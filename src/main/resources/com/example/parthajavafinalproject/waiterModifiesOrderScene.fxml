@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="561.0" prefWidth="788.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.WaiterModifiesOrderScenecontroller">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadOrderButtonOnAction" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: skyblue;" text="LOAD ORDER" />
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="59.0" prefHeight="200.0" prefWidth="742.0">
+        <columns>
+          <TableColumn fx:id="phoneNumberCol" prefWidth="156.00002479553223" text="Phone Number" />
+          <TableColumn fx:id="tableNoCol" prefWidth="88.0" text="Table Number" />
+            <TableColumn fx:id="orderDetailsCol" prefWidth="343.2000427246094" text="Order Details" />
+            <TableColumn fx:id="statusCol" prefWidth="156.800048828125" text="Status" />
+        </columns>
+      </TableView>
+      <TextField fx:id="phoneSearchTextField" layoutX="88.0" layoutY="268.0" />
+      <Label layoutX="12.0" layoutY="271.0" prefHeight="18.0" prefWidth="56.0" text="Phone No" />
+      <TextArea fx:id="textAreaModify" layoutX="88.0" layoutY="316.0" prefHeight="87.0" prefWidth="263.0" />
+      <Label layoutX="12.0" layoutY="316.0" text="Modify Order" />
+      <Button layoutX="91.0" layoutY="426.0" mnemonicParsing="false" onAction="#saveButtonOnAction" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: lightgreen;" text="Save" />
+      <Label fx:id="label" layoutX="84.0" layoutY="496.0" prefHeight="18.0" prefWidth="593.0" style="-fx-background-color: lightpink;" />
+      <Button layoutX="264.0" layoutY="267.0" mnemonicParsing="false" onAction="#searchButtonOnAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: lightpink;" text="Search" />
+   </children>
+</AnchorPane>
