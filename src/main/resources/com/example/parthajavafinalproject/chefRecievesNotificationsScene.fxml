@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="478.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.ChefRecievesNotificationsScenecontroller">
+   <children>
+      <Button layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#loadNotificationButton" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: lightpink;" text="Load Notifications" />
+      <Button layoutX="459.0" layoutY="23.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: white;" text="Back" />
+      <TableView fx:id="tableView" layoutX="52.0" layoutY="109.0" prefHeight="200.0" prefWidth="522.0">
+        <columns>
+          <TableColumn fx:id="waiterNameCol" prefWidth="130.39996337890625" text="Waiter Name" />
+          <TableColumn fx:id="messageCol" prefWidth="391.1999877929687" text="Message" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

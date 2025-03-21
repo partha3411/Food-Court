@@ -37,4 +37,8 @@ public class WaiterModifiesOrderScenecontroller
     @javafx.fxml.FXML
     public void searchButtonOnAction(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void backButtonOnAction(ActionEvent actionEvent) {
+    }
 }

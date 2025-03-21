@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="527.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.WaiterTracksOrderStatuscontroller">
+   <children>
+      <Label layoutX="22.0" layoutY="35.0" prefHeight="18.0" prefWidth="130.0" text="Customer Phone No." />
+      <TextField fx:id="phoneNumberTextField" layoutX="153.0" layoutY="32.0" />
+      <Button layoutX="22.0" layoutY="80.0" mnemonicParsing="false" onAction="#searchButtonOnAction" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: skyblue;" text="Search" />
+      <TableView fx:id="tableView" layoutX="12.0" layoutY="164.0" prefHeight="200.0" prefWidth="563.0">
+        <columns>
+          <TableColumn fx:id="phonenumberCol" prefWidth="232.0" text="Phone Number" />
+          <TableColumn fx:id="nameCol" prefWidth="191.20001220703125" text="Name" />
+            <TableColumn fx:id="statusCol" prefWidth="140.79998779296875" text="Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="487.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="105.0" text="Back" />
+   </children>
+</AnchorPane>
