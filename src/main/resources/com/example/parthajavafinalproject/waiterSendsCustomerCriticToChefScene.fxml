@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="473.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.WaiterSendsCustomerCriticToChefSceneController">
+   <children>
+      <Label layoutX="26.0" layoutY="40.0" prefHeight="18.0" prefWidth="99.0" text="Customer Name" />
+      <Label layoutX="26.0" layoutY="80.0" prefHeight="18.0" prefWidth="99.0" text="Phone Number" />
+      <Label layoutX="26.0" layoutY="121.0" prefHeight="18.0" prefWidth="99.0" text="Table Number" />
+      <TextField fx:id="nameTextField" layoutX="136.0" layoutY="37.0" />
+      <TextField fx:id="phoneNumberTextField" layoutX="136.0" layoutY="76.0" />
+      <TextField fx:id="tableNoTextField" layoutX="136.0" layoutY="117.0" />
+      <TextArea fx:id="textArea" layoutX="136.0" layoutY="195.0" prefHeight="155.0" prefWidth="337.0" />
+      <Button layoutX="136.0" layoutY="369.0" mnemonicParsing="false" onAction="#sendButtonOnAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: palegreen;" text="Send" />
+      <Button layoutX="499.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: white;" text="Back" />
+      <Label layoutX="136.0" layoutY="168.0" prefHeight="18.0" prefWidth="116.0" text="Write your message" />
+      <Label fx:id="label" layoutX="136.0" layoutY="420.0" prefHeight="34.0" prefWidth="347.0" style="-fx-background-color: lightpink;" text="Status" />
+   </children>
+</AnchorPane>
