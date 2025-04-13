@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="482.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.WaiterNotifiesManagerSceneController">
+<AnchorPane prefHeight="482.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.WaiterNotifiesSceneController">
    <children>
       <Label layoutX="14.0" layoutY="28.0" prefHeight="18.0" prefWidth="67.0" text="Name" />
       <TextField fx:id="nameTextField" layoutX="87.0" layoutY="24.0" />

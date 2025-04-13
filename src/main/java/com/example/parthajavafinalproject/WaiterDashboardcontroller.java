@@ -17,7 +17,7 @@ public class WaiterDashboardcontroller
     @javafx.fxml.FXML
     public void notifyManagerButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("waiterNotifiesManagerScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("waiterNotifiesScene.fxml"));
             Parent root = fxmlLoader.load();
             Scene nextScene = new Scene(root);
 

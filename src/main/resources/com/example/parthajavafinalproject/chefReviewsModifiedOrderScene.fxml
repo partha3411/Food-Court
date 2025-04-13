@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="533.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.ChefReviewsModifiedOrderSceneController">
+   <children>
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="90.0" prefHeight="284.0" prefWidth="662.0">
+        <columns>
+          <TableColumn fx:id="phoneNumberCol" prefWidth="106.40002727508545" text="PhoneNumber" />
+          <TableColumn fx:id="orderDetailsCol" prefWidth="430.3999481201172" text="Order Details" />
+            <TableColumn fx:id="statusCol" prefWidth="124.00006103515625" text="Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="559.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="105.0" text="Back" />
+      <Button layoutX="14.0" layoutY="399.0" mnemonicParsing="false" onAction="#FilteronlymodifiedordersButton" prefHeight="26.0" prefWidth="174.0" text="Filter only modified orders" />
+   </children>
+</AnchorPane>

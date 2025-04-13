@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.*;
 import java.util.ArrayList;
 
-public class WaiterNotifiesManagerSceneController {
+public class WaiterNotifiesSceneController {
 
     @javafx.fxml.FXML
     private TextField nameTextField;
@@ -43,7 +43,7 @@ public class WaiterNotifiesManagerSceneController {
         newNoticeArrayList.add(newNotice);
         saveNoticesToFile();
 
-        label.setText("Notice sent to manager.");
+        label.setText("Notice sent successfully.");
 
         // Clear inputs
         nameTextField.clear();
@@ -51,7 +51,7 @@ public class WaiterNotifiesManagerSceneController {
     }
 
     private void saveNoticesToFile() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("noticeToManager.bin"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("notices.bin"))) {
             oos.writeObject(newNoticeArrayList);
         } catch (IOException e) {
             e.printStackTrace();

@@ -101,12 +101,12 @@ public class ChefDashboardScenecontroller
     @javafx.fxml.FXML
     public void notificationfromwaiterButton(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chefRecievesNotificationsScene.fxml"));
             Parent root = fxmlLoader.load();
             Scene nextScene = new Scene(root);
 
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Login Scene");
+            stage.setTitle("Notifications");
             stage.setScene(nextScene);
             stage.show();
         } catch (Exception e) {
@@ -117,12 +117,12 @@ public class ChefDashboardScenecontroller
     @javafx.fxml.FXML
     public void viewSpecificCustomerOrderButton(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chefViewsSpecificCustomerOrderScene.fxml"));
             Parent root = fxmlLoader.load();
             Scene nextScene = new Scene(root);
 
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Login Scene");
+            stage.setTitle("Specific Customer Order");
             stage.setScene(nextScene);
             stage.show();
         } catch (Exception e) {
@@ -149,7 +149,7 @@ public class ChefDashboardScenecontroller
     @javafx.fxml.FXML
     public void ReviewmodifiedOrderButton(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chefProcessanOrderScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chefReviewsModifiedOrderScene.fxml"));
             Parent root = fxmlLoader.load();
             Scene nextScene = new Scene(root);
 
