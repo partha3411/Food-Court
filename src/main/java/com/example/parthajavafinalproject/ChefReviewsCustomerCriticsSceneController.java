@@ -26,21 +26,22 @@ public class ChefReviewsCustomerCriticsSceneController {
     @javafx.fxml.FXML
     public void initialize() {
         phonenumberCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
-        criticsCol.setCellValueFactory(new PropertyValueFactory<>("critic"));
+        criticsCol.setCellValueFactory(new PropertyValueFactory<>("criticMessage"));
     }
 
-    @javafx.fxml.FXML
-    public void loadButtonOnAction(ActionEvent actionEvent) {
+    private void loadCustomerCriticsFromFile() {
         customerCriticArrayList.clear();
-        File file = new File("customerCritics.bin");
+        File file = new File("customerCritic.bin");
 
         if (file.exists()) {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+                // Read objects one by one from the file
                 while (true) {
                     try {
-                        CustomerCritic c = (CustomerCritic) ois.readObject();
-                        customerCriticArrayList.add(c);
-                    } catch (EOFException eof) {
+                        CustomerCritic critic = (CustomerCritic) ois.readObject();
+                        customerCriticArrayList.add(critic);
+                    } catch (EOFException e) {
+                        // End of file reached, exit the loop
                         break;
                     }
                 }
@@ -53,9 +54,14 @@ public class ChefReviewsCustomerCriticsSceneController {
     }
 
     @javafx.fxml.FXML
+    public void loadButtonOnAction(ActionEvent actionEvent) {
+        loadCustomerCriticsFromFile();
+    }
+
+    @javafx.fxml.FXML
     public void backButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("waiterDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chefDashboardScene.fxml"));
             Parent root = fxmlLoader.load();
             Scene nextScene = new Scene(root);
 

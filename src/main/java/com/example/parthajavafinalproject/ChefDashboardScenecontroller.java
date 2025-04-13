@@ -133,7 +133,7 @@ public class ChefDashboardScenecontroller
     @javafx.fxml.FXML
     public void customerfeedbackButton(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chefReviewsCustomerCriticsScene.fxml"));
             Parent root = fxmlLoader.load();
             Scene nextScene = new Scene(root);
 

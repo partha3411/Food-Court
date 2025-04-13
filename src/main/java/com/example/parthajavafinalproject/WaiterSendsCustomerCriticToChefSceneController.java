@@ -1,5 +1,6 @@
 package com.example.parthajavafinalproject;
 
+import com.example.parthajavafinalproject.CustomerCritic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,6 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -44,9 +46,31 @@ public class WaiterSendsCustomerCriticToChefSceneController {
 
         CustomerCritic customerCritic = new CustomerCritic(name, phone, tableNo, critic);
 
-        try (FileOutputStream fos = new FileOutputStream("customerCritic.bin", true);
-             ObjectOutputStream oos = new AppendableObjectOutputStream(fos)) {
+        saveCustomerCriticToFile(customerCritic);
+    }
+
+    private void saveCustomerCriticToFile(CustomerCritic customerCritic) {
+        try {
+            File f = new File("customerCritic.bin");
+            FileOutputStream fos;
+            ObjectOutputStream oos;
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new ObjectOutputStream(fos) {
+                    @Override
+                    protected void writeStreamHeader() throws IOException {
+                        reset();
+                    }
+                };
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
             oos.writeObject(customerCritic);
+            oos.close();
+            fos.close();
+
             label.setText("Critic sent successfully.");
         } catch (IOException e) {
             e.printStackTrace();
