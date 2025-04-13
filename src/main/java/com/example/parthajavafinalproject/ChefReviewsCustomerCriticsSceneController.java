@@ -21,7 +21,7 @@ public class ChefReviewsCustomerCriticsSceneController {
     @javafx.fxml.FXML
     private TableView<CustomerCritic> tableView;
 
-    private ArrayList<CustomerCritic> criticList = new ArrayList<>();
+    private ArrayList<CustomerCritic> customerCriticArrayList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -31,7 +31,7 @@ public class ChefReviewsCustomerCriticsSceneController {
 
     @javafx.fxml.FXML
     public void loadButtonOnAction(ActionEvent actionEvent) {
-        criticList.clear();
+        customerCriticArrayList.clear();
         File file = new File("customerCritics.bin");
 
         if (file.exists()) {
@@ -39,7 +39,7 @@ public class ChefReviewsCustomerCriticsSceneController {
                 while (true) {
                     try {
                         CustomerCritic c = (CustomerCritic) ois.readObject();
-                        criticList.add(c);
+                        customerCriticArrayList.add(c);
                     } catch (EOFException eof) {
                         break;
                     }
@@ -49,7 +49,7 @@ public class ChefReviewsCustomerCriticsSceneController {
             }
         }
 
-        tableView.getItems().setAll(criticList);
+        tableView.getItems().setAll(customerCriticArrayList);
     }
 
     @javafx.fxml.FXML

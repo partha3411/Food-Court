@@ -38,7 +38,7 @@ public class waiterTakesAnOrderScenecontroller
 
     @javafx.fxml.FXML
     public void initialize() {
-        orderStatusComboBox.getItems().addAll("Pending","BeingPrepared","Ready","Canceled");
+        orderStatusComboBox.getItems().addAll("Pending","BeingPrepared","Ready","Canceled","Modified");
     }
 
     @javafx.fxml.FXML

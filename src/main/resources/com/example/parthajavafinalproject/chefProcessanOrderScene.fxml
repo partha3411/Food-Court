@@ -8,22 +8,20 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="505.0" prefWidth="702.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.ChefProcessanOrderScenecontroller">
    <children>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" text="Load Orders" />
-      <Button layoutX="558.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="129.0" style="-fx-background-color: lightpink;" text="Back" />
-      <TableView layoutX="14.0" layoutY="72.0" prefHeight="200.0" prefWidth="660.0">
+      <Button layoutX="558.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="129.0" style="-fx-background-color: lightpink;" text="Back" />
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="72.0" prefHeight="200.0" prefWidth="660.0">
         <columns>
-          <TableColumn prefWidth="151.19997882843018" text="PhoneNumber" />
-          <TableColumn prefWidth="372.00001525878906" text="Order Details" />
-            <TableColumn prefWidth="136.00006103515625" text="Status" />
+          <TableColumn fx:id="phoneNumberCol" prefWidth="151.19997882843018" text="PhoneNumber" />
+          <TableColumn fx:id="orderdetailsCol" prefWidth="372.00001525878906" text="Order Details" />
+            <TableColumn fx:id="statusCol" prefWidth="136.00006103515625" text="Status" />
         </columns>
       </TableView>
-      <Label layoutX="22.0" layoutY="300.0" prefHeight="18.0" prefWidth="84.0" text="Update status" />
-      <TextField layoutX="125.0" layoutY="297.0" promptText="Type Phone Number" />
-      <ComboBox layoutX="124.0" layoutY="345.0" prefWidth="150.0" />
+      <Label layoutX="22.0" layoutY="300.0" prefHeight="18.0" prefWidth="84.0" text="Phone Number" />
+      <TextField fx:id="phoneNumbertextField" layoutX="125.0" layoutY="297.0" promptText="Type Phone Number" />
+      <ComboBox fx:id="statusComboBox" layoutX="124.0" layoutY="345.0" prefWidth="150.0" />
       <Label layoutX="22.0" layoutY="348.0" prefHeight="18.0" prefWidth="84.0" text="Status" />
-      <Button layoutX="125.0" layoutY="403.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: lightgreen;" text="Update" />
+      <Button layoutX="125.0" layoutY="403.0" mnemonicParsing="false" onAction="#updateButtononAction" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: lightgreen;" text="Update" />
    </children>
 </AnchorPane>

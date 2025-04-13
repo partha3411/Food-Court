@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 public class WaiterDashboardcontroller
 {
+
     @javafx.fxml.FXML
     public void initialize() {
     }
@@ -148,5 +149,22 @@ public class WaiterDashboardcontroller
         }
 
 
+    }
+
+    @javafx.fxml.FXML
+    public void backButtonOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginScene.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene nextScene = new Scene(root);
+
+            // Get the current stage
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Login Scene");
+            stage.setScene(nextScene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace(); // Print stack trace to help with debugging
+        }
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -14,16 +15,19 @@
         <columns>
           <TableColumn fx:id="phoneNumberCol" prefWidth="156.00002479553223" text="Phone Number" />
           <TableColumn fx:id="tableNoCol" prefWidth="116.800048828125" text="Table Number" />
-            <TableColumn fx:id="orderDetailsCol" prefWidth="467.9999694824219" text="Order Details" />
+            <TableColumn fx:id="orderDetailsCol" prefWidth="353.6001281738281" text="Order Details" />
+            <TableColumn fx:id="statusCol" prefWidth="112.79996337890623" text="Status" />
         </columns>
       </TableView>
       <TextField fx:id="phoneSearchTextField" layoutX="88.0" layoutY="268.0" />
       <Label layoutX="12.0" layoutY="271.0" prefHeight="18.0" prefWidth="56.0" text="Phone No" />
-      <TextArea fx:id="textAreaModify" layoutX="88.0" layoutY="316.0" prefHeight="87.0" prefWidth="263.0" />
-      <Label layoutX="12.0" layoutY="316.0" text="Modify Order" />
+      <TextArea fx:id="textAreaModify" layoutX="88.0" layoutY="366.0" prefHeight="87.0" prefWidth="263.0" />
+      <Label layoutX="4.0" layoutY="366.0" text="Modify Order" />
       <Label fx:id="label" layoutX="84.0" layoutY="496.0" prefHeight="18.0" prefWidth="593.0" style="-fx-background-color: lightpink;" />
       <Button layoutX="264.0" layoutY="267.0" mnemonicParsing="false" onAction="#searchButtonOnAction" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: lightpink;" text="Search" />
       <Button layoutX="670.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="110.0" text="Back" />
-      <Button layoutX="88.0" layoutY="432.0" mnemonicParsing="false" onAction="#modifyOrderDetailsButtonOnAction" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: palegreen;" text="Modify &amp; Save" />
+      <Button layoutX="88.0" layoutY="460.0" mnemonicParsing="false" onAction="#modifyOrderDetailsButtonOnAction" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: palegreen;" text="Modify &amp; Save" />
+      <Label layoutX="7.0" layoutY="323.0" text="change status to modified" />
+      <ComboBox fx:id="orderStatusComboBox" layoutX="163.0" layoutY="319.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

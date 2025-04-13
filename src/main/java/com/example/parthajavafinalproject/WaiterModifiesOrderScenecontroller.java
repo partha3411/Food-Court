@@ -31,6 +31,10 @@ public class WaiterModifiesOrderScenecontroller {
     private Label label;
 
     private List<Order> orderList = new ArrayList<>();
+    @javafx.fxml.FXML
+    private TableColumn statusCol;
+    @javafx.fxml.FXML
+    private ComboBox<String> orderStatusComboBox;
 
 
     @javafx.fxml.FXML
@@ -38,7 +42,9 @@ public class WaiterModifiesOrderScenecontroller {
         phoneNumberCol.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         tableNoCol.setCellValueFactory(new PropertyValueFactory<>("tableNumber"));
         orderDetailsCol.setCellValueFactory(new PropertyValueFactory<>("orderDetails"));
+        statusCol.setCellValueFactory(new PropertyValueFactory<>("orderStatus"));
 
+        orderStatusComboBox.getItems().addAll("Pending", "BeingPrepared", "Ready", "Canceled", "Modified");
         loadArrayListFromFile();
         tableView.getItems().setAll(orderList);  // populate the table with the loaded orders
     }
@@ -112,37 +118,35 @@ public class WaiterModifiesOrderScenecontroller {
 
     @javafx.fxml.FXML
     public void modifyOrderDetailsButtonOnAction(ActionEvent actionEvent) {
-
-        // Get the phone number and new order details from the input fields
         String searchPhoneNumber = phoneSearchTextField.getText().trim();
         String newOrderDetails = textAreaModify.getText().trim();
+        String newOrderStatus = orderStatusComboBox.getValue();
 
         if (newOrderDetails.isEmpty()) {
             label.setText("Please enter valid order details to modify.");
             return;
         }
 
-        // Iterate over the order list to find the order with the matching phone number
-        for (int i = 0; i < orderList.size(); i++) {
-            Order order = orderList.get(i);
+        if (newOrderStatus == null || newOrderStatus.isEmpty()) {
+            label.setText("Please select a new order status.");
+            return;
+        }
+
+        // Search and update
+        for (Order order : orderList) {
             if (order.getPhoneNumber().equals(searchPhoneNumber)) {
-                // Directly modify the orderDetails field (since it's public)
-                order.orderDetails = newOrderDetails;
+                order.orderDetails = newOrderDetails; // Update order details
+                order.orderStatus = newOrderStatus;   // Update order status
 
-                label.setText("Order details updated successfully!");
+                label.setText("Order details and status updated successfully!");
 
-                // Update the TableView to reflect the changes
-                tableView.refresh();
-
-                // Save the updated orders to file
-                saveOrdersToFile();
+                tableView.refresh(); // Refresh table
+                saveOrdersToFile();  // Save changes
                 return;
             }
         }
 
-        // If no matching phone number is found
         label.setText("Order not found for this phone number.");
-
 
     }
 }
