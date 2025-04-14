@@ -4,5 +4,6 @@ module com.example.parthajavafinalproject {
 
 
     opens com.example.parthajavafinalproject to javafx.fxml;
+    opens com.example.parthajavafinalproject.Sajjatul to javafx.fxml;
     exports com.example.parthajavafinalproject;
 }
