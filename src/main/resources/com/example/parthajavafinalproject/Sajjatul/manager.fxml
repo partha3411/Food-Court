@@ -6,7 +6,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sajjatul.ManagerController">
    <children>
       <Text layoutX="245.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manager">
@@ -39,4 +38,3 @@
       </VBox>
    </children>
 </AnchorPane>
-
