@@ -1,8 +1,13 @@
 package com.example.parthajavafinalproject;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 public class LoginScenecontroller
@@ -22,6 +27,19 @@ public class LoginScenecontroller
 
     @javafx.fxml.FXML
     public void waiterLoginButtonOnAction(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("waiterDashboard.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene nextScene = new Scene(root);
+
+            // Get the current stage
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Waiter Dashboard");
+            stage.setScene(nextScene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace(); // Print stack trace to help with debugging
+        }
     }
 
     @javafx.fxml.FXML
@@ -31,5 +49,21 @@ public class LoginScenecontroller
 
     @javafx.fxml.FXML
     public void chefLoginOnAction(ActionEvent actionEvent) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chefDashboardScene.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene nextScene = new Scene(root);
+
+            // Get the current stage
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Chef DashBoard");
+            stage.setScene(nextScene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace(); // Print stack trace to help with debugging
+        }
+
+
     }
 }

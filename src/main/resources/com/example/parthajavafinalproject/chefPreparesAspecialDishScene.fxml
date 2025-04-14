@@ -8,15 +8,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="555.0" prefWidth="706.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.ChefPreparesAspecialDishSceneController">
    <children>
-      <Button layoutX="28.0" layoutY="26.0" mnemonicParsing="false" onAction="#loadButtonOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-background-color: skyblue;" text="Load Special Orders" />
       <Button layoutX="545.0" layoutY="26.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-background-color: lightpink;" text="Back" />
       <Button layoutX="278.0" layoutY="397.0" mnemonicParsing="false" onAction="#updateButtonOnAction" prefHeight="26.0" prefWidth="136.0" style="-fx-background-color: palegreen;" text="Update Status" />
       <TableView fx:id="tableView" layoutX="51.0" layoutY="78.0" prefHeight="200.0" prefWidth="603.0">
         <columns>
-          <TableColumn fx:id="phonenumberCol" prefWidth="168.00006484985352" text="Phone Number" />
+          <TableColumn fx:id="phoneNumberCol" prefWidth="168.00006484985352" text="Phone Number" />
           <TableColumn fx:id="orderDetailsCol" prefWidth="230.3999481201172" text="Special Dish Order Details" />
             <TableColumn fx:id="statusCol" prefWidth="204.79998779296875" text="Status" />
         </columns>
