@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.parthajavafinalproject.Sajjatul.RealTimeSalesController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="430.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sajjatul.RealTimeSalesController">
+   <children>
+      <Text layoutX="218.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Real Time Sales">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TableView layoutX="24.0" layoutY="209.0" prefHeight="200.0" prefWidth="572.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
