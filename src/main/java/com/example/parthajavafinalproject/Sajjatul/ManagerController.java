@@ -1,97 +1,144 @@
 package com.example.parthajavafinalproject.Sajjatul;
 
+import com.example.parthajavafinalproject.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ManagerController {
 
     @FXML
     private VBox vbox;
+    @FXML
+    private Button stallManagement;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @Deprecated
-    void feedbackRatings(ActionEvent event) {
-
-    }
-
-    @Deprecated
-    void liveChat(ActionEvent event) {
-
-    }
-
-    @Deprecated
-    void openCloseTime(ActionEvent event) {
-
-    }
-
-    @Deprecated
-    void realTimeSales(ActionEvent event) {
-
-    }
-
-    @Deprecated
-    void signOut(ActionEvent event) {
-
-    }
-
-    @Deprecated
-    void staffDetails(ActionEvent event) {
-
-    }
-
-    @Deprecated
-    void stallManagement(ActionEvent event) {
-
-    }
-
-    @Deprecated
-    void stockManagement(ActionEvent event) {
-
-    }
-
-    @Deprecated
-    void updateApp(ActionEvent event) {
+    @FXML
+    void feedbackRatings(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/ratings.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Ratings and Feedback");
+        stage.show();
 
     }
 
     @FXML
-    public void salesReportButton(ActionEvent actionEvent) {
+    void liveChat(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/chat.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Chat");
+        stage.show();
+
     }
 
     @FXML
-    public void utilityBillButton(ActionEvent actionEvent) {
+    void openCloseTime(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/time.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Time Management");
+        stage.show();
+
     }
 
     @FXML
-    public void dailyNeedsButton(ActionEvent actionEvent) {
+    void realTimeSales(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/realTimeSales.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Real Time Sales");
+        stage.show();
+
     }
 
     @FXML
-    public void paymentButton(ActionEvent actionEvent) {
+    void signOut(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginScene.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Login");
+        stage.show();
+
     }
 
     @FXML
-    public void bestSellItemButton(ActionEvent actionEvent) {
+    void staffDetails(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/staff.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("staff details");
+        stage.show();
+
     }
 
     @FXML
-    public void discountOfferButton(ActionEvent actionEvent) {
+    void stallManagement(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/stallManagement.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Stall Management");
+        stage.show();
+    }
+
+
+
+    @FXML
+    void stockManagement(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/stockManagement.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Stock Management");
+        stage.show();
+
     }
 
     @FXML
-    public void staffBillButton(ActionEvent actionEvent) {
-    }
+    void updateApp(ActionEvent event) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/updateMenu.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Update Menu");
+        stage.show();
 
-    @FXML
-    public void digitalReceiptButton(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void signOutButton(ActionEvent actionEvent) {
     }
 }
