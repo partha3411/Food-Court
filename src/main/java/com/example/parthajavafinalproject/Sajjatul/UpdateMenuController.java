@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class UpdateAppController {
+public class UpdateMenuController {
 
     @FXML
     private ComboBox<?> foodNameCB;
