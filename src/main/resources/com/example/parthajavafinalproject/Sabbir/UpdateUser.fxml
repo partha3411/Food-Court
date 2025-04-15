@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.foodcourt.controller.UpdateUserController"
+      spacing="20" alignment="CENTER">
+
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+
+    <Label text="✏️ Update User Info" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <VBox spacing="10" alignment="CENTER_LEFT" maxWidth="350">
+        <Label text="Select User ID:"/>
+        <ComboBox fx:id="userComboBox" promptText="Choose user" prefWidth="300"/>
+
+        <Label text="Name:"/>
+        <TextField fx:id="nameField" prefWidth="300"/>
+
+        <Label text="Email:"/>
+        <TextField fx:id="emailField" prefWidth="300"/>
+
+        <Label text="Salary:"/>
+        <TextField fx:id="salaryField" prefWidth="300"/>
+    </VBox>
+
+    <Button fx:id="updateButton" text="Update User"
+            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"
+            prefWidth="160"/>
+</VBox>

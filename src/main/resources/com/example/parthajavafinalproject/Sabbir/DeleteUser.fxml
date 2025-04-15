@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.foodcourt.controller.DeleteUserController"
+      spacing="20" alignment="CENTER">
+
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+
+    <Label text="🗑️ Delete User Account" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <VBox spacing="10" alignment="CENTER_LEFT" maxWidth="300">
+        <Label text="Select User to Delete:"/>
+        <ComboBox fx:id="userComboBox" promptText="Choose a user" prefWidth="300"/>
+    </VBox>
+
+    <Button fx:id="deleteButton" text="Delete User"
+            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;"
+            prefWidth="150"/>
+</VBox>
