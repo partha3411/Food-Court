@@ -50,4 +50,7 @@ public class StallManagementController {
 
     }
 
+    @FXML
+    public void backMenuButton(ActionEvent actionEvent) {
+    }
 }
