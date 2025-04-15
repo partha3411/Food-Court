@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sajjatul.BestSellItemController">
+   <children>
+      <Text layoutX="230.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Best Sell Item">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="63.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="High Demand Item:" />
+      <TextField fx:id="nameTF" layoutX="188.0" layoutY="63.0" promptText="Food Name" />
+      <Button layoutX="483.0" layoutY="135.0" mnemonicParsing="false" onAction="#sendMessageButton" text="Send Message" />
+      <TextArea fx:id="messageTA" layoutX="346.0" layoutY="51.0" prefHeight="74.0" prefWidth="200.0" promptText="Write Message" />
+      <Label fx:id="textLabel" layoutX="219.0" layoutY="207.0" prefHeight="18.0" prefWidth="175.0" />
+      <Button layoutX="1.0" layoutY="1.0" mnemonicParsing="false" onAction="#backMenuButton" text="←">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
