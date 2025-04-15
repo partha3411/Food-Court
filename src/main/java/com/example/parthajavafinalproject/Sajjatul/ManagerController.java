@@ -17,14 +17,12 @@ public class ManagerController {
 
     @FXML
     private VBox vbox;
-    @FXML
-    private Button stallManagement;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @FXML
+    @Deprecated
     void feedbackRatings(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/ratings.fxml"));
@@ -37,7 +35,7 @@ public class ManagerController {
 
     }
 
-    @FXML
+    @Deprecated
     void liveChat(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/chat.fxml"));
@@ -50,7 +48,7 @@ public class ManagerController {
 
     }
 
-    @FXML
+    @Deprecated
     void openCloseTime(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/time.fxml"));
@@ -63,7 +61,7 @@ public class ManagerController {
 
     }
 
-    @FXML
+    @Deprecated
     void realTimeSales(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/realTimeSales.fxml"));
@@ -76,7 +74,7 @@ public class ManagerController {
 
     }
 
-    @FXML
+    @Deprecated
     void signOut(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginScene.fxml"));
@@ -89,7 +87,7 @@ public class ManagerController {
 
     }
 
-    @FXML
+    @Deprecated
     void staffDetails(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/staff.fxml"));
@@ -102,7 +100,7 @@ public class ManagerController {
 
     }
 
-    @FXML
+    @Deprecated
     void stallManagement(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/stallManagement.fxml"));
@@ -116,7 +114,7 @@ public class ManagerController {
 
 
 
-    @FXML
+    @Deprecated
     void stockManagement(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/stockManagement.fxml"));
@@ -129,7 +127,7 @@ public class ManagerController {
 
     }
 
-    @FXML
+    @Deprecated
     void updateApp(ActionEvent event) throws IOException {
         Parent root = null ;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/updateMenu.fxml"));
