@@ -99,4 +99,76 @@ public class HygieneCondition {
         }
         return "Unknown";
     }
+
+    public TitledPane getZoneb() {
+        return zoneb;
+    }
+
+    public void setZoneb(TitledPane zoneb) {
+        this.zoneb = zoneb;
+    }
+
+    public TitledPane getZonea() {
+        return zonea;
+    }
+
+    public void setZonea(TitledPane zonea) {
+        this.zonea = zonea;
+    }
+
+    public TitledPane getZonec() {
+        return zonec;
+    }
+
+    public void setZonec(TitledPane zonec) {
+        this.zonec = zonec;
+    }
+
+    public TitledPane getZonee() {
+        return zonee;
+    }
+
+    public void setZonee(TitledPane zonee) {
+        this.zonee = zonee;
+    }
+
+    public TitledPane getZoned() {
+        return zoned;
+    }
+
+    public void setZoned(TitledPane zoned) {
+        this.zoned = zoned;
+    }
+
+    public CheckBox getHandwash() {
+        return handwash;
+    }
+
+    public void setHandwash(CheckBox handwash) {
+        this.handwash = handwash;
+    }
+
+    public CheckBox getTissue() {
+        return tissue;
+    }
+
+    public void setTissue(CheckBox tissue) {
+        this.tissue = tissue;
+    }
+
+    public CheckBox getMirrorwiped() {
+        return mirrorwiped;
+    }
+
+    public void setMirrorwiped(CheckBox mirrorwiped) {
+        this.mirrorwiped = mirrorwiped;
+    }
+
+    public CheckBox getFloorcleaned() {
+        return floorcleaned;
+    }
+
+    public void setFloorcleaned(CheckBox floorcleaned) {
+        this.floorcleaned = floorcleaned;
+    }
 }
