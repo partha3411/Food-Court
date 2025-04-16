@@ -40,7 +40,7 @@ public class ChatController {
         managerCol.setCellValueFactory(new PropertyValueFactory<>("managerMessage"));
     }
 
-    private ArrayList<Chat> Chats=new ArrayList<>();
+    private ArrayList<Chat> Chats = new ArrayList<>();
 
     @FXML
     void backMenuButton(ActionEvent event)  throws IOException {
