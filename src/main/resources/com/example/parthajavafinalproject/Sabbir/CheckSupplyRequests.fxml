@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.foodcourt.CheckSupplyRequestsController">
+
+    <padding>
+        <Insets bottom="30" left="40" right="40" top="30" />
+    </padding>
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text=" Check Supply Requests" />
+
+    <TableView fx:id="requestTable" prefHeight="300" prefWidth="550">
+        <columns>
+            <TableColumn fx:id="requestIdColumn" prefWidth="100" text="Request ID" />
+            <TableColumn fx:id="productColumn" prefWidth="150" text="Product" />
+            <TableColumn fx:id="quantityColumn" prefWidth="100" text="Quantity" />
+            <TableColumn fx:id="statusColumn" prefWidth="180" text="Status" />
+        </columns>
+    </TableView>
+</VBox>
