@@ -13,39 +13,50 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class BillingStaffController {
 
     @FXML
-    private TableColumn<?, ?> amountCol;
+    private TableColumn<BillingStaff, Double> amountCol;
 
     @FXML
     private TextField amountTF;
 
     @FXML
-    private TableColumn<?, ?> categoryCol;
+    private TableColumn<BillingStaff, String> categoryCol;
 
     @FXML
-    private TableColumn<?, ?> dateCol;
+    private TableColumn<BillingStaff, LocalDate> dateCol;
 
     @FXML
     private DatePicker dateDP;
 
     @FXML
-    private ComboBox<?> staffCB;
+    private ComboBox<String> staffCB;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<BillingStaff> tableView;
 
     @FXML
     private Label textLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        staffCB.getItems().addAll("Manager","Cleaner","Chef","Security","Waiter");
+
+        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+        amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
     }
+
+    private ArrayList<BillingStaff> BillStaffs = new ArrayList<>();
 
 
     @FXML
