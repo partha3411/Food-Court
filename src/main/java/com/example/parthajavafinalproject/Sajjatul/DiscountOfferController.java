@@ -12,9 +12,13 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class DiscountOfferController {
 
@@ -22,38 +26,47 @@ public class DiscountOfferController {
     private DatePicker dateDP;
 
     @FXML
-    private TableColumn<?, ?> discountCol;
+    private TableColumn<DiscountOffer, Integer> discountCol;
 
     @FXML
     private TextField discountTF;
 
     @FXML
-    private ComboBox<?> itemCB;
+    private ComboBox<String> itemCB;
 
     @FXML
-    private TableColumn<?, ?> itemCol;
+    private TableColumn<DiscountOffer, Double> itemCol;
 
     @FXML
-    private TableColumn<?, ?> nameCol;
+    private TableColumn<DiscountOffer, String> nameCol;
 
     @FXML
-    private TableColumn<?, ?> offerCol;
+    private TableColumn<DiscountOffer, LocalDate> offerCol;
 
     @FXML
     private TextField priceTF;
 
     @FXML
-    private TableColumn<?, ?> promoCol;
+    private TableColumn<DiscountOffer, String> promoCol;
 
     @FXML
     private TextField promoTF;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<DiscountOffer> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+        itemCB.getItems().addAll("Pasta", "Tikka", "Pizza", "Burgers", "Sandwich","Hot Dog");
+
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        itemCol.setCellValueFactory(new PropertyValueFactory<>("itemPrice"));
+        discountCol.setCellValueFactory(new PropertyValueFactory<>("discount"));
+        offerCol.setCellValueFactory(new PropertyValueFactory<>("offerDate"));
+        promoCol.setCellValueFactory(new PropertyValueFactory<>("promoCode"));
     }
+
+    private ArrayList<DiscountOffer> Offers = new ArrayList<>();
 
     @FXML
     void backMenuButton(ActionEvent event) throws IOException {
