@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sajjatul.RatingsController">
    <children>
       <Text layoutX="194.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ratings &amp; Feedback">
@@ -21,7 +20,7 @@
       <TextField fx:id="nameTF" layoutX="22.0" layoutY="66.0" promptText="User Name" />
       <ComboBox fx:id="ratingCB" layoutX="362.0" layoutY="66.0" prefWidth="150.0" promptText="Ratings" />
       <Button layoutX="190.0" layoutY="122.0" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
-      <ComboBox layoutX="362.0" layoutY="122.0" onAction="#ratingDilterCB" prefWidth="150.0" promptText="Ratings" />
+      <ComboBox fx:id="ratingFilterCB" layoutX="362.0" layoutY="122.0" prefWidth="150.0" promptText="Ratings" />
       <Button layoutX="520.0" layoutY="122.0" mnemonicParsing="false" onAction="#filterButton" text="Filter" />
       <TableView fx:id="tableView" layoutX="14.0" layoutY="193.0" prefHeight="200.0" prefWidth="578.0">
         <columns>

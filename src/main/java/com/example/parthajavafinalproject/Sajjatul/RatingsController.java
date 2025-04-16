@@ -11,42 +11,56 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RatingsController {
 
     @FXML
-    private TableColumn<?, ?> feedbackCol;
+    private TableColumn<Ratings, String> feedbackCol;
 
     @FXML
     private TextField feedbackTF;
 
     @FXML
-    private ComboBox<?> fooNameCB;
+    private ComboBox<String> fooNameCB;
 
     @FXML
-    private TableColumn<?, ?> foodNameCol;
+    private TableColumn<Ratings, String> foodNameCol;
 
     @FXML
-    private TableColumn<?, ?> nameCol;
+    private TableColumn<Ratings, String> nameCol;
 
     @FXML
     private TextField nameTF;
 
     @FXML
-    private ComboBox<?> ratingCB;
+    private ComboBox<String> ratingCB;
 
     @FXML
-    private TableColumn<?, ?> ratingCol;
+    private TableColumn<Ratings, String> ratingCol;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<Ratings> tableView;
+    @FXML
+    private ComboBox<String> ratingFilterCB;
 
     @javafx.fxml.FXML
     public void initialize() {
+        fooNameCB.getItems().addAll("Pasta", "Tikka", "Pizza", "Burgers", "Sandwich","Hot Dog");
+        ratingCB.getItems().addAll("★☆☆☆☆", "★★☆☆☆", "★★★☆☆", "★★★★☆", "★★★★★");
+        ratingFilterCB.getItems().addAll("★☆☆☆☆", "★★☆☆☆", "★★★☆☆", "★★★★☆", "★★★★★");
+
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("customerName"));
+        foodNameCol.setCellValueFactory(new PropertyValueFactory<>("foodName"));
+        ratingCol.setCellValueFactory(new PropertyValueFactory<>("rating"));
+        feedbackCol.setCellValueFactory(new PropertyValueFactory<>("feedback"));
     }
+
+    private ArrayList<Ratings> RatingsArray = new ArrayList<>();
 
     @FXML
     void backMenuButton(ActionEvent event)  throws IOException {
@@ -66,7 +80,7 @@ public class RatingsController {
 
     }
 
-    @FXML
+    @Deprecated
     void ratingDilterCB(ActionEvent event) {
 
     }
