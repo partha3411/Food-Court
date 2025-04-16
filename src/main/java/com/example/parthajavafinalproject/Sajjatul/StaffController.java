@@ -11,52 +11,65 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class StaffController {
 
     @FXML
-    private TableColumn<?, ?> dateCol;
+    private TableColumn<Staff, LocalDate> dateCol;
 
     @FXML
     private AnchorPane joiningDP;
 
     @FXML
-    private TableColumn<?, ?> nameCol;
+    private TableColumn<Staff, String> nameCol;
 
     @FXML
     private TextField nameTF;
 
     @FXML
-    private TableColumn<?, ?> nidCol;
+    private TableColumn<Staff, Integer> nidCol;
 
     @FXML
     private TextField nidTF;
 
     @FXML
-    private TableColumn<?, ?> salaryCol;
+    private TableColumn<Staff, Integer> salaryCol;
 
     @FXML
     private TextField salaryTF;
 
     @FXML
-    private ComboBox<?> staffCB;
+    private ComboBox<String> staffCB;
 
     @FXML
-    private TableColumn<?, ?> staffCol;
+    private TableColumn<Staff, String> staffCol;
 
     @FXML
-    private ComboBox<?> staffDilterCB;
+    private ComboBox<String> staffDilterCB;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<Staff> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+        staffCB.getItems().addAll( "Cleaner", "Security", "Cashier","Chef","Waiter");
+        staffDilterCB.getItems().addAll( "Cleaner", "Security", "Cashier","Chef","Waiter");
+
+        staffCol.setCellValueFactory(new PropertyValueFactory<>("staffType"));
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nidCol.setCellValueFactory(new PropertyValueFactory<>("nid"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+        salaryCol.setCellValueFactory(new PropertyValueFactory<>("salary"));
     }
+
+    ArrayList<Staff> Staffs=new ArrayList<>();
 
 
     @FXML
