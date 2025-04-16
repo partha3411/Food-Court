@@ -36,33 +36,35 @@ public class RestockCleanSupplyController
         itemTable.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getItemTable()));
         thresholdTable.setCellValueFactory(cellData -> new javafx.beans.property.SimpleStringProperty(cellData.getValue().getThresholdTable()));
         qualityTable.setCellValueFactory(cellData -> new javafx.beans.property.SimpleObjectProperty<>(cellData.getValue().getQualityTable()));
-        dateTable.setCellValueFactory(cellData -> new javafx.beans.property.SimpleObjectProperty<>(cellData.getValue().getDateTable()));
+//      dateTable.setCellValueFactory(cellData -> new  javafx.beans.property.SimpleObjectProperty(cellData.getValue().getDateTable().toString()));
+
     }
 
 
     @javafx.fxml.FXML
     public void ReorderItemsButton() {
         String itemName = ReorderItem.getText();
-        int quantity = Quantity.getValue();
+        Integer quantity = Quantity.getValue();
         String threshold = Threshold.getText();
-        java.time.LocalDate date = DateOfDeliver.getValue();
+        LocalDate date = DateOfDeliver.getValue();
 
         if (itemName == null || itemName.isEmpty() || threshold == null || threshold.isEmpty() || date == null) {
             System.out.println("Please fill in all fields before adding.");
             return;
         }
 
-        // Create a new MonitorTable row
-        MonitorTable newRow = new MonitorTable(itemName, threshold,Integer quantity, LocalDate date);
+        // Create a new MonitorTable row (ORDER IS CORRECT)
+        MonitorTable newRow = new MonitorTable(itemName,threshold, quantity, date);
 
         // Add the row to the table
         MonitorTable.getItems().add(newRow);
 
-        // Clear the fields after adding (optional)
+        // Clear input fields
         ReorderItem.clear();
         Threshold.clear();
         Quantity.getValueFactory().setValue(1);
         DateOfDeliver.setValue(null);
     }
+
 
 }

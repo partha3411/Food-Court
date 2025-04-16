@@ -1,59 +1,49 @@
 package com.example.parthajavafinalproject.Sojib;
 
-import javafx.scene.control.DatePicker;
+import java.time.LocalDate;
 
 public class MonitorTable {
     private String itemTable;
     private String thresholdTable;
-    private DatePicker dateTable;
     private Integer qualityTable;
+    private LocalDate dateTable;
 
-    public MonitorTable(String itemTable, String thresholdTable, DatePicker dateTable, Integer qualityTable) {
+    public MonitorTable(String itemTable, String thresholdTable, Integer qualityTable, LocalDate dateTable) {
         this.itemTable = itemTable;
         this.thresholdTable = thresholdTable;
-        this.dateTable = dateTable;
         this.qualityTable = qualityTable;
+        this.dateTable = dateTable;
     }
 
     public String getItemTable() {
         return itemTable;
     }
 
-    public void setItemTable(String itemTable) {
-        this.itemTable = itemTable;
-    }
-
     public String getThresholdTable() {
         return thresholdTable;
-    }
-
-    public void setThresholdTable(String thresholdTable) {
-        this.thresholdTable = thresholdTable;
-    }
-
-    public DatePicker getDateTable() {
-        return dateTable;
-    }
-
-    public void setDateTable(DatePicker dateTable) {
-        this.dateTable = dateTable;
     }
 
     public Integer getQualityTable() {
         return qualityTable;
     }
 
-    public void setQualityTable(Integer qualityTable) {
-        this.qualityTable = qualityTable;
+    public LocalDate getDateTable() {
+        return dateTable;
     }
 
-    @Override
-    public String toString() {
-        return "MonitorTable{" +
-                "itemTable='" + itemTable + '\'' +
-                ", thresholdTable='" + thresholdTable + '\'' +
-                ", dateTable=" + dateTable +
-                ", qualityTable=" + qualityTable +
-                '}';
+    public void setItemTable(String itemTable) {
+        this.itemTable = itemTable;
+    }
+
+    public void setThresholdTable(String thresholdTable) {
+        this.thresholdTable = thresholdTable;
+    }
+
+    public void setDateTable(LocalDate dateTable) {
+        this.dateTable = dateTable;
+    }
+
+    public void setQualityTable(Integer qualityTable) {
+        this.qualityTable = qualityTable;
     }
 }
