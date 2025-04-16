@@ -13,20 +13,23 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class UtilityBillController {
 
     @FXML
-    private TableColumn<?, ?> amountCol;
+    private TableColumn<UtilityBill, Double> amountCol;
 
     @FXML
     private TextField amountTF;
 
     @FXML
-    private TableColumn<?, ?> dateCol;
+    private TableColumn<UtilityBill, LocalDate> dateCol;
 
     @FXML
     private DatePicker dateDP;
@@ -35,17 +38,24 @@ public class UtilityBillController {
     private Label label;
 
     @FXML
-    private TableColumn<?, ?> nameCol;
+    private TableColumn<UtilityBill, String> nameCol;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<UtilityBill> tableView;
 
     @FXML
-    private ComboBox<?> utilityNameCB;
+    private ComboBox<String> utilityNameCB;
 
     @javafx.fxml.FXML
     public void initialize() {
+            utilityNameCB.getItems().addAll("Electricity", "Water", "Internet", "Gas");
+
+            nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+            amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
+            dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
+
+    private ArrayList<UtilityBill> Bills = new ArrayList<>();
 
     @FXML
     void backMenuButton(ActionEvent event) throws IOException {
