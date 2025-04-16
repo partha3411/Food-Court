@@ -28,6 +28,7 @@ public class BestSellItemController {
 
     @javafx.fxml.FXML
     public void initialize() {
+        textLabel.setText("");
     }
 
 
@@ -46,5 +47,15 @@ public class BestSellItemController {
 
     @FXML
     public void sendMessageButton(ActionEvent actionEvent) {
+        String itemName = nameTF.getText().trim();
+        String message = messageTA.getText().trim();
+
+        if (itemName.isEmpty() || message.isEmpty()) {
+            textLabel.setText("Please enter item name and message.");
+            return;
+        }
+        textLabel.setText("Message sent for: " + itemName);
+        nameTF.clear();
+        messageTA.clear();
     }
 }
