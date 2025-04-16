@@ -2,6 +2,8 @@ package com.example.parthajavafinalproject.Sojib;
 
 import javafx.scene.control.*;
 
+import java.time.LocalDate;
+
 public class RestockCleanSupplyController
 {
     @javafx.fxml.FXML
@@ -40,5 +42,27 @@ public class RestockCleanSupplyController
 
     @javafx.fxml.FXML
     public void ReorderItemsButton() {
+        String itemName = ReorderItem.getText();
+        int quantity = Quantity.getValue();
+        String threshold = Threshold.getText();
+        java.time.LocalDate date = DateOfDeliver.getValue();
+
+        if (itemName == null || itemName.isEmpty() || threshold == null || threshold.isEmpty() || date == null) {
+            System.out.println("Please fill in all fields before adding.");
+            return;
+        }
+
+        // Create a new MonitorTable row
+        MonitorTable newRow = new MonitorTable(itemName, threshold,Integer quantity, LocalDate date);
+
+        // Add the row to the table
+        MonitorTable.getItems().add(newRow);
+
+        // Clear the fields after adding (optional)
+        ReorderItem.clear();
+        Threshold.clear();
+        Quantity.getValueFactory().setValue(1);
+        DateOfDeliver.setValue(null);
     }
+
 }
