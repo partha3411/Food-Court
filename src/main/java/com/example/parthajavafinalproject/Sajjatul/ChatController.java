@@ -11,30 +11,36 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ChatController {
 
     @FXML
-    private TableColumn<?, ?> customerCol;
+    private TableColumn<Chat, String> customerCol;
 
     @FXML
     private TextArea customerMessageTA;
 
     @FXML
-    private TableColumn<?, ?> managerCol;
+    private TableColumn<Chat, String> managerCol;
 
     @FXML
     private TextArea managerMessageTA;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<String> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+        customerCol.setCellValueFactory(new PropertyValueFactory<>("customerMessage"));
+        managerCol.setCellValueFactory(new PropertyValueFactory<>("managerMessage"));
     }
+
+    private ArrayList<Chat> Chats=new ArrayList<>();
 
     @FXML
     void backMenuButton(ActionEvent event)  throws IOException {
