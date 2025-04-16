@@ -11,20 +11,22 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RealTimeSalesController {
 
     @FXML
-    private ComboBox<?> itemAddCB;
+    private ComboBox<String> itemAddCB;
 
     @FXML
-    private ComboBox<?> itemOrderCB;
+    private ComboBox<String> itemOrderCB;
 
     @FXML
-    private TableColumn<?, ?> nameCol;
+    private TableColumn<RealTimeSales, String> nameCol;
 
     @FXML
     private TextField quantityAddTF;
@@ -33,14 +35,21 @@ public class RealTimeSalesController {
     private TextField quantityOrderTF;
 
     @FXML
-    private TableColumn<?, ?> remainCol;
+    private TableColumn<RealTimeSales, Integer> remainCol;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<RealTimeSales> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+        itemAddCB.getItems().addAll("Pasta", "Tikka", "Pizza", "Burgers", "Sandwich","Hot Dog");
+        itemOrderCB.getItems().addAll("Pasta","Tikka", "Pizza", "Burgers", "Sandwich","Hot Dog");
+
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("itemName"));
+        remainCol.setCellValueFactory(new PropertyValueFactory<>("remainQuantity"));
     }
+
+    private ArrayList<RealTimeSales> RealTimeSalesArray = new ArrayList<>();
 
     @FXML
     void addItemButton(ActionEvent event) {
