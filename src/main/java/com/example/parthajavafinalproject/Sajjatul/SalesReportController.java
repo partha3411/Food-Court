@@ -10,36 +10,49 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class SalesReportController {
 
     @FXML
-    private TableColumn<?, ?> buyCol;
+    private TableColumn<SalesReport, Double> buyCol;
 
     @FXML
-    private TableColumn<?, ?> lossCol;
+    private TableColumn<SalesReport, Double> lossCol;
 
     @FXML
-    private TableColumn<?, ?> profitCol;
+    private TableColumn<SalesReport, Double> profitCol;
 
     @FXML
-    private TableColumn<?, ?> sellCol;
+    private TableColumn<SalesReport, Double> sellCol;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<SalesReport> tableView;
 
     @FXML
-    private ComboBox<?> termCB;
+    private ComboBox<String> termCB;
 
     @FXML
-    private TableColumn<?, ?> termCol;
+    private TableColumn<SalesReport, String> termCol;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        termCB.getItems().addAll("Daily","Weekly","Monthly","Yearly");
+
+
+        termCol.setCellValueFactory(new PropertyValueFactory<>("term"));
+        sellCol.setCellValueFactory(new PropertyValueFactory<>("totalSell"));
+        buyCol.setCellValueFactory(new PropertyValueFactory<>("totalBuy"));
+        profitCol.setCellValueFactory(new PropertyValueFactory<>("profit"));
+        lossCol.setCellValueFactory(new PropertyValueFactory<>("loss"));
     }
+
+    private ArrayList<SalesReport> dataPackageList=new ArrayList<>();
 
     @FXML
     void backMenuButton(ActionEvent event) throws IOException {
