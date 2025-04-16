@@ -12,42 +12,54 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class DigitalReciptController {
 
     @FXML
-    private TableColumn<?, ?> dateCol;
+    private TableColumn<DigitalRecipt, LocalDate> dateCol;
 
     @FXML
     private DatePicker dateDP;
 
     @FXML
-    private ComboBox<?> foodNameCB;
+    private ComboBox<String> foodNameCB;
 
     @FXML
-    private TableColumn<?, ?> itemCol;
+    private TableColumn<DigitalRecipt, String> itemCol;
 
     @FXML
-    private TableColumn<?, ?> nameCol;
+    private TableColumn<DigitalRecipt, String> nameCol;
 
     @FXML
     private TextField nameTF;
 
     @FXML
-    private TableColumn<?, ?> priceCol;
+    private TableColumn<DigitalRecipt, Double> priceCol;
 
     @FXML
     private TextField priceTF;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<DigitalRecipt> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        foodNameCB.getItems().addAll("Pasta", "Tikka", "Pizza", "Burgers", "Sandwich","Hot Dog");
+
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        itemCol.setCellValueFactory(new PropertyValueFactory<>("item"));
+        priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
+
+    private ArrayList<DigitalRecipt> Recipts = new ArrayList<>();
 
 
     @FXML
