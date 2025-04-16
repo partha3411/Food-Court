@@ -12,14 +12,17 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class ReceivePaymentController {
 
     @FXML
-    private TableColumn<?, ?> dateCol;
+    private TableColumn<ReceivePayment, LocalDate> dateCol;
 
     @FXML
     private DatePicker dateDP;
@@ -28,23 +31,30 @@ public class ReceivePaymentController {
     private DatePicker dateFilterDP;
 
     @FXML
-    private ComboBox<?> paymentCB;
+    private ComboBox<String> paymentCB;
 
     @FXML
-    private TableColumn<?, ?> paymentCol;
+    private TableColumn<ReceivePayment, String> paymentCol;
 
     @FXML
-    private TableColumn<?, ?> priceCol;
+    private TableColumn<ReceivePayment, Double> priceCol;
 
     @FXML
     private TextField priceTF;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<String> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+        paymentCB.getItems().addAll("Cash","Bkash","Nagad","Rocket","Upay","Card");
+
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+        paymentCol.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
+        priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
+
+    private ArrayList<ReceivePayment> Payments=new ArrayList<>();
 
     @FXML
     void addButton(ActionEvent event) {
