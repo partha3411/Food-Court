@@ -10,39 +10,48 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class BuyDailyNeedsController {
 
     @FXML
-    private TableColumn<?, ?> nameCol;
+    private TableColumn<BuyDailyNeeds, String> nameCol;
 
     @FXML
     private TextField nameTF;
 
     @FXML
-    private TableColumn<?, ?> priceCol;
+    private TableColumn<BuyDailyNeeds, Double> priceCol;
 
     @FXML
     private TextField priceTF;
 
     @FXML
-    private TableColumn<?, ?> quantityCol;
+    private TableColumn<BuyDailyNeeds, Integer> quantityCol;
 
     @FXML
     private TextField quantityTF;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<BuyDailyNeeds> tableView;
 
     @FXML
-    private TableColumn<?, ?> totalCol;
+    private TableColumn<BuyDailyNeeds, Double> totalCol;
 
     @javafx.fxml.FXML
     public void initialize() {
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+        totalCol.setCellValueFactory(new PropertyValueFactory<>("total"));
+
     }
+
+    private ArrayList<BuyDailyNeeds> Needs = new ArrayList<>();
 
     @FXML
     void addButton(ActionEvent event) {
