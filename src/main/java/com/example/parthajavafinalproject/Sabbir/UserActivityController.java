@@ -13,7 +13,7 @@ public class UserActivityController {
     @FXML
     private Button checkLogsButton;
     @FXML
-    private TableView<UserActivityLog> logTable;
+    private TableView<> logTable;
     @FXML
     private TableColumn<UserActivityLog, String> timestampColumn;
     @FXML

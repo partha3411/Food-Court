@@ -85,7 +85,7 @@ public class StallManagementController {
 
         StallManagement info = new StallManagement(stall, today, nextBillingDate, status);
         label.setText("Billing confirmed for " + stall);
-        tableView.getItems().add(info);
+        stallManagements.add(info);
     }
 
     @FXML
@@ -107,7 +107,11 @@ public class StallManagementController {
 
         StallManagement info = new StallManagement(stall, today, nextBillingDate, status);
         label.setText("Dowloaded");
-        tableView.getItems().add(info);
+        stallManagements.add(info);
+
+        for (StallManagement stallManagement : stallManagements) {
+            tableView.getItems().add(stallManagement);
+        }
 
 
     }
