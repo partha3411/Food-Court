@@ -3,8 +3,8 @@ package sahadat2221634;
 import java.util.List;
 
 public class Restaurant {
-    private final String name;
-    private final List<FoodItem> menu;
+    private String name;
+    private List<FoodItem> menu;
 
     public Restaurant(String name, List<FoodItem> menu) {
         this.name = name;
@@ -15,8 +15,8 @@ public class Restaurant {
         return name;
     }
 
-    public List<FoodItem> getMenu() {
-        return menu;
+    public Restaurant getMenu() {
+        return (Restaurant) menu;
     }
 
     @Override

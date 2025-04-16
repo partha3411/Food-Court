@@ -28,4 +28,3 @@ public class FoodItem {
         return name + " - $" + price;
     }
 }
-

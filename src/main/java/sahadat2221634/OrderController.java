@@ -1,38 +1,26 @@
 package sahadat2221634;
 
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.collections.*;
 
-import java.util.*;
+import java.awt.Label;
 
 public class OrderController {
 
     @FXML
-    private ComboBox<Restaurant> restaurantComboBox;
-
-    @FXML
     private ListView<FoodItem> menuListView;
-
-    @FXML
-    private Button confirmButton;
-
-    @FXML
     private Label statusLabel;
 
-    private ObservableList<Restaurant> restaurants;
+    public OrderController(Label statusLabel) {
+        this.statusLabel = statusLabel;
+    }
 
     @FXML
     public void initialize() {
-        loadRestaurants();
-        restaurantComboBox.setItems(restaurants);
-
-        restaurantComboBox.setOnAction(e -> {
-            Restaurant selected = restaurantComboBox.getSelectionModel().getSelectedItem();
-            if (selected != null) {
-                menuListView.setItems(FXCollections.observableArrayList(selected.getMenu()));
-            }
-        });
+        // You can fill this based on your logic
+        System.out.println("FXML UI loaded successfully");
     }
 
     @FXML
@@ -45,26 +33,23 @@ public class OrderController {
         } else {
             boolean paymentSuccess = verifyPayment(selectedItem.getPrice());
             if (paymentSuccess) {
-                statusLabel.setText("Order confirmed! Thank you for your purchase.");
+                statusLabel.setText("Order confirmed!");
             } else {
-                statusLabel.setText("Payment failed. Please try again.");
+                statusLabel.setText("Payment failed.");
             }
         }
     }
 
-    private boolean verifyPayment(double amount) {
-        // Mock payment logic
-        return true; // Assume payment is always successful
+    private boolean verifyPayment(double price) {
+        // Simulate success
+        return true;
     }
 
-    private void loadRestaurants() {
-        FoodItem burger = new FoodItem("Burger", 5.99, true);
-        FoodItem pizza = new FoodItem("Pizza", 8.99, false);
-        FoodItem sushi = new FoodItem("Sushi", 12.50, true);
+    @FXML
+    public void restaurantComboBox(ActionEvent actionEvent) {
+    }
 
-        Restaurant r1 = new Restaurant("Food Palace", Arrays.asList(burger, pizza));
-        Restaurant r2 = new Restaurant("Sushi World", Arrays.asList(sushi));
-
-        restaurants = FXCollections.observableArrayList(r1, r2);
+    @FXML
+    public void confirmButton(ActionEvent actionEvent) {
     }
 }
