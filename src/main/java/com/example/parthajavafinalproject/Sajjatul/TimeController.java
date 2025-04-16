@@ -11,36 +11,45 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TimeController {
 
     @FXML
-    private TableColumn<?, ?> closingCol;
+    private TableColumn<Time, String> closingCol;
 
     @FXML
     private TextField closingTF;
 
     @FXML
-    private ComboBox<?> offDayCB;
+    private ComboBox<String> offDayCB;
 
     @FXML
-    private TableColumn<?, ?> offDayCol;
+    private TableColumn<Time, String> offDayCol;
 
     @FXML
-    private TableColumn<?, ?> openingCol;
+    private TableColumn<Time, String> openingCol;
 
     @FXML
     private TextField openingTF;
 
     @FXML
-    private TableView<?> tableView;
+    private TableView<Time> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
+        offDayCB.getItems().addAll("Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+
+        openingCol.setCellValueFactory(new PropertyValueFactory<>("openingTime"));
+        closingCol.setCellValueFactory(new PropertyValueFactory<>("closingTime"));
+        offDayCol.setCellValueFactory(new PropertyValueFactory<>("offDay"));
     }
+
+    private ArrayList<Time> Times = new ArrayList<>();
 
     @FXML
     void addScheduleButton(ActionEvent event) {
