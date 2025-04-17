@@ -23,7 +23,7 @@
             <Font size="18.0" />
          </font></Label>
       <ListView fx:id="menuListView" layoutX="155.0" layoutY="202.0" prefHeight="200.0" prefWidth="310.0" />
-      <Button fx:id="confirmButton" layoutX="249.0" layoutY="415.0" mnemonicParsing="false" onAction="handelConfirmOrder" prefHeight="20.0" prefWidth="109.0" text="Confirm Order" />
-      <Label fx:id="statusLabel3" layoutX="233.0" layoutY="457.0" prefHeight="31.0" prefWidth="141.0" text="        Confirm Order!" />
+      <Button layoutX="249.0" layoutY="415.0" mnemonicParsing="false" onAction="handelConfirmOrder" prefHeight="20.0" prefWidth="109.0" text="Confirm Order" />
+      <Label fx:id="statusLabel3" layoutX="233.0" layoutY="456.0" prefHeight="31.0" prefWidth="141.0" text="        Confirm Order!" />
    </children>
 </AnchorPane>
