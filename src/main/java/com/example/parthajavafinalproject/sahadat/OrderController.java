@@ -15,9 +15,6 @@ public class OrderController {
     private ListView<String> menuListView;
 
     @FXML
-    private Button confirmButton;
-
-    @FXML
     private Label statusLabel;
     @FXML
     private Label statusLabel1;
