@@ -2,7 +2,7 @@ package com.example.parthajavafinalproject.Sojib;
 
 import javafx.event.ActionEvent;
 
-public class CleaningTasksController {
+public class CleaningMenu {
 
     @javafx.fxml.FXML
     public void RestockCleanSupply(ActionEvent actionEvent) {

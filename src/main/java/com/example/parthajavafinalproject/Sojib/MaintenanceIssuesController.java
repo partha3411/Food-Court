@@ -87,7 +87,7 @@ public class MaintenanceIssuesController {
 
     @FXML
     void backButton(ActionEvent event)  throws IOException {
-        Parent root = null ;
+        Parent root;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/CleaningTasksController.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
