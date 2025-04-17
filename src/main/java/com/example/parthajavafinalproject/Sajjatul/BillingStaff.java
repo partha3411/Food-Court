@@ -7,10 +7,7 @@ public class BillingStaff {
     private double amount;
     private LocalDate date;
 
-    public BillingStaff(String amount, LocalDate category, String date) {
-        this.amount = amount;
-        this.category = category;
-        this.date = date;
+    public BillingStaff(String category, LocalDate date, String amountText) {
     }
 
     public double getAmount() {

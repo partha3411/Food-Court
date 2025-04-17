@@ -84,7 +84,7 @@ public class BillingStaffController {
         }
 
         try {
-            BillingStaff bill = new BillingStaff(category, date, amountText);
+            BillingStaff bill = new BillingStaff(category,date,amountText);
             billStaff.add(bill);
             tableView.getItems().add(bill);
 
