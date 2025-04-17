@@ -32,7 +32,6 @@ public class MonitoringModuleController {
 
     @FXML
     public void initialize() {
-        // Initialize ComboBox with some department names
         depart.getItems().addAll("Warehouse", "Production", "Office", "Maintenance");
         depanametable.setCellValueFactory(cellData -> cellData.getValue().departmentProperty());
         complainceTable.setCellValueFactory(cellData -> cellData.getValue().complianceProperty());
