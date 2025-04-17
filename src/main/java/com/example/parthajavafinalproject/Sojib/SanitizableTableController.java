@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SanitizableTable {
+public class SanitizableTableController {
 
     @FXML
     private CheckBox sanitizeop;
@@ -55,6 +55,7 @@ public class SanitizableTable {
 
     @FXML
     public void MarkAsCleaned(ActionEvent actionEvent) {
+// Not done yet
 
     }
 }

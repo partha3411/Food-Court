@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SpillCleanup {
+public class SpillCleanupController {
     @javafx.fxml.FXML
     private ProgressBar Progression;
     @javafx.fxml.FXML
