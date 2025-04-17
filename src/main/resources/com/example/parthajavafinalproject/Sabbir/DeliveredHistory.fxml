@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.foodcourt.DeliveredHistoryController">
+
+    <padding>
+        <Insets bottom="30" left="40" right="40" top="30" />
+    </padding>
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text=" Delivered Products History" />
+
+    <TableView fx:id="historyTable" prefHeight="400" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="productColumn" prefWidth="200" text="Product Name" />
+            <TableColumn fx:id="deliveryDateColumn" prefWidth="150" text="Delivery Date" />
+            <TableColumn fx:id="quantityColumn" prefWidth="100" text="Quantity" />
+            <TableColumn fx:id="statusColumn" prefWidth="150" text="Status" />
+        </columns>
+    </TableView>
+</VBox>
