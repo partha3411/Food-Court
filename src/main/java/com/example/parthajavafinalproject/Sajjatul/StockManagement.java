@@ -10,8 +10,8 @@ public class StockManagement {
     }
 
     public StockManagement(String howLongLast, int itemName, int quantity) {
-        this.howLongLast = howLongLast;
-        this.itemName = itemName;
+        this.howLongLast = Integer.parseInt(howLongLast);
+        this.itemName = String.valueOf(itemName);
         this.quantity = quantity;
     }
 

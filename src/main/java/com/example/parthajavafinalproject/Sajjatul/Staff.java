@@ -17,6 +17,9 @@ public class Staff {
         this.staffType = staffType;
     }
 
+    public Staff(String type, String name, int nid, LocalDate today, int salary) {
+    }
+
     public LocalDate getJoiningDate() {
         return joiningDate;
     }
