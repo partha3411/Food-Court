@@ -57,7 +57,28 @@ public class ReceivePaymentController {
     private ArrayList<ReceivePayment> Payments=new ArrayList<>();
 
     @FXML
-    void addButton(ActionEvent event) {
+        void addButton(ActionEvent event) {
+            LocalDate date = dateDP.getValue();
+            String paymentMethod = paymentCB.getValue();
+            String priceText = priceTF.getText();
+
+            if (date == null || paymentMethod == null || priceText.isEmpty()) {
+                System.out.println("Input Corretly");
+                return;
+            }
+
+            try {
+                double price = Double.parseDouble(priceText);
+                ReceivePayment paid = new ReceivePayment(date, paymentMethod, price);
+                Payments.add(paid);
+                tableView.getItems().add(String.valueOf(paid));
+
+                dateDP.setValue(null);
+                paymentCB.setValue(null);
+                priceTF.clear();
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid price format");
+            }
 
     }
 
@@ -76,6 +97,20 @@ public class ReceivePaymentController {
 
     @FXML
     void filterButton(ActionEvent event) {
+        LocalDate filterDate = dateFilterDP.getValue();
+
+        if (filterDate == null) {
+            System.out.println("Select a date");
+            return;
+        }
+
+        tableView.getItems().clear();
+
+        for (ReceivePayment payment : Payments) {
+            if (payment.getDate().equals(filterDate)) {
+                tableView.getItems().add(String.valueOf(payment));
+            }
+        }
 
     }
 
