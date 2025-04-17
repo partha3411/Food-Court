@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="485.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sojib.RoutineSafetyController">
+   <children>
+      <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton" text="←">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="313.0" layoutY="14.0" text="Routine Inspection">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ListView fx:id="Description" layoutX="418.0" layoutY="36.0" prefHeight="165.0" prefWidth="266.0" style="-fx-border-color: black;" />
+      <Label layoutX="303.0" layoutY="57.0" text="Description of Insp" />
+      <Button layoutX="23.0" layoutY="220.0" mnemonicParsing="false" onAction="#SubmitButton" prefHeight="30.0" prefWidth="660.0" text="Submit Inspection" />
+      <DatePicker fx:id="DateofInspector" layoutX="104.0" layoutY="79.0" />
+      <Label layoutX="19.0" layoutY="83.0" text="Date of Inspect" />
+      <TextField fx:id="name" layoutX="130.0" layoutY="152.0" />
+      <Label layoutX="54.0" layoutY="156.0" text="Inspector" />
+      <TableView fx:id="RoutineSafety" layoutX="14.0" layoutY="271.0" prefHeight="200.0" prefWidth="680.0">
+        <columns>
+          <TableColumn fx:id="dateTable" prefWidth="140.7999906539917" text="Date" />
+          <TableColumn fx:id="nameTable" prefWidth="255.99998474121094" text="Inspector name" />
+            <TableColumn fx:id="desTable" prefWidth="283.20001220703125" text="Description of Inspection" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

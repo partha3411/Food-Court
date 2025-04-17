@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="469.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sojib.MonitoringModuleController">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton" prefHeight="42.0" prefWidth="56.0" text="←">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Label layoutX="308.0" layoutY="14.0" text="PPE Monitoring Module" />
+      <TableView fx:id="MonitoringModule" layoutX="1.0" layoutY="268.0" prefHeight="202.0" prefWidth="743.0">
+        <columns>
+          <TableColumn fx:id="depanametable" prefWidth="223.20001220703125" text="Depart name" />
+          <TableColumn fx:id="complainceTable" prefWidth="288.0" text="Complaince" />
+            <TableColumn fx:id="dateChTable" prefWidth="231.99993896484375" text="LastCheck Date" />
+        </columns>
+      </TableView>
+      <Label fx:id="logOb" layoutX="28.0" layoutY="218.0" prefHeight="42.0" prefWidth="463.0" style="-fx-border-color: green;" text="Log Obserb" />
+      <TextField fx:id="name" layoutX="105.0" layoutY="54.0" promptText="Officer Name" />
+      <DatePicker fx:id="dateob" layoutX="291.0" layoutY="54.0" promptText="Date Observation" />
+      <ComboBox fx:id="depart" layoutX="519.0" layoutY="54.0" prefWidth="150.0" promptText="Department" />
+      <TextArea fx:id="viloationd" layoutX="28.0" layoutY="95.0" prefHeight="111.0" prefWidth="463.0" promptText="Violation Details" style="-fx-border-color: red;" />
+      <Button layoutX="519.0" layoutY="95.0" mnemonicParsing="false" onAction="#submitv" prefHeight="167.0" prefWidth="175.0" text=" Submit Violation" />
+   </children>
+</AnchorPane>
