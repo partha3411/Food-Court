@@ -9,7 +9,7 @@ public class StockManagement {
     public StockManagement() {
     }
 
-    public StockManagement(int howLongLast, String itemName, int quantity) {
+    public StockManagement(String howLongLast, int itemName, int quantity) {
         this.howLongLast = howLongLast;
         this.itemName = itemName;
         this.quantity = quantity;
