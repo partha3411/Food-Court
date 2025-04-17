@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -32,7 +31,7 @@ public class ChatController {
     private TextArea managerMessageTA;
 
     @FXML
-    private TableView<String> tableView;
+    private TableView<Chat> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -40,7 +39,7 @@ public class ChatController {
         managerCol.setCellValueFactory(new PropertyValueFactory<>("managerMessage"));
     }
 
-    private ArrayList<Chat> Chats = new ArrayList<>();
+    private ArrayList<String> chats = new ArrayList<String>();
 
     @FXML
     void backMenuButton(ActionEvent event)  throws IOException {
@@ -57,10 +56,20 @@ public class ChatController {
 
     @FXML
     void customerSendButton(ActionEvent event) {
-
+        String cutomerMessage = customerMessageTA.getText().trim();
+        if (!cutomerMessage.isEmpty()) {
+            chats .add(cutomerMessage);
+            customerMessageTA.clear();
+        }
     }
 
     @FXML
     public void managerSendButton(ActionEvent actionEvent) {
+        String managerMessage = customerMessageTA.getText().trim();
+        if (!managerMessage.isEmpty()) {
+            chats .add(managerMessage);
+            managerMessageTA.clear();
+        }
+
     }
 }
