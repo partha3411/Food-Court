@@ -6,16 +6,25 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="511.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.FeedbackController">
    <children>
-      <Label fx:id="statusLabel1" layoutX="216.0" layoutY="27.0" prefHeight="17.0" prefWidth="164.0" text="  Rate Your Experience:" />
+      <Label fx:id="statusLabel1" layoutX="160.0" layoutY="14.0" prefHeight="35.0" prefWidth="276.0" text="  Rate Your Experience:">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
       <ComboBox fx:id="ratingComboBox" layoutX="196.0" layoutY="65.0" prefHeight="25.0" prefWidth="164.0" promptText="   Select Rating 1-5" />
-      <Label fx:id="statusLabel2" layoutX="216.0" layoutY="119.0" prefHeight="17.0" prefWidth="164.0" text="Write Your Feedback:" />
+      <Label fx:id="statusLabel2" layoutX="180.0" layoutY="119.0" prefHeight="27.0" prefWidth="196.0" text="Write Your Feedback:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
       <TextArea fx:id="feedbackTextArea" layoutX="174.0" layoutY="156.0" prefHeight="200.0" prefWidth="211.0" />
       <Button fx:id="submitButton" layoutX="187.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleSubmitFeedback" prefHeight="25.0" prefWidth="164.0" text="Submit Feedback" />
-      <Label fx:id="statusLabel3" layoutX="200.0" layoutY="428.0" prefHeight="17.0" prefWidth="196.0" text="Thank you for your review!" />
+      <Label fx:id="statusLabel3" layoutX="180.0" layoutY="427.0" prefHeight="27.0" prefWidth="217.0" text="Thank you for your review!">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
       <VBox fx:id="feedbackContainer" layoutX="453.0" layoutY="156.0" prefHeight="200.0" prefWidth="100.0" />
    </children>
 </AnchorPane>
