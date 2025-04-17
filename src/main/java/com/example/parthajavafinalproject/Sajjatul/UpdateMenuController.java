@@ -62,8 +62,32 @@ public class UpdateMenuController {
 
     @FXML
     void addToMenuButton(ActionEvent event) {
+        String foodName = foodNameCB.getValue();
+        String rating = ratingsCB.getValue();
+        String priceText = priceTF.getText();
+        String sellText = yesterdaySellTF.getText();
 
+        if (foodName != null && rating != null && !priceText.isEmpty() && !sellText.isEmpty()) {
+            try {
+                double price = Double.parseDouble(priceText);
+                int yesterdaySell = Integer.parseInt(sellText);
+
+                UpdateMenu item = new UpdateMenu(foodName, price, rating, yesterdaySell);
+                Updates.add(item);
+
+                foodNameCB.setValue(null);
+                ratingsCB.setValue(null);
+                priceTF.clear();
+                yesterdaySellTF.clear();
+
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid");
+            }
+        } else {
+            System.out.println("All input needed");
+        }
     }
+
 
     @FXML
     void backMenuButton(ActionEvent event)  throws IOException {
