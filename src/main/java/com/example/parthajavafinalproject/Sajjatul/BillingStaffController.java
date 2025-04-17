@@ -56,7 +56,7 @@ public class BillingStaffController {
         amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
     }
 
-    private ArrayList<BillingStaff> BillStaffs = new ArrayList<>();
+    private ArrayList<BillingStaff> billStaff = new ArrayList<>();
 
 
     @FXML
@@ -74,7 +74,29 @@ public class BillingStaffController {
 
     @FXML
     void payBillButton(ActionEvent event) {
+        String category = staffCB.getValue();
+        LocalDate date = dateDP.getValue();
+        String amountText = amountTF.getText();
 
+        if (category == null || date == null || amountText.isEmpty()) {
+            textLabel.setText("Please input all");
+            return;
+        }
+
+        try {
+            BillingStaff bill = new BillingStaff(category, date, amountText);
+            billStaff.add(bill);
+            tableView.getItems().add(bill);
+
+
+            staffCB.setValue(null);
+            dateDP.setValue(null);
+            amountTF.clear();
+            textLabel.setText("Bill added ");
+        } catch (NumberFormatException e) {
+            textLabel.setText("Invalid ");
+        }
     }
+
 
 }
