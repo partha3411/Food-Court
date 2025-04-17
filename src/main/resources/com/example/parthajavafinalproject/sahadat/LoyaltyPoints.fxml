@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.LoyaltyPointsController">
+   <children>
+      <Label fx:id="label" layoutX="205.0" layoutY="32.0" prefHeight="39.0" prefWidth="174.0" text="  Loality Points">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="192.0" layoutY="85.0" prefHeight="25.0" prefWidth="231.0" text="You have eraned X points for this order!" />
+      <Button layoutX="248.0" layoutY="146.0" mnemonicParsing="false" onAction="#voucher1Button" prefHeight="25.0" prefWidth="132.0" text="50tk Voucher" />
+      <Label fx:id="label1" layoutX="137.0" layoutY="150.0" prefHeight="17.0" prefWidth="71.0" text="1000 points" />
+      <Button layoutX="247.0" layoutY="200.0" mnemonicParsing="false" onAction="#voucher2Button" prefHeight="25.0" prefWidth="132.0" text="100tk Voucher" />
+      <Button layoutX="248.0" layoutY="256.0" mnemonicParsing="false" onAction="#voucher3Button" prefHeight="25.0" prefWidth="132.0" text="150tk Voucher" />
+      <Label fx:id="label2" layoutX="137.0" layoutY="204.0" prefHeight="17.0" prefWidth="84.0" text="1500 points" />
+      <Label fx:id="label3" layoutX="137.0" layoutY="260.0" prefHeight="17.0" prefWidth="84.0" text="2000 points" />
+   </children>
+</AnchorPane>
