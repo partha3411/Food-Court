@@ -26,7 +26,7 @@ public class OrderController {
     @FXML
     private Label statusLabel3;
 
-    // Dummy data
+
     private final ObservableList<String> pizzaMenu = FXCollections.observableArrayList("Pepperoni", "Cheese", "Veggie");
     private final ObservableList<String> burgerMenu = FXCollections.observableArrayList("Beef Burger", "Chicken Burger", "Veggie Burger");
     private final ObservableList<String> sushiMenu = FXCollections.observableArrayList("California Roll", "Tuna Roll", "Salmon");
