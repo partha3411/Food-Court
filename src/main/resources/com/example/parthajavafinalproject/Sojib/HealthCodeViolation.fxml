@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="466.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sojib.HealthCodeViolationController">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton" text="←">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextField fx:id="details" layoutX="85.0" layoutY="43.0" prefHeight="124.0" prefWidth="395.0" promptText="Details Violation or Describe whole Details" />
+      <Label layoutX="312.0" layoutY="14.0" text="Handle health code violation">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="cDate" layoutX="517.0" layoutY="68.0" promptText="Closure Date" />
+      <ComboBox fx:id="status" layoutX="517.0" layoutY="108.0" prefWidth="150.0" promptText="Current Status" />
+      <Button layoutX="59.0" layoutY="187.0" mnemonicParsing="false" onAction="#savedetails" prefHeight="26.0" prefWidth="697.0" text="Save details" />
+      <Label fx:id="statusDONEorUNDONE" layoutX="59.0" layoutY="268.0" prefHeight="66.0" prefWidth="274.0" text="Status PDF: " />
+      <Button layoutX="441.0" layoutY="242.0" mnemonicParsing="false" onAction="#PDFdownload" prefHeight="4.0" prefWidth="316.0" text="Download PDF" />
+   </children>
+</AnchorPane>
