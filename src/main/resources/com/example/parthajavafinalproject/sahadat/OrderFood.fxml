@@ -5,13 +5,23 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="561.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.OrderController">
    <children>
-      <Label fx:id="statusLabel" layoutX="230.0" layoutY="14.0" prefHeight="31.0" prefWidth="161.0" text="   Food Ordering System" />
-      <Label fx:id="statusLabel1" layoutX="166.0" layoutY="101.0" prefHeight="20.0" prefWidth="109.0" text=" Select Restaurants:" />
+      <Label fx:id="statusLabel" layoutX="163.0" layoutY="21.0" prefHeight="35.0" prefWidth="295.0" text="   Food Ordering System">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="statusLabel1" layoutX="166.0" layoutY="101.0" prefHeight="27.0" prefWidth="186.0" text=" Select Restaurants:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
       <ComboBox fx:id="restaurantComboBox" layoutX="161.0" layoutY="132.0" prefHeight="31.0" prefWidth="176.0" promptText=" Select Restaurant" />
-      <Label fx:id="statusLabel2" layoutX="161.0" layoutY="173.0" prefHeight="17.0" prefWidth="119.0" text=" Select Food Item:" />
+      <Label fx:id="statusLabel2" layoutX="161.0" layoutY="173.0" prefHeight="27.0" prefWidth="164.0" text=" Select Food Item:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
       <ListView fx:id="menuListView" layoutX="155.0" layoutY="202.0" prefHeight="200.0" prefWidth="310.0" />
       <Button fx:id="confirmButton" layoutX="249.0" layoutY="415.0" mnemonicParsing="false" onAction="handelConfirmOrder" prefHeight="20.0" prefWidth="109.0" text="Confirm Order" />
       <Label fx:id="statusLabel3" layoutX="233.0" layoutY="457.0" prefHeight="31.0" prefWidth="141.0" text="        Confirm Order!" />
