@@ -15,6 +15,9 @@ public class SalesReport {
         this.totalSell = totalSell;
     }
 
+    public SalesReport(String selectedTerm, double totalSell, double totalBuy, double profit, double loss) {
+    }
+
     public double getLoss() {
         return loss;
     }

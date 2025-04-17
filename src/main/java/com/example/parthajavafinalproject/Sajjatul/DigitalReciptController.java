@@ -77,7 +77,34 @@ public class DigitalReciptController {
 
     @FXML
     void downloadButton(ActionEvent event) {
+        String customerName = nameTF.getText();
+        String foodItem = foodNameCB.getValue();
+        String priceText = priceTF.getText();
+        LocalDate date = dateDP.getValue();
 
+        if (customerName == null || customerName.isEmpty() ||
+                foodItem == null || priceText.isEmpty() || date == null) {
+            System.out.println("Please input all");
+            return;
+        }
+
+        try {
+            double price = Double.parseDouble(priceText);
+
+            DigitalRecipt recipt = new DigitalRecipt(customerName, foodItem, price, date);
+            Recipts.add(recipt);
+            tableView.getItems().add(recipt);
+
+            nameTF.clear();
+            foodNameCB.setValue(null);
+            priceTF.clear();
+            dateDP.setValue(null);
+
+            System.out.println("Receipt downloaded");
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a number.");
+        }
     }
+
 
 }

@@ -51,12 +51,28 @@ public class BuyDailyNeedsController {
 
     }
 
-    private ArrayList<BuyDailyNeeds> Needs = new ArrayList<>();
+    private ArrayList<BuyDailyNeeds> needs = new ArrayList<>();
 
     @FXML
     void addButton(ActionEvent event) {
+        String name = nameTF.getText();
+        String priceText = priceTF.getText();
+        String quantityText = quantityTF.getText();
+
+        double price = Double.parseDouble(priceText);
+        int quantity = Integer.parseInt(quantityText);
+        double total = price * quantity;
+
+        BuyDailyNeeds item = new BuyDailyNeeds(name, quantity, price, total);
+        needs.add(item);
+
+        tableView.getItems().add(item);
+        nameTF.clear();
+        priceTF.clear();
+        quantityTF.clear();
 
     }
+
 
     @FXML
     void backMenuButton(ActionEvent event) throws IOException {

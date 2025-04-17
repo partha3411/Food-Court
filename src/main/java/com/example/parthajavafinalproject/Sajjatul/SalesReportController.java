@@ -52,7 +52,7 @@ public class SalesReportController {
         lossCol.setCellValueFactory(new PropertyValueFactory<>("loss"));
     }
 
-    private ArrayList<SalesReport> dataPackageList=new ArrayList<>();
+    private ArrayList<SalesReport> sales=new ArrayList<>();
 
     @FXML
     void backMenuButton(ActionEvent event) throws IOException {
@@ -69,7 +69,24 @@ public class SalesReportController {
 
     @FXML
     void reportButton(ActionEvent event) {
+        String selectedTerm = termCB.getValue();
 
+        if (selectedTerm == null) {
+            System.out.println("Select a term.");
+            return;
+        }
+
+        double totalBuy = Math.random() * 1000;
+        double totalSell = totalBuy + Math.random() * 500;
+        double profit = totalSell - totalBuy;
+        double loss = profit < 0 ? -profit : 0;
+        if (profit < 0) profit = 0;
+
+        SalesReport report = new SalesReport(selectedTerm, totalSell, totalBuy, profit, loss);
+
+        sales.add(report);
+        tableView.getItems().add(report);
     }
+
 
 }

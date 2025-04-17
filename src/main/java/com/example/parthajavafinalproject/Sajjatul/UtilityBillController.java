@@ -70,9 +70,31 @@ public class UtilityBillController {
 
     }
 
+
     @FXML
     void payBillButton(ActionEvent event) {
+        String name = utilityNameCB.getValue();
+        String amountText = amountTF.getText();
+        LocalDate date = dateDP.getValue();
+
+        if (name == null || amountText.isEmpty() || date == null) {
+            label.setText("Please input all");
+            return;
+        }
+
+
+        double amount = Double.parseDouble(amountText);
+        UtilityBill bill = new UtilityBill(amount, date, name);
+        Bills.add(bill);
+        tableView.getItems().add(bill);
+
+
+        utilityNameCB.setValue(null);
+        amountTF.clear();
+        dateDP.setValue(null);
+        label.setText("Bill paid successfully!");
 
     }
+
 
 }
