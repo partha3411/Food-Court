@@ -87,6 +87,5 @@ public class RoutineSafetyController {
         stage.setScene(scene);
         stage.setTitle("Health Dashboard");
         stage.show();
-
     }
 }
