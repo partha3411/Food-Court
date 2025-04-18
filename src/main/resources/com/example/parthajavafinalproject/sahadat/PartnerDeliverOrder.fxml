@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.DeliverOrderController">
+<AnchorPane prefHeight="500.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerDeliverOrderController">
    <children>
       <Button fx:id="startDeliveryButton" layoutX="180.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleStartDelivery" prefHeight="25.0" prefWidth="191.0" text=" Start Delivery " />
       <Label fx:id="label" layoutX="131.0" layoutY="102.0" prefHeight="35.0" prefWidth="374.0" text="Enter Delivery Confirmation Code:">

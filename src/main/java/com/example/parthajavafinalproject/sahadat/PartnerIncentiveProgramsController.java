@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
-public class ParticipateIncentiveProgramsController {
+public class PartnerIncentiveProgramsController {
     @javafx.fxml.FXML
     private Label statusLabel1;
     @javafx.fxml.FXML

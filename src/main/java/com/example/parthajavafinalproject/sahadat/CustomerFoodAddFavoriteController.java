@@ -3,7 +3,7 @@ package com.example.parthajavafinalproject.sahadat;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
-public class FoodAddFavoriteController {
+public class CustomerFoodAddFavoriteController {
     @javafx.fxml.FXML
     private Label label4;
     @javafx.fxml.FXML

@@ -1,36 +1,38 @@
 package com.example.parthajavafinalproject.sahadat;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-
-public class FoodDeliveryPartnerDashboardController {
-    @javafx.fxml.FXML
-    private Label label;
-    @javafx.fxml.FXML
-    private Label label1;
-    @javafx.fxml.FXML
-    private Label label2;
-    @javafx.fxml.FXML
-    private Label label3;
-    @javafx.fxml.FXML
-    private Label label4;
+public class FoodDeliveryPartnerDashboardController
+{
     @javafx.fxml.FXML
     private Label label5;
     @javafx.fxml.FXML
-    private TextField TF3;
-    @javafx.fxml.FXML
-    private TextField TF2;
-    @javafx.fxml.FXML
-    private TextField TF5;
-    @javafx.fxml.FXML
-    private TextField TF4;
-    @javafx.fxml.FXML
-    private TextField TF1;
+    private Label label;
 
     @javafx.fxml.FXML
-    public void handleAvailability(ActionEvent actionEvent) {
+    public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void programsButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void ratebutton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void trackButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void accetButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void updateButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void deliveryOrder(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -38,6 +40,10 @@ public class FoodDeliveryPartnerDashboardController {
     }
 
     @javafx.fxml.FXML
-    public void handleRefresh(ActionEvent actionEvent) {
+    public void pickupButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void deliveryIssues(ActionEvent actionEvent) {
     }
 }

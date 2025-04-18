@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class OrderController {
+public class CustomerOrderController {
 
     @FXML
     private ComboBox<String> restaurantComboBox;

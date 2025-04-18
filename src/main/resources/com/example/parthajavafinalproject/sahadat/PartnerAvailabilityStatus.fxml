@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.AvailabilityStatusController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerAvailabilityStatusController">
    <children>
       <ToggleButton layoutX="171.0" layoutY="109.0" mnemonicParsing="false" onAction="#handleToggle" prefHeight="80.0" prefWidth="192.0" text="Unavailable">
          <font>
