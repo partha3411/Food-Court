@@ -7,8 +7,6 @@ import javafx.scene.control.TextField;
 
 public class FoodDeliveryPartnerDashboardController {
     @javafx.fxml.FXML
-    private TextArea ta1;
-    @javafx.fxml.FXML
     private Label label;
     @javafx.fxml.FXML
     private Label label1;
@@ -20,6 +18,16 @@ public class FoodDeliveryPartnerDashboardController {
     private Label label4;
     @javafx.fxml.FXML
     private Label label5;
+    @javafx.fxml.FXML
+    private TextField TF3;
+    @javafx.fxml.FXML
+    private TextField TF2;
+    @javafx.fxml.FXML
+    private TextField TF5;
+    @javafx.fxml.FXML
+    private TextField TF4;
+    @javafx.fxml.FXML
+    private TextField TF1;
 
     @javafx.fxml.FXML
     public void handleAvailability(ActionEvent actionEvent) {

@@ -23,6 +23,6 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <TextField layoutX="237.0" layoutY="139.0" />
+      <TextField fx:id="TF" layoutX="237.0" layoutY="139.0" />
    </children>
 </AnchorPane>

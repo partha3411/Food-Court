@@ -32,7 +32,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="226.0" layoutY="368.0" mnemonicParsing="false" onAction="#backButton" prefHeight="36.0" prefWidth="95.0" text="Back">
+      <Button layoutX="205.0" layoutY="365.0" mnemonicParsing="false" onAction="#backButton" prefHeight="39.0" prefWidth="139.0" text="Back to login ">
          <font>
             <Font size="18.0" />
          </font>

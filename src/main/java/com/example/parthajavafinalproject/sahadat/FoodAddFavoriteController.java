@@ -25,7 +25,7 @@ public class FoodAddFavoriteController {
     public void tacosButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void viewFavoritesButton(ActionEvent actionEvent) {
     }
 
@@ -35,5 +35,9 @@ public class FoodAddFavoriteController {
 
     @javafx.fxml.FXML
     public void burgerButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void viewButton(ActionEvent actionEvent) {
     }
 }
