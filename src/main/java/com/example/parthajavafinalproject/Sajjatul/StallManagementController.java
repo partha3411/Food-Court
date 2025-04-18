@@ -1,5 +1,6 @@
 package com.example.parthajavafinalproject.Sajjatul;
 
+import com.example.parthajavafinalproject.AppendableObjectOutputStream;
 import com.example.parthajavafinalproject.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,9 +14,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.io.*;
 import java.time.LocalDate;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -112,8 +114,9 @@ public class StallManagementController {
 
 
         StallManagement info = new StallManagement(stall, today, nextBillingDate, status);
+        writestallManagement(info);
         label.setText("Dowloaded");
-        stallManagements.add(info);
+        stallManagements = readStallManagement();
 
         for (StallManagement stallManagement : stallManagements) {
             tableView.getItems().add(stallManagement);
@@ -133,4 +136,66 @@ public class StallManagementController {
         stage.setTitle("Manager Dashboard");
         stage.show();
     }
+
+    public ArrayList<StallManagement> readStallManagement() {
+        ArrayList<StallManagement> stall = new ArrayList<>() ;
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File("stallFile.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            StallManagement stallManagement;
+            try{
+                while(true){
+                    stallManagement = (StallManagement) ois.readObject();
+                    stall.add(stallManagement) ;
+                }
+            }
+            catch(Exception e){
+                System.out.println("Error: " + e.getMessage());
+            }
+        } catch (Exception ex) {
+            System.out.println("External Error: " + ex.getMessage());
+        }
+        finally {
+            try {
+
+                if(ois != null) ois.close();
+            } catch (IOException ex) { }
+        }
+        return stall ;
+    }
+
+    public void writestallManagement(StallManagement stallManagement) {
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("stallFile.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new AppendableObjectOutputStream(fos);
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(stallManagement);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                System.out.println("Error: " + ex.getMessage());
+            }
+        }
+    }
+
 }

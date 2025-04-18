@@ -1,5 +1,6 @@
 package com.example.parthajavafinalproject.Sajjatul;
 
+import com.example.parthajavafinalproject.AppendableObjectOutputStream;
 import com.example.parthajavafinalproject.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class StockManagementController {
@@ -67,8 +68,13 @@ public class StockManagementController {
         int howLong = (int)(Math.random() * 10) + 1;
 
         StockManagement product = new StockManagement(item, quantity, howLong);
-        stockManagements.add(product);
-        tableView.getItems().add(product);
+        writestockManagement(product);
+
+        stockManagements = readStockManagement();
+
+        for (StockManagement stockManagement : stockManagements) {
+            tableView.getItems().add(stockManagement);
+        }
     }
 
 
@@ -105,6 +111,67 @@ public class StockManagementController {
         }
 
 
+    }
+
+    public ArrayList<StockManagement> readStockManagement() {
+        ArrayList<StockManagement> stall = new ArrayList<>() ;
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File("stockFile.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            StockManagement stockManagement;
+            try{
+                while(true){
+                    stockManagement = (StockManagement) ois.readObject();
+                    stall.add(stockManagement) ;
+                }
+            }
+            catch(Exception e){
+                System.out.println("Error: " + e.getMessage());
+            }
+        } catch (Exception ex) {
+            System.out.println("External Error: " + ex.getMessage());
+        }
+        finally {
+            try {
+
+                if(ois != null) ois.close();
+            } catch (IOException ex) { }
+        }
+        return stall ;
+    }
+
+    public void writestockManagement(StockManagement stockManagement) {
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("stockFile.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new AppendableObjectOutputStream(fos);
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(stockManagement);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                System.out.println("Error: " + ex.getMessage());
+            }
+        }
     }
 
 }
