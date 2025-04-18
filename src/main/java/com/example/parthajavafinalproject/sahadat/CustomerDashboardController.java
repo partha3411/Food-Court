@@ -7,7 +7,7 @@ public class CustomerDashboardController {
     @javafx.fxml.FXML
     private Label label;
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void viewMenuButton(ActionEvent actionEvent) {
     }
 
@@ -27,11 +27,27 @@ public class CustomerDashboardController {
     public void placeOrderButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void settingButton(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void feedbackButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void shareButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void addButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void refundButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void cancelButton(ActionEvent actionEvent) {
     }
 }

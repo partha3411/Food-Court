@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javax.swing.table.TableColumn;
 import javax.swing.text.TableView;
 
-public class EarningsViewController {
+public class PartnerEarningsViewController {
     @javafx.fxml.FXML
     private TableColumn orderIdColumn;
     @javafx.fxml.FXML

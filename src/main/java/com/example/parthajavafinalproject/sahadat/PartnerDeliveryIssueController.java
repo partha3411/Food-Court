@@ -5,7 +5,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-public class DeliveryIssueController {
+public class PartnerDeliveryIssueController {
     @javafx.fxml.FXML
     private Button handleSubmit;
     @javafx.fxml.FXML

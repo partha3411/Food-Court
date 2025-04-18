@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="586.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.EarningsViewController">
+<AnchorPane prefHeight="586.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerEarningsViewController">
    <children>
       <Label layoutX="182.0" layoutY="25.0" prefHeight="35.0" prefWidth="201.0" text="Earnings Summary">
          <font>

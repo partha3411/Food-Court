@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 
-public class FeedbackController {
+public class CustomerFeedbackController {
     @javafx.fxml.FXML
     private Label statusLabel1;
     @javafx.fxml.FXML

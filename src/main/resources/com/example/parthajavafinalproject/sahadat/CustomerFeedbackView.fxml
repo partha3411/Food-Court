@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="511.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.FeedbackController">
+<AnchorPane prefHeight="511.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.CustomerFeedbackController">
    <children>
       <Label fx:id="statusLabel1" layoutX="160.0" layoutY="14.0" prefHeight="35.0" prefWidth="276.0" text="  Rate Your Experience:">
          <font>
