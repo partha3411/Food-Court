@@ -103,7 +103,13 @@ public class StallManagementController {
             default -> today.plusMonths(1);
         };
 
-        String status = payment.equals("Cash") ? "Paid Offline" : "Paid Online";
+        String status;
+        if (payment.equals("Cash")) {
+            status = "Paid Offline";
+        } else {
+            status = "Paid Online";
+        }
+
 
         StallManagement info = new StallManagement(stall, today, nextBillingDate, status);
         label.setText("Dowloaded");
