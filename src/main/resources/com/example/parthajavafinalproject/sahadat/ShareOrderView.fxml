@@ -7,17 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="466.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.ShareOrderController">
    <children>
-      <Label fx:id="label" layoutX="187.0" layoutY="44.0" prefHeight="17.0" prefWidth="146.0" text="Your Order:">
+      <Label fx:id="label" layoutX="34.0" layoutY="55.0" prefHeight="17.0" prefWidth="146.0" text="Your Order:">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TextArea fx:id="orderDetails" layoutX="187.0" layoutY="80.0" prefHeight="147.0" prefWidth="171.0" text="&#10; 1x pizza&#10; 2x sushi&#10; 3x Burger" />
+      <TextArea fx:id="orderDetails" layoutX="34.0" layoutY="99.0" prefHeight="147.0" prefWidth="498.0" />
       <Button layoutX="190.0" layoutY="255.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Generate Share Link " />
-      <TextField fx:id="shareLinkField" layoutX="190.0" layoutY="312.0" prefHeight="25.0" prefWidth="165.0" text="https://foodcourt.app/share?order= " />
-      <Button layoutX="230.0" layoutY="357.0" mnemonicParsing="false" text="Order This" />
+      <TextField fx:id="shareLinkField" layoutX="160.0" layoutY="312.0" prefHeight="25.0" prefWidth="227.0" text="https://foodcourt.app/share?order= " />
+      <Button layoutX="218.0" layoutY="357.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Order This" />
    </children>
 </AnchorPane>

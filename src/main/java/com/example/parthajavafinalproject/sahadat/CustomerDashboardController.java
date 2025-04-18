@@ -26,4 +26,12 @@ public class CustomerDashboardController {
     @javafx.fxml.FXML
     public void placeOrderButton(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void settingButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void feedbackButton(ActionEvent actionEvent) {
+    }
 }

@@ -15,7 +15,7 @@
          </font>
       </Label>
       <ComboBox fx:id="orderComboBox" layoutX="217.0" layoutY="90.0" prefWidth="150.0" promptText="         Select Order" />
-      <TextArea fx:id="reasonTextArea" layoutX="207.0" layoutY="130.0" prefHeight="200.0" prefWidth="200.0" text="Enter reason for refund." />
+      <TextArea fx:id="reasonTextArea" layoutX="114.0" layoutY="130.0" prefHeight="200.0" prefWidth="396.0" text="Enter reason for refund." />
       <Button layoutX="226.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleSubmitRefund" prefHeight="25.0" prefWidth="141.0" text="Submit Refund Request" />
       <Label fx:id="label1" layoutX="217.0" layoutY="388.0" prefHeight="25.0" prefWidth="160.0" />
    </children>

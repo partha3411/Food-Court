@@ -5,34 +5,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="478.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.CustomerDashboardController">
+<AnchorPane prefHeight="450.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.CustomerDashboardController">
    <children>
-      <Label fx:id="label" layoutX="132.0" layoutY="18.0" prefHeight="35.0" prefWidth="348.0" text="     Customer Dashboard">
+      <Label fx:id="label" layoutX="111.0" layoutY="14.0" prefHeight="35.0" prefWidth="348.0" text="     Customer Dashboard" textFill="#d31010">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="92.0" layoutY="90.0" mnemonicParsing="false" onAction="#placeOrderButton" prefHeight="111.0" prefWidth="165.0" text="Place Order">
+      <Button layoutX="92.0" layoutY="90.0" mnemonicParsing="false" onAction="#placeOrderButton" prefHeight="64.0" prefWidth="165.0" text="Place Order">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="285.0" layoutY="90.0" mnemonicParsing="false" onAction="#trackOrderButton" prefHeight="111.0" prefWidth="165.0" text="Track Order">
+      <Button layoutX="92.0" layoutY="169.0" mnemonicParsing="false" onAction="#trackOrderButton" prefHeight="64.0" prefWidth="165.0" text="Track Order">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="92.0" layoutY="218.0" mnemonicParsing="false" onAction="#viewMenuButton" prefHeight="117.0" prefWidth="165.0" text="View Menu">
+      <Button layoutX="285.0" layoutY="90.0" mnemonicParsing="false" onAction="#viewMenuButton" prefHeight="64.0" prefWidth="165.0" text="View Menu">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="285.0" layoutY="218.0" mnemonicParsing="false" onAction="#pointsButton" prefHeight="117.0" prefWidth="165.0" text="Earn &amp; Redeem points">
+      <Button layoutX="285.0" layoutY="166.0" mnemonicParsing="false" onAction="#pointsButton" prefHeight="70.0" prefWidth="165.0" text="Earn &amp; Redeem points" />
+      <Button layoutX="216.0" layoutY="362.0" mnemonicParsing="false" onAction="#backButton" prefHeight="36.0" prefWidth="134.0" text="Back">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="226.0" layoutY="368.0" mnemonicParsing="false" onAction="#backButton" prefHeight="36.0" prefWidth="95.0" text="Back">
+      <Button layoutX="92.0" layoutY="262.0" mnemonicParsing="false" onAction="#settingButton" prefHeight="57.0" prefWidth="165.0" text="Setting">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="286.0" layoutY="262.0" mnemonicParsing="false" onAction="#feedbackButton" prefHeight="57.0" prefWidth="165.0" text="Feedback">
          <font>
             <Font size="18.0" />
          </font>
