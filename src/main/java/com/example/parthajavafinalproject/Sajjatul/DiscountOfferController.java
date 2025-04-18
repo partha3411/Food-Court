@@ -83,7 +83,38 @@ public class DiscountOfferController {
 
     @FXML
     void createOfferButton(ActionEvent event) {
+        String itemName = itemCB.getValue();
+        String priceText = priceTF.getText();
+        String discountText = discountTF.getText();
+        String promoCode = promoTF.getText();
+        LocalDate offerDate = dateDP.getValue();
 
+        if (itemName == null || priceText.isEmpty() || discountText.isEmpty() ||
+                promoCode.isEmpty() || offerDate == null) {
+            System.out.println("Please input all");
+            return;
+        }
+
+        try {
+            double itemPrice = Double.parseDouble(priceText);
+            int discount = Integer.parseInt(discountText);
+
+            DiscountOffer offer = new DiscountOffer(itemName, itemPrice, discount, offerDate, promoCode);
+            Offers.add(offer);
+            tableView.getItems().add(offer);
+
+
+            itemCB.setValue(null);
+            priceTF.clear();
+            discountTF.clear();
+            promoTF.clear();
+            dateDP.setValue(null);
+
+            System.out.println("Discount offer created");
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid! input all fields");
+        }
     }
+
 
 }

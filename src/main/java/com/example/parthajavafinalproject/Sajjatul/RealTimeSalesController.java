@@ -53,8 +53,32 @@ public class RealTimeSalesController {
 
     @FXML
     void addItemButton(ActionEvent event) {
+        String item = itemAddCB.getValue();
+        String quantityText = quantityAddTF.getText();
 
+        if (item == null || quantityText.isEmpty()) {
+            System.out.println("Please input all the items");
+            return;
+        }
+
+        int quantity = Integer.parseInt(quantityText);
+
+        for (RealTimeSales sales : RealTimeSalesArray) {
+            if (sales.getItemName().equals(item)) {
+                sales.setRemainQuantity(sales.getRemainQuantity() + quantity);
+                tableView.refresh();
+                return;
+            }
+        }
+
+        RealTimeSales newItem = new RealTimeSales(item, quantity);
+        RealTimeSalesArray.add(newItem);
+        tableView.getItems().add(newItem);
+
+        quantityAddTF.clear();
+        itemAddCB.setValue(null);
     }
+
 
     @FXML
     void backMenuButton(ActionEvent event) throws IOException {
@@ -71,7 +95,29 @@ public class RealTimeSalesController {
 
     @FXML
     void orderButton(ActionEvent event) {
+        String item = itemOrderCB.getValue();
+        String quantityText = quantityOrderTF.getText();
 
+        if (item == null || quantityText.isEmpty()) {
+            System.out.println("Please input all");
+            return;
+        }
+
+        int quantity = Integer.parseInt(quantityText);
+
+        for (RealTimeSales sales : RealTimeSalesArray) {
+            if (sales.getItemName().equals(item)) {
+                int current = sales.getRemainQuantity();
+                if (quantity > current) {
+                    System.out.println("stock out!");
+                    return;
+                }
+                sales.setRemainQuantity(current - quantity);
+                tableView.refresh();
+                return;
+            }
+        }
     }
+
 
 }

@@ -55,8 +55,22 @@ public class StockManagementController {
 
     @FXML
     void addKitchenButton(ActionEvent event) {
+        String item = itemCB.getValue();
+        int quantity;
+        try {
+            quantity = Integer.parseInt(quantityTF.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid quantity");
+            return;
+        }
 
+        int howLong = (int)(Math.random() * 10) + 1;
+
+        StockManagement product = new StockManagement(item, quantity, howLong);
+        stockManagements.add(product);
+        tableView.getItems().add(product);
     }
+
 
     @FXML
     void backMenuButton(ActionEvent event) throws IOException {
@@ -74,6 +88,22 @@ public class StockManagementController {
 
     @FXML
     void filterButton(ActionEvent event) {
+        int filterQuantity;
+        try {
+            filterQuantity = Integer.parseInt(quantityFilterTF.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid filter value");
+            return;
+        }
+
+        tableView.getItems().clear();
+        for (StockManagement product : stockManagements) {
+            if (product.getQuantity() >= filterQuantity) {
+                tableView.getItems().add(product);
+            }
+
+        }
+
 
     }
 

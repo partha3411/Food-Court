@@ -4,11 +4,17 @@ public class BuyDailyNeeds {
     private String name;
     private int quantity;
     private double price;
+    private double total;
 
-    public BuyDailyNeeds(String name, double price, int quantity) {
+    public BuyDailyNeeds(String name, double price, int quantity, double total) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.total = total;
+    }
+
+    public BuyDailyNeeds(String name, int quantity, double price, double total) {
+        this.total = total;
     }
 
     public String getName() {
@@ -35,12 +41,21 @@ public class BuyDailyNeeds {
         this.quantity = quantity;
     }
 
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
     @Override
     public String toString() {
         return "BuyDailyNeeds{" +
                 "name='" + name + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
+                ", total=" + total +
                 '}';
     }
 }

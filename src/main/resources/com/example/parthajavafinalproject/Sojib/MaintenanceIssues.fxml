@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.parthajavafinalproject.Sojib.MaintenanceIssues"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="493.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sojib.MaintenanceIssuesController">
+   <children>
+      <TextField fx:id="issue" layoutX="146.0" layoutY="65.0" prefHeight="100.0" prefWidth="270.0" />
+      <Text layoutX="56.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issue /Problem" wrappingWidth="86.10232543945312" />
+      <Button layoutX="460.0" layoutY="50.0" mnemonicParsing="false" onAction="#uploadImage" prefHeight="42.0" prefWidth="94.0" text="Upload Image" />
+      <DatePicker fx:id="dateofissue" layoutX="143.0" layoutY="189.0" />
+      <Text layoutX="43.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Issue" wrappingWidth="86.10232543945312" />
+      <RadioButton fx:id="LowRadio" layoutX="608.0" layoutY="119.0" mnemonicParsing="false" text="Low" />
+      <RadioButton fx:id="MediumRadio" layoutX="608.0" layoutY="146.0" mnemonicParsing="false" text="Medium" />
+      <RadioButton fx:id="HighRadio" layoutX="608.0" layoutY="171.0" mnemonicParsing="false" text="High" />
+      <Text layoutX="608.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Risk Problem" wrappingWidth="86.10232543945312" />
+      <Button layoutX="412.0" layoutY="189.0" mnemonicParsing="false" onAction="#ReportIssue" prefHeight="26.0" prefWidth="154.0" text="Report Issue" />
+      <TableView fx:id="maintainTable" layoutX="22.0" layoutY="268.0" prefHeight="200.0" prefWidth="694.0">
+        <columns>
+          <TableColumn fx:id="dateTable" prefWidth="208.80007362365723" text="Date of Issue" />
+          <TableColumn fx:id="riskTable" prefWidth="242.39990234375" text="Risk Level" />
+            <TableColumn fx:id="problemTable" prefWidth="243.19998168945312" text="Problem" />
+        </columns>
+      </TableView>
+      <Text layoutX="326.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maintanance Issue" wrappingWidth="154.4000000000001" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton" prefHeight="42.0" prefWidth="56.0" text="←">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

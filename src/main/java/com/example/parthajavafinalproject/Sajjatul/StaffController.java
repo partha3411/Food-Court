@@ -74,8 +74,31 @@ public class StaffController {
 
     @FXML
     void addStaffButton(ActionEvent event) {
+        String type = staffCB.getValue();
+        String name = nameTF.getText();
+        String nidText = nidTF.getText();
+        String salaryText = salaryTF.getText();
 
+        if (type == null || name.isEmpty() || nidText.isEmpty() || salaryText.isEmpty()) {
+            System.out.println("Please Enter all input");
+            return;
+        }
+
+        try {
+            int nid = Integer.parseInt(nidText);
+            int salary = Integer.parseInt(salaryText);
+            LocalDate today = LocalDate.now();
+
+            Staff newStaff = new Staff(type,  name, nid, today, salary);
+            Staffs.add(newStaff);
+            tableView.getItems().add(newStaff);
+            System.out.println("Staff added: " + name);
+
+        } catch (NumberFormatException e) {
+            System.out.println("NID and Salary must be inputed.");
+        }
     }
+
 
     @FXML
     void backMenuButton(ActionEvent event) throws IOException {
@@ -93,7 +116,17 @@ public class StaffController {
 
     @FXML
     void filterButton(ActionEvent event) {
+        String filterType = staffDilterCB.getValue();
+        if (filterType == null)
+            return;
 
+        tableView.getItems().clear();
+        for (Staff newStaff : Staffs) {
+            if (newStaff.getStaffType().equals(filterType)) {
+                tableView.getItems().add(newStaff);
+            }
+        }
     }
+
 
 }

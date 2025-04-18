@@ -15,6 +15,9 @@ public class DigitalRecipt {
         this.price = price;
     }
 
+    public DigitalRecipt(String customerName, String foodItem, double price, LocalDate date) {
+    }
+
     public LocalDate getDate() {
         return date;
     }

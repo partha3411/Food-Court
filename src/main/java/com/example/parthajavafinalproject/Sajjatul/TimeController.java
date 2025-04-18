@@ -53,8 +53,26 @@ public class TimeController {
 
     @FXML
     void addScheduleButton(ActionEvent event) {
+        String opening = openingTF.getText();
+        String closing = closingTF.getText();
+        String offDay = offDayCB.getValue();
 
+        if (opening.isEmpty() || closing.isEmpty() || offDay == null) {
+            System.out.println("Please input correctly");
+            return;
+        }
+
+        Time time = new Time(opening, closing, offDay);
+        Times.add(time);
+        tableView.getItems().add(time);
+
+        openingTF.clear();
+        closingTF.clear();
+        offDayCB.setValue(null);
+
+        System.out.println("Added schedule");
     }
+
 
     @FXML
     public void backMenuButton(ActionEvent actionEvent)  throws IOException {

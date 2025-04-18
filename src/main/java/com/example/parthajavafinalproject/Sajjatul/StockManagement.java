@@ -9,9 +9,9 @@ public class StockManagement {
     public StockManagement() {
     }
 
-    public StockManagement(int howLongLast, String itemName, int quantity) {
-        this.howLongLast = howLongLast;
-        this.itemName = itemName;
+    public StockManagement(String howLongLast, int itemName, int quantity) {
+        this.howLongLast = Integer.parseInt(howLongLast);
+        this.itemName = String.valueOf(itemName);
         this.quantity = quantity;
     }
 
