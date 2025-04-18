@@ -3,10 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="702.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.FoodDeliveryPartnerDashboardController">
    <children>
@@ -25,13 +23,11 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="tx1" layoutX="297.0" layoutY="129.0" prefHeight="25.0" prefWidth="120.0" />
       <Label fx:id="label3" layoutX="160.0" layoutY="180.0" prefHeight="27.0" prefWidth="178.0" text="Deliveries Completed:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="tx2" layoutX="346.0" layoutY="181.0" prefHeight="25.0" prefWidth="72.0" />
       <TextArea fx:id="ta1" layoutX="143.0" layoutY="245.0" prefHeight="158.0" prefWidth="283.0" text="Order ID&#10;&#10;Restaurant&#10;&#10;Status">
          <font>
             <Font size="18.0" />
@@ -40,5 +36,7 @@
       <Button layoutX="143.0" layoutY="456.0" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="25.0" prefWidth="94.0" text="Refresh" />
       <Button layoutX="299.0" layoutY="456.0" mnemonicParsing="false" onAction="#handleAvailability" prefHeight="25.0" prefWidth="100.0" text="Go Offline" />
       <Button layoutX="237.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="78.0" text="Logout" />
+      <Label fx:id="label4" layoutX="310.0" layoutY="129.0" prefHeight="25.0" prefWidth="78.0" />
+      <Label fx:id="label5" layoutX="353.0" layoutY="181.0" prefHeight="25.0" prefWidth="46.0" />
    </children>
 </AnchorPane>

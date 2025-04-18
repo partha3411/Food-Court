@@ -11,15 +11,15 @@ public class FoodDeliveryPartnerDashboardController {
     @javafx.fxml.FXML
     private Label label;
     @javafx.fxml.FXML
-    private TextField tx1;
-    @javafx.fxml.FXML
     private Label label1;
     @javafx.fxml.FXML
     private Label label2;
     @javafx.fxml.FXML
     private Label label3;
     @javafx.fxml.FXML
-    private TextField tx2;
+    private Label label4;
+    @javafx.fxml.FXML
+    private Label label5;
 
     @javafx.fxml.FXML
     public void handleAvailability(ActionEvent actionEvent) {
