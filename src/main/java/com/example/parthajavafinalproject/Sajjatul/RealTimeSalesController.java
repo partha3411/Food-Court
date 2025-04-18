@@ -1,5 +1,6 @@
 package com.example.parthajavafinalproject.Sajjatul;
 
+import com.example.parthajavafinalproject.AppendableObjectOutputStream;
 import com.example.parthajavafinalproject.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class RealTimeSalesController {
@@ -49,7 +50,7 @@ public class RealTimeSalesController {
         remainCol.setCellValueFactory(new PropertyValueFactory<>("remainQuantity"));
     }
 
-    private ArrayList<RealTimeSales> RealTimeSalesArray = new ArrayList<>();
+    private ArrayList<RealTimeSales> realTimeSalesArray = new ArrayList<>();
 
     @FXML
     void addItemButton(ActionEvent event) {
@@ -63,7 +64,7 @@ public class RealTimeSalesController {
 
         int quantity = Integer.parseInt(quantityText);
 
-        for (RealTimeSales sales : RealTimeSalesArray) {
+        for (RealTimeSales sales : realTimeSalesArray) {
             if (sales.getItemName().equals(item)) {
                 sales.setRemainQuantity(sales.getRemainQuantity() + quantity);
                 tableView.refresh();
@@ -72,7 +73,6 @@ public class RealTimeSalesController {
         }
 
         RealTimeSales newItem = new RealTimeSales(item, quantity);
-        RealTimeSalesArray.add(newItem);
         tableView.getItems().add(newItem);
 
         quantityAddTF.clear();
@@ -105,7 +105,7 @@ public class RealTimeSalesController {
 
         int quantity = Integer.parseInt(quantityText);
 
-        for (RealTimeSales sales : RealTimeSalesArray) {
+        for (RealTimeSales sales : readrealTimeSales()) {
             if (sales.getItemName().equals(item)) {
                 int current = sales.getRemainQuantity();
                 if (quantity > current) {
@@ -115,6 +115,67 @@ public class RealTimeSalesController {
                 sales.setRemainQuantity(current - quantity);
                 tableView.refresh();
                 return;
+            }
+        }
+    }
+
+    public ArrayList<RealTimeSales> readrealTimeSales() {
+        ArrayList<RealTimeSales> real = new ArrayList<>() ;
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File("saleFile.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            RealTimeSales realTimeSales;
+            try{
+                while(true){
+                    realTimeSales = (RealTimeSales) ois.readObject();
+                    real.add(realTimeSales) ;
+                }
+            }
+            catch(Exception e){
+                System.out.println("Error: " + e.getMessage());
+            }
+        } catch (Exception ex) {
+            System.out.println("External Error: " + ex.getMessage());
+        }
+        finally {
+            try {
+
+                if(ois != null) ois.close();
+            } catch (IOException ex) { }
+        }
+        return real ;
+    }
+
+    public void writestallManagement(RealTimeSales realTimeSales) {
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+
+        try {
+            f = new File("stallFile.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new AppendableObjectOutputStream(fos);
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(realTimeSales);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            try {
+                if(oos != null) oos.close();
+            } catch (IOException ex) {
+                System.out.println("Error: " + ex.getMessage());
             }
         }
     }
