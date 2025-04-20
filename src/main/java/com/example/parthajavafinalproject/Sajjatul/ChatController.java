@@ -65,13 +65,12 @@ public class ChatController {
     }
 
     @FXML
-    public void managerSendButton(ActionEvent actionEvent) {
-        String managerMessage = customerMessageTA.getText().trim();
+    public void managerSendButton(ActionEvent event) {
+        String managerMessage = managerMessageTA.getText().trim();
         if (!managerMessage.isEmpty()) {
             Chat chat = new Chat("", managerMessage);
-            chats .add(managerMessage);
+            tableView.getItems().add(chat);
             managerMessageTA.clear();
         }
-
     }
 }
