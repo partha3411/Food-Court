@@ -9,6 +9,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 
 public class LoginScenecontroller
 {
@@ -65,6 +67,12 @@ public class LoginScenecontroller
                     fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/cashier.fxml"));
                     System.out.println("Login Successful");
                     break;
+
+                case "Cleaning Stuff":
+                    fxmlLoader = new FXMLLoader(getClass().getResource("Sojib/CleaningTasksController.fxml"));
+                    System.out.println("Login Successful");
+                    break;
+
                 default:
                     System.out.println("Unknown user type.");
                     return;
@@ -100,6 +108,44 @@ public class LoginScenecontroller
             stage.show();
         } catch (Exception e) {
             e.printStackTrace(); // Print stack trace to help with debugging
+        }
+
+
+    }
+    /// ///// donot touch this from here
+    ///
+    @javafx.fxml.FXML
+    public void safetyLoginButton(ActionEvent actionEvent) {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Sojib/HealthTaskBar.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene nextScene = new Scene(root);
+
+            // Get the current stage
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Health and Safety DashBoard");
+            stage.setScene(nextScene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void cleanerLoginButton(ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Sojib/CleaningTasksController.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene nextScene = new Scene(root);
+
+            // Get the current stage
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Cleaning DashBoard");
+            stage.setScene(nextScene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
 
