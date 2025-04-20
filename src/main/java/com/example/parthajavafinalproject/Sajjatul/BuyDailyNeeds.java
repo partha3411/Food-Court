@@ -13,10 +13,6 @@ public class BuyDailyNeeds {
         this.total = total;
     }
 
-    public BuyDailyNeeds(String name, int quantity, double price, double total) {
-        this.total = total;
-    }
-
     public String getName() {
         return name;
     }

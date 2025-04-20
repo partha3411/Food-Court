@@ -2,12 +2,12 @@ package com.example.parthajavafinalproject.Sajjatul;
 
 public class SalesReport {
     private String term;
-    private double totalSell;
-    private double totalBuy;
-    private double profit;
-    private double loss;
+    private int totalSell;
+    private int totalBuy;
+    private int profit;
+    private int loss;
 
-    public SalesReport(double loss, double profit, String term, double totalBuy, double totalSell) {
+    public SalesReport(int loss, int profit, String term, int totalBuy, int totalSell) {
         this.loss = loss;
         this.profit = profit;
         this.term = term;
@@ -15,22 +15,19 @@ public class SalesReport {
         this.totalSell = totalSell;
     }
 
-    public SalesReport(String selectedTerm, double totalSell, double totalBuy, double profit, double loss) {
-    }
-
-    public double getLoss() {
+    public int getLoss() {
         return loss;
     }
 
-    public void setLoss(double loss) {
+    public void setLoss(int loss) {
         this.loss = loss;
     }
 
-    public double getProfit() {
+    public int getProfit() {
         return profit;
     }
 
-    public void setProfit(double profit) {
+    public void setProfit(int profit) {
         this.profit = profit;
     }
 
@@ -42,19 +39,19 @@ public class SalesReport {
         this.term = term;
     }
 
-    public double getTotalBuy() {
+    public int getTotalBuy() {
         return totalBuy;
     }
 
-    public void setTotalBuy(double totalBuy) {
+    public void setTotalBuy(int totalBuy) {
         this.totalBuy = totalBuy;
     }
 
-    public double getTotalSell() {
+    public int getTotalSell() {
         return totalSell;
     }
 
-    public void setTotalSell(double totalSell) {
+    public void setTotalSell(int totalSell) {
         this.totalSell = totalSell;
     }
 

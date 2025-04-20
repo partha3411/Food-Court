@@ -63,10 +63,11 @@ public class BuyDailyNeedsController {
         int quantity = Integer.parseInt(quantityText);
         double total = price * quantity;
 
-        BuyDailyNeeds item = new BuyDailyNeeds(name, quantity, price, total);
+        BuyDailyNeeds item = new BuyDailyNeeds(name, price, quantity,total);
         needs.add(item);
-
         tableView.getItems().add(item);
+
+
         nameTF.clear();
         priceTF.clear();
         quantityTF.clear();

@@ -4,17 +4,20 @@ import java.time.LocalDate;
 
 public class BillingStaff {
     private String category;
-    private double amount;
+    private int amount;
     private LocalDate date;
 
-    public BillingStaff(String category, LocalDate date, String amountText) {
+    public BillingStaff(int amount, String category, LocalDate date) {
+        this.amount = amount;
+        this.category = category;
+        this.date = date;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 

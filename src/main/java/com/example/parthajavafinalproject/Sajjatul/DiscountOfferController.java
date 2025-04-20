@@ -99,7 +99,7 @@ public class DiscountOfferController {
             double itemPrice = Double.parseDouble(priceText);
             int discount = Integer.parseInt(discountText);
 
-            DiscountOffer offer = new DiscountOffer(itemName, itemPrice, discount, offerDate, promoCode);
+            DiscountOffer offer = new DiscountOffer(discount,itemName, itemPrice, offerDate, promoCode);
             Offers.add(offer);
             tableView.getItems().add(offer);
 
