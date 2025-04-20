@@ -54,7 +54,7 @@ public class ReceivePaymentController {
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
-    private ArrayList<ReceivePayment> Payments=new ArrayList<>();
+    private ArrayList<ReceivePayment> payments = new ArrayList<>();
 
     @FXML
         void addButton(ActionEvent event) {
@@ -68,10 +68,11 @@ public class ReceivePaymentController {
             }
 
             try {
-                double price = Double.parseDouble(priceText);
+                int price = Integer.parseInt(priceText);
                 ReceivePayment paid = new ReceivePayment(date, paymentMethod, price);
-                Payments.add(paid);
+                payments.add(paid);
                 tableView.getItems().add(String.valueOf(paid));
+
 
                 dateDP.setValue(null);
                 paymentCB.setValue(null);
@@ -106,7 +107,7 @@ public class ReceivePaymentController {
 
         tableView.getItems().clear();
 
-        for (ReceivePayment payment : Payments) {
+        for (ReceivePayment payment : payments) {
             if (payment.getDate().equals(filterDate)) {
                 tableView.getItems().add(String.valueOf(payment));
             }

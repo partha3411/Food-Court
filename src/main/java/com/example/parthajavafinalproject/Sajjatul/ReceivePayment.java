@@ -5,9 +5,9 @@ import java.time.LocalDate;
 public class ReceivePayment {
     private LocalDate date;
     private String paymentMethod;
-    private double price;
+    private int price;
 
-    public ReceivePayment(LocalDate date, String paymentMethod, double price) {
+    public ReceivePayment(LocalDate date, String paymentMethod, int price) {
         this.date = date;
         this.paymentMethod = paymentMethod;
         this.price = price;
@@ -33,7 +33,7 @@ public class ReceivePayment {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

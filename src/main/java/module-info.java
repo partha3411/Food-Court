@@ -9,4 +9,6 @@ module com.example.parthajavafinalproject {
     exports com.example.parthajavafinalproject;
     opens com.example.parthajavafinalproject.Sabbir to javafx.fxml;
     exports com.example.parthajavafinalproject.Sabbir;
+    opens com.example.parthajavafinalproject.sahadat to javafx.fxml;
+    exports com.example.parthajavafinalproject.sahadat;
 }
