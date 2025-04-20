@@ -82,3 +82,5 @@ public class CustomerDashboardController {
     @javafx.fxml.FXML
     public void CustomerTrackOrder(ActionEvent actionEvent) {
     }
+}
+
