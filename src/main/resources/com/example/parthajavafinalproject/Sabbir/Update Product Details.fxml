@@ -30,4 +30,5 @@
     </VBox>
 
     <Button fx:id="updateButton" prefWidth="160" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Update Product" />
+   <Button mnemonicParsing="false" text="Back" />
 </VBox>

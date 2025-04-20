@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.foodcourt.controller.UpdateUserController"
-      spacing="20" alignment="CENTER">
+<VBox alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.foodcourt.controller.UpdateUserController">
 
     <padding>
-        <Insets top="30" right="40" bottom="30" left="40"/>
+        <Insets bottom="30" left="40" right="40" top="30" />
     </padding>
 
-    <Label text="✏️ Update User Info" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="✏️ Update User Info" />
 
-    <VBox spacing="10" alignment="CENTER_LEFT" maxWidth="350">
-        <Label text="Select User ID:"/>
-        <ComboBox fx:id="userComboBox" promptText="Choose user" prefWidth="300"/>
+    <VBox alignment="CENTER_LEFT" maxWidth="350" spacing="10">
+        <Label text="Select User ID:" />
+        <ComboBox fx:id="userComboBox" prefWidth="300" promptText="Choose user" />
 
-        <Label text="Name:"/>
-        <TextField fx:id="nameField" prefWidth="300"/>
+        <Label text="Name:" />
+        <TextField fx:id="nameField" prefWidth="300" />
 
-        <Label text="Email:"/>
-        <TextField fx:id="emailField" prefWidth="300"/>
+        <Label text="Email:" />
+        <TextField fx:id="emailField" prefWidth="300" />
 
-        <Label text="Salary:"/>
-        <TextField fx:id="salaryField" prefWidth="300"/>
+        <Label text="Salary:" />
+        <TextField fx:id="salaryField" prefWidth="300" />
     </VBox>
 
-    <Button fx:id="updateButton" text="Update User"
-            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"
-            prefWidth="160"/>
+    <Button fx:id="updateButton" prefWidth="160" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Update User" />
+   <Button mnemonicParsing="false" text="Back" />
 </VBox>

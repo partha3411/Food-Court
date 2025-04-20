@@ -46,4 +46,8 @@ public class AddProductController {
     public void setQuantityField(TextField quantityField) {
         this.quantityField = quantityField;
     }
-}
+
+    public void initialize{
+
+    }
+\}
