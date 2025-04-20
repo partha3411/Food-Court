@@ -1,49 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="624.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.CustomerDashboardController">
    <children>
-      <Label fx:id="label" layoutX="111.0" layoutY="14.0" prefHeight="35.0" prefWidth="348.0" text="     Customer Dashboard" textFill="#d31010">
+      <Text fill="#e11809" layoutX="195.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Dashboard" wrappingWidth="239.0">
          <font>
-            <Font size="25.0" />
+            <Font size="24.0" />
          </font>
-      </Label>
-      <Button layoutX="29.0" layoutY="65.0" mnemonicParsing="false" onAction="#customerOrderFood" prefHeight="36.0" prefWidth="153.0" text="Place Order">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="29.0" layoutY="233.0" mnemonicParsing="false" onAction="#customerTrackOrder" prefHeight="30.0" prefWidth="153.0" text="Track Order">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="27.0" layoutY="397.0" mnemonicParsing="false" onAction="#customerShareOrderView" prefHeight="30.0" prefWidth="153.0" text="Share Order">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="29.0" layoutY="454.0" mnemonicParsing="false" onAction="#customerLoyaltyPoints" prefHeight="30.0" prefWidth="153.0" text="Earn &amp; Redeem points" />
-      <Button layoutX="273.0" layoutY="504.0" mnemonicParsing="false" onAction="#backButton" prefHeight="36.0" prefWidth="134.0" text="Back to login">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="29.0" layoutY="179.0" mnemonicParsing="false" onAction="#customerOrderCancel" prefHeight="30.0" prefWidth="153.0" text="Cancel an Order">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="29.0" layoutY="126.0" mnemonicParsing="false" onAction="#customerFeedbackView" prefHeight="30.0" prefWidth="153.0" text="Feedback">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="30.0" layoutY="288.0" mnemonicParsing="false" onAction="#customerRefundRequest" prefHeight="30.0" prefWidth="153.0" text=" Request a Refund" />
-      <Button layoutX="27.0" layoutY="340.0" mnemonicParsing="false" onAction="#customerFoodAddFavorite" prefHeight="30.0" prefWidth="153.0" text="Add Food to Favorites" />
+      </Text>
+      <VBox fx:id="vbox" layoutX="217.0" layoutY="59.0" prefHeight="454.0" prefWidth="180.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#customerOrderFood" prefHeight="36.0" prefWidth="195.0" text="Place Order">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="176.13671875" />
+            <Button mnemonicParsing="false" onAction="#customerFeedbackView" prefHeight="30.0" prefWidth="197.0" text="Feedback">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="179.13671875" />
+            <Button mnemonicParsing="false" onAction="#customerOrderCancel" prefHeight="30.0" prefWidth="197.0" text="Cancel an Order">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="177.13671875" />
+            <Button mnemonicParsing="false" onAction="#customerTrackOrder" prefHeight="30.0" prefWidth="196.0" text="Track Order">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="181.13671875" />
+            <Button mnemonicParsing="false" onAction="#customerRefundRequest" prefHeight="30.0" prefWidth="195.0" text=" Request a Refund" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="180.13671875" />
+            <Button mnemonicParsing="false" onAction="#customerShareOrderView" prefHeight="30.0" prefWidth="197.0" text="Share Order">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="181.13671875" />
+            <Button mnemonicParsing="false" onAction="#customerLoyaltyPoints" prefHeight="30.0" prefWidth="196.0" text="Earn &amp; Redeem points" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="193.13671875" />
+            <Button mnemonicParsing="false" onAction="#customerFoodAddFavorite" prefHeight="30.0" prefWidth="194.0" text="Add Food to Favorites" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="37.13671875" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Button mnemonicParsing="false" onAction="#backButton" prefHeight="36.0" prefWidth="134.0" text="Back to login">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

@@ -9,19 +9,11 @@ import javafx.scene.layout.VBox;
 
 public class CustomerFeedbackController {
     @javafx.fxml.FXML
-    private Label statusLabel1;
-    @javafx.fxml.FXML
-    private VBox feedbackContainer;
-    @javafx.fxml.FXML
-    private Button submitButton;
-    @javafx.fxml.FXML
     private TextArea feedbackTextArea;
     @javafx.fxml.FXML
-    private ComboBox ratingComboBox;
+    private Label statusLB;
     @javafx.fxml.FXML
-    private Label statusLabel3;
-    @javafx.fxml.FXML
-    private Label statusLabel2;
+    private ComboBox ratingCB;
 
     @javafx.fxml.FXML
     public void handleSubmitFeedback(ActionEvent actionEvent) {

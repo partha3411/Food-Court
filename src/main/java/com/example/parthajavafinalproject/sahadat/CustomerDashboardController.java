@@ -1,119 +1,132 @@
 package com.example.parthajavafinalproject.sahadat;
 
+
+import com.example.parthajavafinalproject.HelloApplication;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CustomerDashboardController {
+
     @javafx.fxml.FXML
-    private Label label;
+    private VBox vbox;
 
-    @Deprecated
-    public void viewMenuButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void pointsButton(ActionEvent actionEvent) {
+    @javafx.fxml.FXML
+    public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void backButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void trackOrderButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void placeOrderButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void settingButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void feedbackButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void shareButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void addButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void refundButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void cancelButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void CustomerFeedbackView(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void CustomerFoodAddFavorite(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void CustomerOrderCancel(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void CustomerLoyaltyPoints(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void CustomerRefundRequest(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void CustomerShareOrderView(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void CustomerOrderFood(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void CustomerTrackOrder(ActionEvent actionEvent){
-
+    public void customerFeedbackView(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerFeedbackView.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Ratings and Feedback");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void customerFeedbackView(ActionEvent actionEvent) {
+    public void customerRefundRequest(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerRefundRequest.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Refund Request");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void customerRefundRequest(ActionEvent actionEvent) {
+    public void customerTrackOrder(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerTrackerOrder.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Track Order");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void customerTrackOrder(ActionEvent actionEvent) {
+    public void customerLoyaltyPoints(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerLoyaltyPoints.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Redeem Points");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void customerLoyaltyPoints(ActionEvent actionEvent) {
+    public void customerFoodAddFavorite(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerFoodAddFavorite.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Add Favorite Food");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void customerFoodAddFavorite(ActionEvent actionEvent) {
+    public void backButton(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginScene.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Login");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void customerOrderFood(ActionEvent actionEvent) {
+    public void customerOrderFood(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerOrderFood.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Order Food");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void customerOrderCancel(ActionEvent actionEvent) {
+    public void customerShareOrderView(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerShareOrderView.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Share Order");
+        stage.show();
     }
 
     @javafx.fxml.FXML
-    public void customerShareOrderView(ActionEvent actionEvent) {
+    public void customerOrderCancel(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerOrderCancel.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Order Cancel");
+        stage.show();
     }
+
 }
-
