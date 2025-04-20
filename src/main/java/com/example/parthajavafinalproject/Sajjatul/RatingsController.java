@@ -104,7 +104,8 @@ public class RatingsController {
             return;
         }
 
-        Ratings ratingAdd = new Ratings(name, food, rating, feedback);
+        Ratings ratingAdd = new Ratings(name, feedback,food, rating);
+        System.out.println("Thanks For Your Feedback");
         ratings.add(ratingAdd);
         tableView.getItems().add(ratingAdd);
         nameTF.clear();

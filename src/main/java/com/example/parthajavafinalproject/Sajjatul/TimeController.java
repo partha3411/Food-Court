@@ -62,7 +62,7 @@ public class TimeController {
             return;
         }
 
-        Time time = new Time(opening, closing, offDay);
+        Time time = new Time(closing, offDay,opening);
         Times.add(time);
         tableView.getItems().add(time);
 

@@ -58,7 +58,8 @@ public class ChatController {
     void customerSendButton(ActionEvent event) {
         String cutomerMessage = customerMessageTA.getText().trim();
         if (!cutomerMessage.isEmpty()) {
-            chats .add(cutomerMessage);
+            Chat chat = new Chat(cutomerMessage, "");
+            tableView.getItems().add(chat);
             customerMessageTA.clear();
         }
     }
@@ -67,6 +68,7 @@ public class ChatController {
     public void managerSendButton(ActionEvent actionEvent) {
         String managerMessage = customerMessageTA.getText().trim();
         if (!managerMessage.isEmpty()) {
+            Chat chat = new Chat("", managerMessage);
             chats .add(managerMessage);
             managerMessageTA.clear();
         }

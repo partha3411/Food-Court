@@ -7,12 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,9 +19,6 @@ public class StaffController {
 
     @FXML
     private TableColumn<Staff, LocalDate> dateCol;
-
-    @FXML
-    private AnchorPane joiningDP;
 
     @FXML
     private TableColumn<Staff, String> nameCol;
@@ -56,6 +49,8 @@ public class StaffController {
 
     @FXML
     private TableView<Staff> tableView;
+    @FXML
+    private DatePicker joiningDP;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -78,6 +73,7 @@ public class StaffController {
         String name = nameTF.getText();
         String nidText = nidTF.getText();
         String salaryText = salaryTF.getText();
+        LocalDate joinDate = joiningDP.getValue();
 
         if (type == null || name.isEmpty() || nidText.isEmpty() || salaryText.isEmpty()) {
             System.out.println("Please Enter all input");
@@ -89,7 +85,7 @@ public class StaffController {
             int salary = Integer.parseInt(salaryText);
             LocalDate today = LocalDate.now();
 
-            Staff newStaff = new Staff(type,  name, nid, today, salary);
+            Staff newStaff = new Staff( joinDate, name, nid,  salary, type);
             Staffs.add(newStaff);
             tableView.getItems().add(newStaff);
             System.out.println("Staff added: " + name);
