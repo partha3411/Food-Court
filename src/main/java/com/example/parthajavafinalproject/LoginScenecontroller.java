@@ -58,11 +58,12 @@ public class LoginScenecontroller
 
             switch (userType) {
                 case "Manager":
-                    fxmlLoader = new FXMLLoader(getClass().getResource("managerDashboard.fxml"));
+                    fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/manager.fxml"));
                     System.out.println("Login Successful");
                     break;
                 case "Cashier":
-                    fxmlLoader = new FXMLLoader(getClass().getResource("cashierDashboard.fxml"));
+                    fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/cashier.fxml"));
+                    System.out.println("Login Successful");
                     break;
                 default:
                     System.out.println("Unknown user type.");
