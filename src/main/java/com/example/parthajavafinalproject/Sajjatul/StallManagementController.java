@@ -66,6 +66,7 @@ public class StallManagementController {
 
     @FXML
     void confirmButton(ActionEvent event) {
+        tableView.getItems().clear();
         String stall = stallComboBox.getValue();
         String duration = durationComboBox.getValue();
         String payment = paymentComboBox.getValue();
@@ -84,14 +85,16 @@ public class StallManagementController {
         };
 
         String status = payment.equals("Cash") ? "Paid Offline" : "Paid Online";
-
-        StallManagement info = new StallManagement(stall, today, nextBillingDate, status);
+        StallManagement info = new StallManagement( today, nextBillingDate, stall,status);
+        System.out.println(info);
         label.setText("Billing confirmed for " + stall);
         stallManagements.add(info);
+        tableView.getItems().add(info) ;
     }
 
     @FXML
     void downloadReceiptButton(ActionEvent event) {
+        tableView.getItems().clear();
         String stall = stallComboBox.getValue();
         String duration = durationComboBox.getValue();
         String payment = paymentComboBox.getValue();
@@ -113,7 +116,7 @@ public class StallManagementController {
         }
 
 
-        StallManagement info = new StallManagement(stall, today, nextBillingDate, status);
+        StallManagement info = new StallManagement( today, nextBillingDate,stall, status);
         writestallManagement(info);
         label.setText("Dowloaded");
         stallManagements = readStallManagement();
@@ -155,7 +158,7 @@ public class StallManagementController {
                 }
             }
             catch(Exception e){
-                System.out.println("Error: " + e.getMessage());
+                System.out.println("Read Error: " + e.getMessage());
             }
         } catch (Exception ex) {
             System.out.println("External Error: " + ex.getMessage());
