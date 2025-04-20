@@ -1,6 +1,8 @@
 package com.example.parthajavafinalproject.Sajjatul;
 
-public class StockManagement {
+import java.io.Serializable;
+
+public class StockManagement implements Serializable {
     private String itemName;
     private int quantity;
     private int howLongLast;
@@ -9,9 +11,9 @@ public class StockManagement {
     public StockManagement() {
     }
 
-    public StockManagement(String howLongLast, int itemName, int quantity) {
-        this.howLongLast = Integer.parseInt(howLongLast);
-        this.itemName = String.valueOf(itemName);
+    public StockManagement(int howLongLast, String itemName, int quantity) {
+        this.howLongLast = howLongLast;
+        this.itemName = itemName;
         this.quantity = quantity;
     }
 

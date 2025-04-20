@@ -9,15 +9,12 @@ public class Staff {
     private LocalDate joiningDate;
     private int salary;
 
-    public Staff(LocalDate joiningDate, String name, int nid, int salary, String staffType) {
+    public Staff(LocalDate joiningDate,String name, int nid, int salary, String staffType) {
         this.joiningDate = joiningDate;
         this.name = name;
         this.nid = nid;
         this.salary = salary;
         this.staffType = staffType;
-    }
-
-    public Staff(String type, String name, int nid, LocalDate today, int salary) {
     }
 
     public LocalDate getJoiningDate() {

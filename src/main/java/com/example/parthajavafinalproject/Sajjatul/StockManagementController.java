@@ -67,7 +67,7 @@ public class StockManagementController {
 
         int howLong = (int)(Math.random() * 10) + 1;
 
-        StockManagement product = new StockManagement(item, quantity, howLong);
+        StockManagement product = new StockManagement(howLong,item,quantity);
         writestockManagement(product);
 
         stockManagements = readStockManagement();

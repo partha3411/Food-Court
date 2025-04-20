@@ -1,8 +1,9 @@
 package com.example.parthajavafinalproject.Sajjatul;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class StallManagement {
+public class StallManagement implements Serializable {
     private String stallName;
     private LocalDate billingDate;
     private LocalDate nextBillingDate;
@@ -13,10 +14,6 @@ public class StallManagement {
         this.nextBillingDate = nextBillingDate;
         this.stallName = stallName;
         this.status = status;
-    }
-
-    public StallManagement(String stall, LocalDate today, LocalDate nextBillingDate, String status) {
-
     }
 
     public LocalDate getBillingDate() {

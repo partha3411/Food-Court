@@ -74,6 +74,9 @@ public class UpdateMenuController {
 
                 UpdateMenu item = new UpdateMenu(foodName, price, rating, yesterdaySell);
                 Updates.add(item);
+                System.out.println("Added UpdateMenu");
+                tableView.getItems().add(item);
+
 
                 foodNameCB.setValue(null);
                 ratingsCB.setValue(null);
