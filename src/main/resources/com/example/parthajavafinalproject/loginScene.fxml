@@ -5,19 +5,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="541.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.LoginScenecontroller">
+<AnchorPane prefHeight="415.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.LoginScenecontroller">
    <children>
-      <Label layoutX="291.0" layoutY="64.0" prefHeight="18.0" prefWidth="54.0" text="userType" />
-      <Label layoutX="291.0" layoutY="107.0" prefHeight="18.0" prefWidth="54.0" text="ID" />
-      <Label layoutX="290.0" layoutY="147.0" prefHeight="18.0" prefWidth="54.0" text="password" />
-      <ComboBox fx:id="userTypeComboBox" layoutX="355.0" layoutY="61.0" prefWidth="150.0" />
-      <TextField fx:id="idTextField" layoutX="356.0" layoutY="104.0" />
-      <TextField fx:id="passwordTextField" layoutX="356.0" layoutY="144.0" />
-      <Button layoutX="287.0" layoutY="420.0" mnemonicParsing="false" onAction="#waiterLoginButtonOnAction" prefHeight="26.0" prefWidth="116.0" text="Waiter Dashboard" />
-      <Button layoutX="356.0" layoutY="209.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="92.0" text="Login " />
-      <BorderPane layoutX="6.0" layoutY="3.0" prefHeight="534.0" prefWidth="231.0" />
-      <Button layoutX="448.0" layoutY="420.0" mnemonicParsing="false" onAction="#chefLoginOnAction" prefHeight="26.0" prefWidth="103.0" text="Chef Dashboard" />
+      <ComboBox fx:id="userTypeComboBox" layoutX="232.0" layoutY="130.0" prefHeight="26.0" prefWidth="135.0" promptText="Select User Type" />
+      <TextField fx:id="idTextField" layoutX="207.0" layoutY="173.0" promptText="User ID">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TextField fx:id="passwordTextField" layoutX="207.0" layoutY="217.0" promptText="Passward">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Button layoutX="372.0" layoutY="271.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="27.0" prefWidth="68.0" text="Login " textAlignment="RIGHT" textFill="#1a10e1">
+         <font>
+            <Font name="Arial Unicode MS" size="16.0" />
+         </font></Button>
+      <Label fx:id="successLabel" layoutX="143.0" layoutY="250.0" prefHeight="18.0" prefWidth="326.0" textFill="#0de138" />
+      <Label fx:id="erorLabel" layoutX="141.0" layoutY="250.0" prefHeight="18.0" prefWidth="326.0" textFill="#ea1805" />
+      <Text fill="#d614e3" layoutX="244.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Text fill="#f70000" layoutX="142.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[Welcome to Digital Foodcourt]">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© 2025 Digital Foodcourt | All rights reserved" />
    </children>
 </AnchorPane>
