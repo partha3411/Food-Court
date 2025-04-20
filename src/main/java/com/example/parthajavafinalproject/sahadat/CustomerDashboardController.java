@@ -51,36 +51,69 @@ public class CustomerDashboardController {
     public void cancelButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void CustomerFeedbackView(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void CustomerFoodAddFavorite(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void CustomerOrderCancel(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void CustomerLoyaltyPoints(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void CustomerRefundRequest(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void CustomerShareOrderView(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void CustomerOrderFood(ActionEvent actionEvent) {
     }
 
+    @Deprecated
+    public void CustomerTrackOrder(ActionEvent actionEvent){
+
+    }
+
     @javafx.fxml.FXML
-    public void CustomerTrackOrder(ActionEvent actionEvent) {
+    public void customerFeedbackView(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void customerRefundRequest(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void customerTrackOrder(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void customerLoyaltyPoints(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void customerFoodAddFavorite(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void customerOrderFood(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void customerOrderCancel(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void customerShareOrderView(ActionEvent actionEvent) {
     }
 }
 
