@@ -44,6 +44,43 @@ public class LoginScenecontroller
 
     @javafx.fxml.FXML
     public void loginButtonOnAction(ActionEvent actionEvent) {
+        String id = idTextField.getText();
+        String password = passwordTextField.getText();
+        String userType = userTypeComboBox.getValue();
+
+        if (id.isEmpty() || password.isEmpty() || userType == null) {
+            System.out.println("Please fill all fields.");
+            return;
+        }
+
+        try {
+            FXMLLoader fxmlLoader = null;
+
+            switch (userType) {
+                case "Manager":
+                    fxmlLoader = new FXMLLoader(getClass().getResource("managerDashboard.fxml"));
+                    System.out.println("Login Successful");
+                    break;
+                case "Cashier":
+                    fxmlLoader = new FXMLLoader(getClass().getResource("cashierDashboard.fxml"));
+                    break;
+                default:
+                    System.out.println("Unknown user type.");
+                    return;
+            }
+
+            if (fxmlLoader != null) {
+                Parent root = fxmlLoader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setTitle(userType + " Dashboard");
+                stage.setScene(scene);
+                stage.show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
