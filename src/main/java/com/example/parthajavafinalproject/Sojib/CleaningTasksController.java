@@ -45,7 +45,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     void GarbageWasteDesposal(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SanitizableTable.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/GarbageWasteDesposal.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -57,7 +57,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     void SpillCleanup(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("SpillCleanup.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/SpillCleanup.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -69,7 +69,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     void DeepClean(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DeepClean.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/DeepClean.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -81,7 +81,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     void CleaningTask(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("CleaningTask.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/CleaningTask.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -93,7 +93,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     void HygienicCondition(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HygienicCondition.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/HygienicCondition.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -106,7 +106,7 @@ public class CleaningTasksController
     @FXML
     void MaintenanceIssues(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MaintenanceIssues.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/MaintenanceIssues.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

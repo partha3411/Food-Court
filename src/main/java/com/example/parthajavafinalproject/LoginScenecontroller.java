@@ -6,11 +6,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 
 public class LoginScenecontroller
@@ -21,10 +18,6 @@ public class LoginScenecontroller
     private ComboBox<String> userTypeComboBox;
     @javafx.fxml.FXML
     private TextField passwordTextField;
-    @javafx.fxml.FXML
-    private Label erorLabel;
-    @javafx.fxml.FXML
-    private Label successLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -32,7 +25,7 @@ public class LoginScenecontroller
 
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void waiterLoginButtonOnAction(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("waiterDashboard.fxml"));
@@ -56,47 +49,43 @@ public class LoginScenecontroller
         String userType = userTypeComboBox.getValue();
 
         if (id.isEmpty() || password.isEmpty() || userType == null) {
-            erorLabel.setText("Please Fill all the fields");
-            return;
-        }
-
-        FXMLLoader fxmlLoader = null;
-
-        if (userType.equals("Manager") && id.equals("1111") && password.equals("@1234")) {
-            fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/manager.fxml"));
-            successLabel.setText("Manager Login Successful");
-
-        }
-        else if (userType.equals("Cashier") && id.equals("2222") && password.equals("@2345")) {
-            fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/cashier.fxml"));
-            successLabel.setText("Cashier Login Successful");
-        }
-
-        //else if (userType.equals("staffName") && id.equals("ID(4 Digit)") && password.equals("Passward(Your Wish)")) {
-            //fxmlLoader = new FXMLLoader(getClass().getResource("JetaloadkorteHobe.fxml"));
-            //successLabel.setText("Cashier Login Successful");
-
-        else {
-            erorLabel.setText("Invalid! ID or Password.Try again.");
+            System.out.println("Please fill all fields.");
             return;
         }
 
         try {
-            Parent root = fxmlLoader.load();
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle(userType + " Dashboard");
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            FXMLLoader fxmlLoader = null;
+
+            switch (userType) {
+                case "Manager":
+                    fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/manager.fxml"));
+                    System.out.println("Login Successful");
+                    break;
+                case "Cashier":
+                    fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/cashier.fxml"));
+                    System.out.println("Login Successful");
+                    break;
+                default:
+                    System.out.println("Unknown user type.");
+                    return;
+            }
+
+            if (fxmlLoader != null) {
+                Parent root = fxmlLoader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                stage.setTitle(userType + " Dashboard");
+                stage.setScene(scene);
+                stage.show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-
     }
 
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void chefLoginOnAction(ActionEvent actionEvent) {
 
         try {
