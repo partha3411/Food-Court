@@ -69,7 +69,7 @@ public class FireSafetyController {
     @FXML
     void backButton(ActionEvent event)  throws IOException {
         Parent root = null ;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(""));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/HealthTaskBar.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
