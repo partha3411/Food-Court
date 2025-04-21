@@ -1,6 +1,8 @@
 package com.example.parthajavafinalproject.Sajjatul;
 
-public class RealTimeSales {
+import java.io.Serializable;
+
+public class RealTimeSales implements Serializable {
     private String itemName;
     private int remainQuantity;
 
