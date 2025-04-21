@@ -25,11 +25,11 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <ComboBox fx:id="ratingCB" layoutX="150.0" layoutY="67.0" prefHeight="25.0" prefWidth="123.0" promptText="             1-5" />
+      <ComboBox fx:id="ratingCB" layoutX="150.0" layoutY="67.0" onAction="#ratingButton" prefHeight="25.0" prefWidth="123.0" promptText="             1-5" />
       <TextArea fx:id="feedbackTextArea" layoutX="133.0" layoutY="149.0" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="163.0" layoutY="378.0" mnemonicParsing="false" onAction="#handleSubmitFeedback" prefHeight="25.0" prefWidth="123.0" text="Submit" />
       <Label fx:id="statusLB" layoutX="156.0" layoutY="434.0" prefHeight="35.0" prefWidth="142.0" />
-      <Button layoutX="262.0" layoutY="457.0" mnemonicParsing="false" onAction="#customerDashboard" prefHeight="25.0" prefWidth="88.0" text="Back" />
+      <Button layoutX="333.0" layoutY="469.0" mnemonicParsing="false" onAction="#customerDashboard" prefHeight="25.0" prefWidth="88.0" text="Back" />
       <Label layoutX="344.0" layoutY="378.0" prefHeight="25.0" prefWidth="129.0" />
    </children>
 </AnchorPane>

@@ -1,98 +1,81 @@
 package com.example.parthajavafinalproject.sahadat;
 
-
 import com.example.parthajavafinalproject.HelloApplication;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CustomerOrderController {
+public class CustomerOrderController implements Initializable {
 
     @FXML
-    private ComboBox<String> restaurantComboBox;
+    private ComboBox<String> foodComboBox;
+
+    @FXML
+    private ComboBox<String> restaurantsCB;
 
     @FXML
     private ListView<String> menuListView;
 
     @FXML
-    private Label statusLabel;
-    @FXML
-    private Label statusLabel1;
-    @FXML
-    private Label statusLabel2;
-    @FXML
-    private Label statusLabel3;
+    private Label Label3;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Populate food items
+        foodComboBox.getItems().addAll(
+                "Burger", "Pizza", "Pasta", "Sushi", "Fried Rice"
+        );
 
-    private final ObservableList<String> pizzaMenu = FXCollections.observableArrayList("Pepperoni", "Cheese", "Veggie");
-    private final ObservableList<String> burgerMenu = FXCollections.observableArrayList("Beef Burger", "Chicken Burger", "Veggie Burger");
-    private final ObservableList<String> sushiMenu = FXCollections.observableArrayList("California Roll", "Tuna Roll", "Salmon");
-    @FXML
-    private ComboBox restaurantsCB;
-
-    @FXML
-    public void initialize() {
-        // Load restaurant names
-        restaurantComboBox.setItems(FXCollections.observableArrayList("Pizza Palace", "Burger Barn", "Sushi Spot"));
-
-        // When a restaurant is selected, update the menu
-        restaurantComboBox.setOnAction(e -> {
-            String selected = restaurantComboBox.getValue();
-            if (selected == null) return;
-
-            switch (selected) {
-                case "Pizza Palace":
-                    menuListView.setItems(pizzaMenu);
-                    break;
-                case "Burger Barn":
-                    menuListView.setItems(burgerMenu);
-                    break;
-                case "Sushi Spot":
-                    menuListView.setItems(sushiMenu);
-                    break;
-                default:
-                    menuListView.getItems().clear();
-            }
-
-            statusLabel3.setText("");
-        });
+        // Populate restaurant names
+        restaurantsCB.getItems().addAll(
+                "Food Palace", "Spicy Bite", "Ocean Dine", "Green Garden", "Taco Town"
+        );
     }
 
     @FXML
-    private void handelConfirmOrder() {
-        String restaurant = restaurantComboBox.getValue();
-        String foodItem = menuListView.getSelectionModel().getSelectedItem();
-
-        if (restaurant == null) {
-            statusLabel3.setText("Please select a restaurant.");
-        } else if (foodItem == null) {
-            statusLabel3.setText("Please select a food item.");
-        } else {
-            // Simulate food availability and payment
-            boolean available = true;
-            boolean payment = true;
-
-            if (!available) {
-                statusLabel3.setText(" Item not available.");
-            } else if (!payment) {
-                statusLabel3.setText("Payment failed.");
-            } else {
-                statusLabel3.setText("Order confirmed!");
-            }
+    private void foodButton(ActionEvent event) {
+        String selectedFood = foodComboBox.getValue();
+        if (selectedFood != null && !menuListView.getItems().contains(selectedFood)) {
+            menuListView.getItems().add(selectedFood);
         }
     }
 
     @FXML
-    public void customerDashboard(ActionEvent event) throws IOException {
+    private void restaurantButton(ActionEvent event) {
+        String selectedRestaurant = restaurantsCB.getValue();
+        System.out.println("Selected restaurant: " + selectedRestaurant);
+
+
+        menuListView.getItems().clear(); // Clear previous items
+        if (selectedRestaurant != null) {
+            if (selectedRestaurant.equals("Food Palace")) {
+                menuListView.getItems().addAll("Burger", "Pizza", "Pasta");
+            } else if (selectedRestaurant.equals("Spicy Bite")) {
+                menuListView.getItems().addAll("Fried Rice", "Pizza");
+            }
+
+        }
+    }
+
+    @FXML
+    private void handelConfirmOrder(ActionEvent event) {
+        Label3.setText("Order Confirmed!");
+    }
+
+    @FXML
+    private void customerDashboard(ActionEvent event) throws IOException {
         Parent root = null;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerDashboard.fxml"));
         root = fxmlLoader.load();
@@ -102,14 +85,4 @@ public class CustomerOrderController {
         stage.setTitle("Back");
         stage.show();
     }
-
-    @FXML
-    public void restaurantButton(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void foodButton(ActionEvent actionEvent) {
-    }
 }
-
-

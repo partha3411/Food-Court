@@ -64,6 +64,7 @@ public class RealTimeSalesController {
 
         int quantity = Integer.parseInt(quantityText);
 
+
         for (RealTimeSales sales : realTimeSalesArray) {
             if (sales.getItemName().equals(item)) {
                 sales.setRemainQuantity(sales.getRemainQuantity() + quantity);
@@ -74,6 +75,7 @@ public class RealTimeSalesController {
 
         RealTimeSales newItem = new RealTimeSales(item, quantity);
         tableView.getItems().add(newItem);
+        writestallManagement(newItem);
 
         quantityAddTF.clear();
         itemAddCB.setValue(null);
@@ -105,7 +107,8 @@ public class RealTimeSalesController {
 
         int quantity = Integer.parseInt(quantityText);
 
-        for (RealTimeSales sales : readrealTimeSales()) {
+        realTimeSalesArray=readrealTimeSales();
+        for (RealTimeSales sales : realTimeSalesArray) {
             if (sales.getItemName().equals(item)) {
                 int current = sales.getRemainQuantity();
                 if (quantity > current) {
@@ -157,7 +160,7 @@ public class RealTimeSalesController {
         ObjectOutputStream oos = null;
 
         try {
-            f = new File("stallFile.bin");
+            f = new File("saleFile.bin");
             if(f.exists()){
                 fos = new FileOutputStream(f,true);
                 oos = new AppendableObjectOutputStream(fos);

@@ -37,13 +37,13 @@ public class ReceivePaymentController {
     private TableColumn<ReceivePayment, String> paymentCol;
 
     @FXML
-    private TableColumn<ReceivePayment, Double> priceCol;
+    private TableColumn<ReceivePayment, Integer> priceCol;
 
     @FXML
     private TextField priceTF;
 
     @FXML
-    private TableView<String> tableView;
+    private TableView<ReceivePayment> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -60,18 +60,17 @@ public class ReceivePaymentController {
         void addButton(ActionEvent event) {
             LocalDate date = dateDP.getValue();
             String paymentMethod = paymentCB.getValue();
-            String priceText = priceTF.getText();
+            int priceText = Integer.parseInt(priceTF.getText());
 
-            if (date == null || paymentMethod == null || priceText.isEmpty()) {
+            if (date == null || paymentMethod == null ) {
                 System.out.println("Input Corretly");
                 return;
             }
 
             try {
-                int price = Integer.parseInt(priceText);
-                ReceivePayment paid = new ReceivePayment(date, paymentMethod, price);
+                ReceivePayment paid = new ReceivePayment(date, paymentMethod, priceText);
                 payments.add(paid);
-                tableView.getItems().add(String.valueOf(paid));
+                tableView.getItems().add(paid);
 
 
                 dateDP.setValue(null);
@@ -109,7 +108,7 @@ public class ReceivePaymentController {
 
         for (ReceivePayment payment : payments) {
             if (payment.getDate().equals(filterDate)) {
-                tableView.getItems().add(String.valueOf(payment));
+                tableView.getItems().add(payment);
             }
         }
 

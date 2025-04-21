@@ -27,12 +27,13 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="199.0" layoutY="304.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" text="Accept" />
-      <Button layoutX="354.0" layoutY="304.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" text="Decline" />
+      <Button layoutX="199.0" layoutY="304.0" mnemonicParsing="false" onAction="#acceptButton" prefHeight="36.0" prefWidth="96.0" text="Accept" />
+      <Button layoutX="354.0" layoutY="304.0" mnemonicParsing="false" onAction="#declineButton" prefHeight="36.0" prefWidth="96.0" text="Decline" />
       <Label layoutX="230.0" layoutY="375.0" prefHeight="36.0" prefWidth="181.0" />
       <Button layoutX="261.0" layoutY="463.0" mnemonicParsing="false" onAction="#partnerDashboard" prefHeight="25.0" prefWidth="124.0" text="Back" />
-      <Label layoutX="295.0" layoutY="108.0" prefHeight="25.0" prefWidth="109.0" />
-      <Label layoutX="300.0" layoutY="175.0" prefHeight="25.0" prefWidth="118.0" />
-      <Label layoutX="295.0" layoutY="238.0" prefHeight="25.0" prefWidth="141.0" />
+      <Label fx:id="label1" layoutX="295.0" layoutY="108.0" prefHeight="25.0" prefWidth="118.0" />
+      <Label fx:id="label2" layoutX="300.0" layoutY="175.0" prefHeight="25.0" prefWidth="118.0" />
+      <Label fx:id="label3" layoutX="295.0" layoutY="238.0" prefHeight="25.0" prefWidth="141.0" />
+      <Label fx:id="label4" layoutX="216.0" layoutY="375.0" prefHeight="35.0" prefWidth="207.0" />
    </children>
 </AnchorPane>

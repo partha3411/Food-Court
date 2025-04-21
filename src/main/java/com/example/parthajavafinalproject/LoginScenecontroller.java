@@ -39,8 +39,6 @@ public class LoginScenecontroller
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("waiterDashboard.fxml"));
             Parent root = fxmlLoader.load();
             Scene nextScene = new Scene(root);
-
-            // Get the current stage
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("Waiter Dashboard");
             stage.setScene(nextScene);
@@ -91,7 +89,7 @@ public class LoginScenecontroller
         }
         //else if (userType.equals("Staff_Category") && id.equals("ID(4 Digit)") && password.equals("pass(your wish)")) {
             //fxmlLoader = new FXMLLoader(getClass().getResource("(Je fxml Load korte chao).fxml"));
-            //successLabel.setText("staff Category Login Successful");
+            //successLabel.setText("staff Category Login Successful")
 
         //}
         else if (userType.equals("Product Supplier") && id.equals("7777") && password.equals("7777")) {
