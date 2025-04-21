@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CleaningTasksController
+public class CleaningTasksController00
 {
     @javafx.fxml.FXML
     public void initialize() {
@@ -20,7 +20,7 @@ public class CleaningTasksController
     @FXML
     void RestockCleanSupply(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RestockCleanSupply.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/RestockCleanSupply.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -93,7 +93,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     void HygienicCondition(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/HygienicCondition.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/HygieneCondition.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -118,7 +118,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     public void Logout(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("src/main/resources/com/example/parthajavafinalproject/loginScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginScene.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HealthTaskBar {
+public class HealthTaskBar00 {
 
 
     @FXML
@@ -84,6 +84,18 @@ public class HealthTaskBar {
     @javafx.fxml.FXML
     void HealthSafetyOffice(ActionEvent event)  throws IOException {
         Parent root;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/MonitoringModule.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Health Dashboard");
+        stage.show();
+    }
+    @javafx.fxml.FXML
+
+    void guidline(ActionEvent event)  throws IOException {
+        Parent root;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/RoutineSafety.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
@@ -91,10 +103,6 @@ public class HealthTaskBar {
         stage.setScene(scene);
         stage.setTitle("Health Dashboard");
         stage.show();
-
-    }
-    @javafx.fxml.FXML
-    public void guidline(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
