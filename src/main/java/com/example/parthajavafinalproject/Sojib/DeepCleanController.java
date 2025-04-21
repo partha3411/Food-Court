@@ -52,7 +52,6 @@ private final ObservableList<DeepClean> data = FXCollections.observableArrayList
 
         DeepClean.setItems(data);
     }
-
     @FXML
     public void backButton(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Sojib/CleaningTasksController.fxml"));
@@ -62,7 +61,6 @@ private final ObservableList<DeepClean> data = FXCollections.observableArrayList
         stage.setTitle("Cleaner Dashboard");
         stage.show();
     }
-
     @FXML
     public void reportgen(ActionEvent event) {
         LocalDate date = Dateofissue.getValue();
@@ -85,18 +83,14 @@ private final ObservableList<DeepClean> data = FXCollections.observableArrayList
             showAlert("Please check at least one task or add a comment.");
             return;
         }
-
         String report = reportBuilder.toString().replaceAll(", $", "");
         data.add(new DeepClean(date, report));
-
-        // Clear input
         Dateofissue.setValue(null);
         floor.setSelected(false);
         sanitize.setSelected(false);
         etb.setSelected(false);
         comment.clear();
     }
-
     private void showAlert(String msg) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Input Needed");
