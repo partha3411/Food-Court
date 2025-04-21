@@ -17,7 +17,7 @@ public class HealthTaskBar {
     @FXML
     void FireSafety(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FireSafety.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/FireSafety.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -29,7 +29,7 @@ public class HealthTaskBar {
     @FXML
     void Foodhandle(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FoodComplaint.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/FoodComplaint.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -41,7 +41,7 @@ public class HealthTaskBar {
     @FXML
     void CodeVio(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("HealthCOdeViolation.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/HealthCOdeViolation.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -54,7 +54,7 @@ public class HealthTaskBar {
     @FXML
     void FoodStoreage(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("FoodStorage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/FoodStorage.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -71,7 +71,7 @@ public class HealthTaskBar {
     @FXML
     void EmergencyRes(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("EmergencyTraining.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/EmergencyTraining.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -84,7 +84,7 @@ public class HealthTaskBar {
     @javafx.fxml.FXML
     void HealthSafetyOffice(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RoutineSafety.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/RoutineSafety.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -100,7 +100,7 @@ public class HealthTaskBar {
     @javafx.fxml.FXML
     public void Logout(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("src/main/resources/com/example/parthajavafinalproject/loginScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginScene.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -76,14 +76,13 @@ public class SalesReportController {
             return;
         }
 
-        double totalBuy = Math.random() * 1000;
-        double totalSell = totalBuy + Math.random() * 500;
-        double profit = totalSell - totalBuy;
-        double loss = profit < 0 ? -profit : 0;
+        int totalBuy = (int) (Math.random() * 1000);
+        int totalSell = (int) (totalBuy + Math.random() * 500);
+        int profit = totalSell - totalBuy;
+        int loss = profit < 0 ? -profit : 0;
         if (profit < 0) profit = 0;
 
-        SalesReport report = new SalesReport(selectedTerm, totalSell, totalBuy, profit, loss);
-
+        SalesReport report = new SalesReport(loss,profit,selectedTerm, totalBuy, totalSell);
         sales.add(report);
         tableView.getItems().add(report);
     }

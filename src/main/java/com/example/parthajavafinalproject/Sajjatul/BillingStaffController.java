@@ -76,15 +76,15 @@ public class BillingStaffController {
     void payBillButton(ActionEvent event) {
         String category = staffCB.getValue();
         LocalDate date = dateDP.getValue();
-        String amountText = amountTF.getText();
+        int amount = Integer.parseInt(amountTF.getText());;
 
-        if (category == null || date == null || amountText.isEmpty()) {
+        if (category == null || date == null) {
             textLabel.setText("Please input all");
             return;
         }
 
         try {
-            BillingStaff bill = new BillingStaff(category,date,amountText);
+            BillingStaff bill = new BillingStaff(amount,category,date);
             billStaff.add(bill);
             tableView.getItems().add(bill);
 

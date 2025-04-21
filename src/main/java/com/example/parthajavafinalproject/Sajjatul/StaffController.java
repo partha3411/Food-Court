@@ -83,9 +83,9 @@ public class StaffController {
         try {
             int nid = Integer.parseInt(nidText);
             int salary = Integer.parseInt(salaryText);
-            LocalDate today = LocalDate.now();
 
-            Staff newStaff = new Staff( joinDate, name, nid,  salary, type);
+
+            Staff newStaff = new Staff(joinDate, name, nid, salary, type);
             Staffs.add(newStaff);
             tableView.getItems().add(newStaff);
             System.out.println("Staff added: " + name);

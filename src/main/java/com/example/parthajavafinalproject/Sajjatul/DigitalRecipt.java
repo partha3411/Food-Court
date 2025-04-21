@@ -5,17 +5,14 @@ import java.time.LocalDate;
 public class DigitalRecipt {
     private String name;
     private String item;
-    private double price;
+    private int price;
     private LocalDate date;
 
-    public DigitalRecipt(LocalDate date, String item, String name, double price) {
+    public DigitalRecipt(LocalDate date, String item, String name, int price) {
         this.date = date;
         this.item = item;
         this.name = name;
         this.price = price;
-    }
-
-    public DigitalRecipt(String customerName, String foodItem, double price, LocalDate date) {
     }
 
     public LocalDate getDate() {
@@ -42,11 +39,11 @@ public class DigitalRecipt {
         this.name = name;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

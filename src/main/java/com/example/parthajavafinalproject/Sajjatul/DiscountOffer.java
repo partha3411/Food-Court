@@ -17,9 +17,6 @@ public class DiscountOffer {
         this.promoCode = promoCode;
     }
 
-    public DiscountOffer(String itemName, double itemPrice, int discount, LocalDate offerDate, String promoCode) {
-    }
-
     public int getDiscount() {
         return discount;
     }

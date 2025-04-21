@@ -59,7 +59,7 @@ public class DigitalReciptController {
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
     }
 
-    private ArrayList<DigitalRecipt> Recipts = new ArrayList<>();
+    private ArrayList<DigitalRecipt> recipts = new ArrayList<>();
 
 
     @FXML
@@ -79,20 +79,20 @@ public class DigitalReciptController {
     void downloadButton(ActionEvent event) {
         String customerName = nameTF.getText();
         String foodItem = foodNameCB.getValue();
-        String priceText = priceTF.getText();
+        String price = priceTF.getText();
         LocalDate date = dateDP.getValue();
 
         if (customerName == null || customerName.isEmpty() ||
-                foodItem == null || priceText.isEmpty() || date == null) {
+                foodItem == null || price.isEmpty() || date == null) {
             System.out.println("Please input all");
             return;
         }
 
         try {
-            double price = Double.parseDouble(priceText);
+            int priceItem = Integer.parseInt(price);
 
-            DigitalRecipt recipt = new DigitalRecipt(customerName, foodItem, price, date);
-            Recipts.add(recipt);
+            DigitalRecipt recipt = new DigitalRecipt(date,foodItem,customerName, priceItem);
+            recipts.add(recipt);
             tableView.getItems().add(recipt);
 
             nameTF.clear();
