@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CleaningTasksController
+public class CleaningTasksController00
 {
     @javafx.fxml.FXML
     public void initialize() {

@@ -38,8 +38,6 @@ public class LoginScenecontroller
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("waiterDashboard.fxml"));
             Parent root = fxmlLoader.load();
             Scene nextScene = new Scene(root);
-
-            // Get the current stage
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("Waiter Dashboard");
             stage.setScene(nextScene);
