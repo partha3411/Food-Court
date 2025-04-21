@@ -13,35 +13,36 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PartnerDeliverOrderController
-{
+public class PartnerDeliverOrderController {
+
     @javafx.fxml.FXML
     private Label label;
     @javafx.fxml.FXML
     private TextField confirmationCodeField;
     @javafx.fxml.FXML
-    private Button startDeliveryButton;
-    @javafx.fxml.FXML
-    private Label label1;
+    private Button confirmDeliveryButton;
 
     @javafx.fxml.FXML
     public void initialize() {
-    }
 
-    @javafx.fxml.FXML
-    public void handleStartDelivery(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void handleConfirmDelivery(ActionEvent actionEvent) {
-    }
+        String confirmationCode = confirmationCodeField.getText();
 
+
+        if (confirmationCode != null && !confirmationCode.isEmpty()) {
+            label.setText("Delivery Confirmed");
+        } else {
+            label.setText("Invalid Code! Please try again.");
+        }
+    }
 
     @javafx.fxml.FXML
     public void partnerDashboard(ActionEvent event) throws IOException {
-        Parent root = null;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/partnerDashboard.fxml"));
-        root = fxmlLoader.load();
+        // Switch to the partner dashboard scene
+        Parent root = FXMLLoader.load(HelloApplication.class.getResource("sahadat/partnerDashboard.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

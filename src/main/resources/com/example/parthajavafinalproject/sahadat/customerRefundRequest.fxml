@@ -9,13 +9,13 @@
 
 <AnchorPane prefHeight="505.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.CustomerRefundRequestController">
    <children>
-      <Label fx:id="label" layoutX="207.0" layoutY="35.0" prefHeight="38.0" prefWidth="320.0" text="Request a Refund">
+      <Label layoutX="207.0" layoutY="35.0" prefHeight="38.0" prefWidth="189.0" text="Request a Refund">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <ComboBox fx:id="orderComboBox" layoutX="217.0" layoutY="90.0" prefWidth="150.0" promptText="         Select Order" />
-      <TextArea fx:id="reasonTextArea" layoutX="114.0" layoutY="130.0" prefHeight="200.0" prefWidth="396.0" text="Enter reason for refund." />
+      <TextArea fx:id="reasonTextArea" layoutX="114.0" layoutY="130.0" prefHeight="200.0" prefWidth="396.0" />
       <Button layoutX="226.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleSubmitRefund" prefHeight="25.0" prefWidth="141.0" text="Submit Refund Request" />
       <Label fx:id="label1" layoutX="217.0" layoutY="388.0" prefHeight="25.0" prefWidth="160.0" />
       <Button layoutX="259.0" layoutY="429.0" mnemonicParsing="false" onAction="#customerDashboard" prefHeight="32.0" prefWidth="118.0" text="Back" />

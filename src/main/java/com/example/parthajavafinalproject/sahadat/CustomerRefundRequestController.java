@@ -2,6 +2,7 @@ package com.example.parthajavafinalproject.sahadat;
 
 import com.example.parthajavafinalproject.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -14,25 +15,29 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class CustomerRefundRequestController {
-    @javafx.fxml.FXML
-    private Label label;
-    @javafx.fxml.FXML
+    @FXML
     private Label label1;
-    @javafx.fxml.FXML
+    @FXML
     private TextArea reasonTextArea;
-    @javafx.fxml.FXML
-    private ComboBox orderComboBox;
+    @FXML
+    private ComboBox<String> orderComboBox;
 
-    @javafx.fxml.FXML
-    public void handleSubmitRefund(ActionEvent actionEvent) {
+
+    @FXML
+    public void initialize() {
+        orderComboBox.getItems().addAll("Pizza", "Burger", "Sushi", "Taco");
     }
 
+    @FXML
+    public void handleSubmitRefund(ActionEvent actionEvent) {
 
-    @javafx.fxml.FXML
+        label1.setText("Submitted");
+    }
+
+    @FXML
     public void customerDashboard(ActionEvent event) throws IOException {
-        Parent root = null;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerDashboard.fxml"));
-        root = fxmlLoader.load();
+        Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

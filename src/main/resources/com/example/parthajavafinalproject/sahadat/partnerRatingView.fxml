@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="562.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerRatingViewController">
    <children>
-      <Label fx:id="label" layoutX="132.0" layoutY="28.0" prefHeight="35.0" prefWidth="366.0" text=" Rate the Restaurant &amp; Customer ">
+      <Label layoutX="132.0" layoutY="28.0" prefHeight="35.0" prefWidth="366.0" text=" Rate the Restaurant &amp; Customer ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="ch1" layoutX="127.0" layoutY="126.0" prefWidth="150.0" />
-      <Label fx:id="label1" layoutX="127.0" layoutY="83.0" prefHeight="35.0" prefWidth="171.0" text="Restaurant Rating:">
+      <Label layoutX="127.0" layoutY="83.0" prefHeight="35.0" prefWidth="171.0" text="Restaurant Rating:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label2" layoutX="340.0" layoutY="83.0" prefHeight="35.0" prefWidth="157.0" text="Customer Rating:">
+      <Label layoutX="340.0" layoutY="83.0" prefHeight="35.0" prefWidth="157.0" text="Customer Rating:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="ch2" layoutX="338.0" layoutY="126.0" prefWidth="150.0" />
       <Button layoutX="264.0" layoutY="209.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="25.0" prefWidth="102.0" text="Submit Ratings" />
       <Button layoutX="272.0" layoutY="319.0" mnemonicParsing="false" onAction="#partnerDashboard" prefHeight="25.0" prefWidth="102.0" text="Back" />
+      <Label fx:id="label" layoutX="208.0" layoutY="264.0" prefHeight="25.0" prefWidth="240.0" />
+      <ComboBox fx:id="cB1" layoutX="127.0" layoutY="126.0" prefWidth="150.0" />
+      <ComboBox fx:id="cB2" layoutX="331.0" layoutY="126.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

@@ -11,29 +11,52 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PartnerAvailabilityStatusController
-{
+public class PartnerAvailabilityStatusController {
+
     @javafx.fxml.FXML
-    private Label statusLabel;
+    private Label label;
 
     @javafx.fxml.FXML
     public void initialize() {
+
     }
 
-    @javafx.fxml.FXML
+
+    @Deprecated
     public void handleToggle(ActionEvent actionEvent) {
-    }
 
+    }
 
     @javafx.fxml.FXML
     public void partnerDashboard(ActionEvent event) throws IOException {
-        Parent root = null;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/partnerDashboard.fxml"));
-        root = fxmlLoader.load();
+        Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setTitle("Back");
+        stage.setTitle("Partner Dashboard");
         stage.show();
+    }
+
+    @Deprecated
+    public void availableButton(ActionEvent actionEvent) {
+
+        label.setText("Food Delivery Partner Online");
+    }
+
+    @Deprecated
+    public void unavailable(ActionEvent actionEvent) {
+        label.setText("Food Delivery Partner Offline");
+    }
+
+    @javafx.fxml.FXML
+    public void availabelButton(ActionEvent actionEvent) {
+        label.setText("Food Delivery Partner Online");
+    }
+
+    @javafx.fxml.FXML
+    public void Unavailable(ActionEvent actionEvent) {
+        label.setText("Food Delivery Partner Offline");
+
     }
 }

@@ -16,13 +16,12 @@ public class CustomerOrderCancelController {
     @javafx.fxml.FXML
     private Label label;
 
-    // Called when the "Cancel Order" button is clicked
     @javafx.fxml.FXML
     public void cancelOrderButton(ActionEvent actionEvent) {
         label.setText("Order Canceled");
     }
 
-    // Navigates back to the customer dashboard
+
     @javafx.fxml.FXML
     public void customerDashboard(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerDashboard.fxml"));
