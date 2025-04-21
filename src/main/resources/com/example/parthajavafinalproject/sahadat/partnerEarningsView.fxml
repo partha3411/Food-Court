@@ -14,10 +14,10 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TableView fx:id="earningsTable" layoutX="113.0" layoutY="82.0" prefHeight="200.0" prefWidth="360.0">
+      <TableView layoutX="113.0" layoutY="82.0" prefHeight="200.0" prefWidth="360.0">
         <columns>
-          <TableColumn fx:id="orderIdColumn" prefWidth="177.0" text="Order ID" />
-          <TableColumn fx:id="amountColumn" prefWidth="182.0" text="Amount Earned" />
+          <TableColumn prefWidth="177.0" text="Order ID" />
+          <TableColumn prefWidth="182.0" text="Amount Earned" />
         </columns>
       </TableView>
       <Label layoutX="178.0" layoutY="315.0" prefHeight="35.0" prefWidth="124.0" text="Total Balance:">
@@ -26,11 +26,12 @@
          </font>
       </Label>
       <Label fx:id="balanceLabel" layoutX="293.0" layoutY="321.0" prefHeight="24.0" prefWidth="124.0" />
-      <Button fx:id="withdrawButton" layoutX="139.0" layoutY="364.0" mnemonicParsing="false" onAction="#withDrawButton" prefHeight="57.0" prefWidth="295.0" text="Withdraw Funds">
+      <Button fx:id="withdrawButton" layoutX="178.0" layoutY="360.0" mnemonicParsing="false" onAction="#withDrawButton" prefHeight="57.0" prefWidth="210.0" text="Withdraw Funds">
          <font>
-            <Font size="24.0" />
+            <Font size="18.0" />
          </font>
       </Button>
       <Label fx:id="messageLabel" layoutX="140.0" layoutY="452.0" prefHeight="96.0" prefWidth="295.0" />
+      <Button layoutX="500.0" layoutY="523.0" mnemonicParsing="false" onAction="#partnerDashboard" prefHeight="25.0" prefWidth="106.0" text="Back" />
    </children>
 </AnchorPane>

@@ -30,5 +30,6 @@
       <Button layoutX="199.0" layoutY="304.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" text="Accept" />
       <Button layoutX="354.0" layoutY="304.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" text="Decline" />
       <Label fx:id="acDeLB" layoutX="230.0" layoutY="375.0" prefHeight="36.0" prefWidth="181.0" />
+      <Button layoutX="261.0" layoutY="463.0" mnemonicParsing="false" onAction="#partnerDashboard" prefHeight="25.0" prefWidth="124.0" text="Back" />
    </children>
 </AnchorPane>

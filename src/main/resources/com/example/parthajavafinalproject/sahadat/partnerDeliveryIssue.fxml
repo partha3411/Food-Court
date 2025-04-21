@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="556.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerDeliveryIssueController">
+<AnchorPane prefHeight="627.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerDeliveryIssueController">
    <children>
       <Label fx:id="label" layoutX="191.0" layoutY="32.0" prefHeight="35.0" prefWidth="264.0" text=" Report a Delivery Issue">
          <font>
@@ -28,5 +28,6 @@
       <TextArea fx:id="ta1" layoutX="48.0" layoutY="239.0" prefHeight="192.0" prefWidth="551.0" />
       <Button fx:id="handleSubmit" layoutX="228.0" layoutY="459.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Submit Issue " />
       <Label layoutX="283.0" layoutY="484.0" prefHeight="17.0" prefWidth="147.0" />
+      <Button layoutX="305.0" layoutY="543.0" mnemonicParsing="false" onAction="#partnerDashboard" prefHeight="35.0" prefWidth="82.0" text="Back" />
    </children>
 </AnchorPane>

@@ -14,18 +14,19 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Label fx:id="statusLabel1" layoutX="458.0" layoutY="123.0" prefHeight="27.0" prefWidth="186.0" text=" Select Restaurants:">
+      <Label fx:id="statusLabel1" layoutX="458.0" layoutY="96.0" prefHeight="27.0" prefWidth="186.0" text=" Select Restaurants:">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <ComboBox fx:id="restaurantComboBox" layoutX="103.0" layoutY="162.0" prefHeight="31.0" prefWidth="176.0" />
-      <Label fx:id="statusLabel2" layoutX="103.0" layoutY="123.0" prefHeight="27.0" prefWidth="164.0" text=" Select Food Item:">
+      <ComboBox fx:id="restaurantComboBox" layoutX="97.0" layoutY="135.0" prefHeight="31.0" prefWidth="176.0" />
+      <Label fx:id="statusLabel2" layoutX="103.0" layoutY="96.0" prefHeight="27.0" prefWidth="164.0" text=" Select Food Item:">
          <font>
             <Font size="18.0" />
          </font></Label>
       <ListView fx:id="menuListView" layoutX="103.0" layoutY="200.0" prefHeight="200.0" prefWidth="310.0" />
       <Button layoutX="204.0" layoutY="417.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="109.0" text="Confirm Order" />
       <Label fx:id="statusLabel3" layoutX="197.0" layoutY="460.0" prefHeight="31.0" prefWidth="141.0" />
-      <ChoiceBox fx:id="restaurantsCB" layoutX="465.0" layoutY="162.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="restaurantsCB" layoutX="464.0" layoutY="138.0" prefWidth="150.0" />
+      <Button layoutX="311.0" layoutY="485.0" mnemonicParsing="false" onAction="#customerDashboard" prefHeight="31.0" prefWidth="96.0" text="Back" />
    </children>
 </AnchorPane>

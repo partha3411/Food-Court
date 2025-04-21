@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="421.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerIncentiveProgramsController">
+<AnchorPane prefHeight="467.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerIncentiveProgramsController">
    <children>
       <Label fx:id="statusLabel" layoutX="186.0" layoutY="23.0" prefHeight="35.0" prefWidth="222.0" text="Available Incentives">
          <font>
@@ -22,5 +21,6 @@
       </Button>
       <Label layoutY="-34.0" text="Label" />
       <Label fx:id="statusLabel1" layoutX="178.0" layoutY="324.0" prefHeight="35.0" prefWidth="245.0" />
+      <Button layoutX="268.0" layoutY="394.0" mnemonicParsing="false" onAction="#partnerDashboard" prefHeight="35.0" prefWidth="92.0" text="Back" />
    </children>
 </AnchorPane>

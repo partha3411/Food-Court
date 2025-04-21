@@ -7,17 +7,18 @@
 
 <AnchorPane prefHeight="527.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerPickupOrderController">
    <children>
-      <Label fx:id="label" layoutX="208.0" layoutY="28.0" prefHeight="35.0" prefWidth="222.0" text="Order Pickup Screen">
+      <Label fx:id="label" layoutX="175.0" layoutY="30.0" prefHeight="35.0" prefWidth="222.0" text="Order Pickup Screen">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="label1" layoutX="207.0" layoutY="94.0" prefHeight="27.0" prefWidth="238.0" text="Please mark your arrival first.">
+      <Label fx:id="label1" layoutX="167.0" layoutY="99.0" prefHeight="27.0" prefWidth="238.0" text="Please mark your arrival first.">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Button layoutX="208.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleArrival" prefHeight="25.0" prefWidth="142.0" text="Arrived at Restaurant" />
       <Button layoutX="208.0" layoutY="222.0" mnemonicParsing="false" onAction="#handlePickup" prefHeight="25.0" prefWidth="142.0" text="Mark as Picked Up" />
+      <Button layoutX="226.0" layoutY="374.0" mnemonicParsing="false" onAction="#partnerDashboard" prefHeight="27.0" prefWidth="112.0" text="Back" />
    </children>
 </AnchorPane>

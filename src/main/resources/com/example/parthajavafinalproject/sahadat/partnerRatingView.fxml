@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="562.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.sahadat.PartnerRatingViewController">
    <children>
       <Label fx:id="label" layoutX="132.0" layoutY="28.0" prefHeight="35.0" prefWidth="366.0" text=" Rate the Restaurant &amp; Customer ">
@@ -27,5 +26,6 @@
       </Label>
       <ChoiceBox fx:id="ch2" layoutX="338.0" layoutY="126.0" prefWidth="150.0" />
       <Button layoutX="264.0" layoutY="209.0" mnemonicParsing="false" onAction="#submitButton" prefHeight="25.0" prefWidth="102.0" text="Submit Ratings" />
+      <Button layoutX="272.0" layoutY="319.0" mnemonicParsing="false" onAction="#partnerDashboard" prefHeight="25.0" prefWidth="102.0" text="Back" />
    </children>
 </AnchorPane>
