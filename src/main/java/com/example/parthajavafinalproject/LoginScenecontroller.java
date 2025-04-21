@@ -18,6 +18,10 @@ public class LoginScenecontroller
     private ComboBox<String> userTypeComboBox;
     @javafx.fxml.FXML
     private TextField passwordTextField;
+    @javafx.fxml.FXML
+    private Label erorLabel;
+    @javafx.fxml.FXML
+    private Label successLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -25,7 +29,7 @@ public class LoginScenecontroller
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void waiterLoginButtonOnAction(ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("waiterDashboard.fxml"));
@@ -85,7 +89,7 @@ public class LoginScenecontroller
     }
 
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void chefLoginOnAction(ActionEvent actionEvent) {
 
         try {
