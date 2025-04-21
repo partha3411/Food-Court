@@ -27,6 +27,8 @@ public class CustomerOrderController {
     private final ObservableList<String> pizzaMenu = FXCollections.observableArrayList("Pepperoni", "Cheese", "Veggie");
     private final ObservableList<String> burgerMenu = FXCollections.observableArrayList("Beef Burger", "Chicken Burger", "Veggie Burger");
     private final ObservableList<String> sushiMenu = FXCollections.observableArrayList("California Roll", "Tuna Roll", "Salmon");
+    @FXML
+    private ChoiceBox restaurantsCB;
 
     @FXML
     public void initialize() {
