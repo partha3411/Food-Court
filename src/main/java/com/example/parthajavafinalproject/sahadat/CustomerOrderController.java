@@ -37,7 +37,7 @@ public class CustomerOrderController {
     private final ObservableList<String> burgerMenu = FXCollections.observableArrayList("Beef Burger", "Chicken Burger", "Veggie Burger");
     private final ObservableList<String> sushiMenu = FXCollections.observableArrayList("California Roll", "Tuna Roll", "Salmon");
     @FXML
-    private ChoiceBox restaurantsCB;
+    private ComboBox restaurantsCB;
 
     @FXML
     public void initialize() {
@@ -101,6 +101,14 @@ public class CustomerOrderController {
         stage.setScene(scene);
         stage.setTitle("Back");
         stage.show();
+    }
+
+    @FXML
+    public void restaurantButton(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void foodButton(ActionEvent actionEvent) {
     }
 }
 

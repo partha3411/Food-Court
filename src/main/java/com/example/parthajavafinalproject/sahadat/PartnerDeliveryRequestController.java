@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -16,10 +15,7 @@ import java.io.IOException;
 public class PartnerDeliveryRequestController {
 
     @javafx.fxml.FXML
-    private Label acDeLB;
-    @javafx.fxml.FXML
     private AnchorPane TF2;
-
 
     @javafx.fxml.FXML
     public void partnerDashboard(ActionEvent event) throws IOException {

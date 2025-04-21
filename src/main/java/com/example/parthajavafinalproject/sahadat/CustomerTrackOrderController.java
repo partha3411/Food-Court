@@ -14,16 +14,11 @@ import java.io.IOException;
 
 public class CustomerTrackOrderController {
     @javafx.fxml.FXML
-    private Label label1;
-    @javafx.fxml.FXML
     private Label label2;
-    @javafx.fxml.FXML
-    private TextField TF;
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
     }
-
 
     @javafx.fxml.FXML
     public void customerDashboard(ActionEvent event) throws IOException {
