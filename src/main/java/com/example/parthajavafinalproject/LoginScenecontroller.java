@@ -80,6 +80,14 @@ public class LoginScenecontroller
             fxmlLoader = new FXMLLoader(getClass().getResource("sahadat/partnerDashboard.fxml"));
             successLabel.setText("Food Delivery partner Login Successful");
         }
+        else if (userType.equals("Cleaning Stuff") && id.equals("5555") && password.equals("5556")) {
+            fxmlLoader = new FXMLLoader(getClass().getResource("Sojib/CleaningTasksController.fxml"));
+            successLabel.setText("Cleaning Stuff Login Successful");
+        }
+        else if (userType.equals("Health and Safety Officers") && id.equals("6666") && password.equals("6667")) {
+            fxmlLoader = new FXMLLoader(getClass().getResource("Sojib/HealthTaskBar.fxml"));
+            successLabel.setText("Health and Safety Login Successful");
+        }
         //else if (userType.equals("Staff_Category") && id.equals("ID(4 Digit)") && password.equals("pass(your wish)")) {
             //fxmlLoader = new FXMLLoader(getClass().getResource("(Je fxml Load korte chao).fxml"));
             //successLabel.setText("staff Category Login Successful");
