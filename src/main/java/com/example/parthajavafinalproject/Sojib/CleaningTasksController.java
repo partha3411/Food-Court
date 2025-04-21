@@ -20,7 +20,7 @@ public class CleaningTasksController
     @FXML
     void RestockCleanSupply(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("RestockCleanSupply.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/RestockCleanSupply.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -93,7 +93,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     void HygienicCondition(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/HygienicCondition.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sojib/HygieneCondition.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
