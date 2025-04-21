@@ -1,5 +1,7 @@
 package com.example.parthajavafinalproject;
 
+import com.example.parthajavafinalproject.Sajjatul.Cashier;
+import com.example.parthajavafinalproject.Sajjatul.Manager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,7 +13,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class LoginScenecontroller
@@ -61,14 +68,27 @@ public class LoginScenecontroller
 
         FXMLLoader fxmlLoader = null;
 
-        if (userType.equals("Manager") && id.equals("1111") && password.equals("@1234")) {
-            fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/manager.fxml"));
-            successLabel.setText("Manager Login Successful");
+        if (userType.equals("Manager")) {
+            ArrayList<Manager> managers = manager() ;
+            for (Manager manager : managers) {
+                if (manager.getId() == Integer.parseInt(id) && Objects.equals(manager.getPassword(), password)) {
+                    fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/manager.fxml"));
+                    successLabel.setText("Manager Login Successful");
+                    break ;
+                }
+            }
 
         }
-        else if (userType.equals("Cashier") && id.equals("2222") && password.equals("@2345")) {
-            fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/cashier.fxml"));
-            successLabel.setText("Cashier Login Successful");
+
+        else if (userType.equals("Cashier")) {
+            ArrayList<Cashier> cashiers = cashier() ;
+            for (Cashier cashier : cashiers) {
+                if (cashier.getId() == Integer.parseInt(id) && Objects.equals(cashier.getPassword(), password)) {
+                    fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/cashier.fxml"));
+                    successLabel.setText("Cashier Login Successful");
+                    break ;
+                }
+            }
 
         }
         else if (userType.equals("Customer") && id.equals("3333") && password.equals("@3333")) {
@@ -157,5 +177,81 @@ public class LoginScenecontroller
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void createAccount(ActionEvent actionEvent) throws IOException {
+        Parent root = null ;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Sajjatul/createAccount.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root) ;
+        Stage stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Create Account");
+        stage.show();
+    }
+
+    public ArrayList<Cashier> cashier() {
+        ArrayList<Cashier> newCashier = new ArrayList<>() ;
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File("cashierFile.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            Cashier cashier;
+            try{
+                while(true){
+                    cashier = (Cashier) ois.readObject();
+                    newCashier.add(cashier) ;
+                }
+            }
+            catch(Exception e){
+                System.out.println("Error: " + e.getMessage());
+            }
+        } catch (Exception ex) {
+            System.out.println("External Error: " + ex.getMessage());
+        }
+        finally {
+            try {
+
+                if(ois != null) ois.close();
+            } catch (IOException ex) { }
+        }
+        return newCashier;
+    }
+
+    public ArrayList<Manager> manager() {
+        ArrayList<Manager> newManager = new ArrayList<>() ;
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+
+        try {
+            f = new File("managerFile.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            Manager manager;
+            try{
+                while(true){
+                    manager = (Manager) ois.readObject();
+                    newManager.add(manager) ;
+                }
+            }
+            catch(Exception e){
+                System.out.println("Error: " + e.getMessage());
+            }
+        } catch (Exception ex) {
+            System.out.println("External Error: " + ex.getMessage());
+        }
+        finally {
+            try {
+
+                if(ois != null) ois.close();
+            } catch (IOException ex) { }
+        }
+        return newManager;
     }
 }

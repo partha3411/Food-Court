@@ -19,7 +19,7 @@
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <Button layoutX="372.0" layoutY="271.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="27.0" prefWidth="68.0" text="Login " textAlignment="RIGHT" textFill="#1a10e1">
+      <Button layoutX="314.0" layoutY="270.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="27.0" prefWidth="68.0" text="Login " textAlignment="RIGHT" textFill="#1a10e1">
          <font>
             <Font name="Arial Unicode MS" size="16.0" />
          </font></Button>
@@ -36,5 +36,10 @@
          </font>
       </Text>
       <Text layoutX="21.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© 2025 Digital Foodcourt | All rights reserved" />
+      <Button layoutX="470.0" layoutY="363.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="29.0" prefWidth="110.0" text="Create Account" textFill="#6f07e0">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,8 +1,9 @@
 package com.example.parthajavafinalproject.Sajjatul;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Manager {
+public class Manager implements Serializable {
     Integer id;
     String name;
     String email;
