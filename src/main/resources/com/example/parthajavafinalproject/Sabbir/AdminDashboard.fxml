@@ -5,55 +5,65 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="638.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodcourt.AdminDashboardController">
+<AnchorPane prefHeight="638.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sabbir.AdminDashboardController">
    <children>
-      <Label layoutX="146.0" layoutY="15.0" text=" Admin Dashboard" textFill="#078909">
+      <!-- Title Label -->
+      <Label layoutX="146.0" layoutY="15.0" text="Admin Dashboard" textFill="#078909">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <Button layoutX="259.0" layoutY="100.0" mnemonicParsing="false" text="Create User">
+
+      <!-- Buttons with event handlers for scene switching -->
+      <Button layoutX="203.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleCreateUserButton" prefHeight="50.0" prefWidth="180.0" text="Create User">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="259.0" layoutY="455.0" mnemonicParsing="false" text="User Activity">
+
+      <Button layoutX="203.0" layoutY="514.0" mnemonicParsing="false" onAction="#handleUserActivityButton" prefHeight="50.0" prefWidth="180.0" text="User Activity">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="257.0" layoutY="306.0" mnemonicParsing="false" text="Sales Report">
+
+      <Button layoutX="204.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleSalesReportButton" prefHeight="50.0" prefWidth="180.0" text="Sales Report">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="257.0" layoutY="403.0" mnemonicParsing="false" text="Update User">
+
+      <Button layoutX="204.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleUpdateUserButton" prefHeight="50.0" prefWidth="180.0" text="Update User">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="30.0" layoutY="28.0" mnemonicParsing="false" text="Log Out">
+
+      <Button layoutX="30.0" layoutY="28.0" mnemonicParsing="false" onAction="#logoutButtonOnClick" prefHeight="29.0" prefWidth="70.0" text="Log Out">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="242.0" layoutY="351.0" mnemonicParsing="false" text="Send Notification">
+
+      <Button layoutX="204.0" layoutY="393.0" mnemonicParsing="false" onAction="#handleSendNotificationButton" prefHeight="50.0" prefWidth="180.0" text="Send Notification">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="251.0" layoutY="256.0" mnemonicParsing="false" text="Revenue Chart">
+
+      <Button layoutX="204.0" layoutY="272.0" mnemonicParsing="false" onAction="#handleRevenueChartButton" prefHeight="50.0" prefWidth="180.0" text="Revenue Chart">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="248.0" layoutY="204.0" mnemonicParsing="false" text="Reactivate User">
+
+      <Button layoutX="203.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleReactivateUserButton" prefHeight="50.0" prefWidth="180.0" text="Reactivate User">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="259.0" layoutY="150.0" mnemonicParsing="false" text="Delete User">
+
+      <Button layoutX="203.0" layoutY="154.0" mnemonicParsing="false" onAction="#handleDeleteUserButton" prefHeight="50.0" prefWidth="180.0" text="Delete User">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

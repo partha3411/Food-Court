@@ -60,7 +60,7 @@ public class StaffController {
         staffCol.setCellValueFactory(new PropertyValueFactory<>("staffType"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         nidCol.setCellValueFactory(new PropertyValueFactory<>("nid"));
-        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("joiningDate"));
         salaryCol.setCellValueFactory(new PropertyValueFactory<>("salary"));
     }
 

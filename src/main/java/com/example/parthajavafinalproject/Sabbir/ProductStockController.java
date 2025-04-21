@@ -1,40 +1,66 @@
 package com.example.parthajavafinalproject.Sabbir;
 
+import com.example.parthajavafinalproject.BinaryFileHelper;
+import com.example.parthajavafinalproject.SceneSwitcher;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
 public class ProductStockController {
 
     @FXML
-    private TableView<ProductStock> stockTable;
+    private TableView<Product> stockTable;
 
     @FXML
-    private TableColumn<ProductStock, String> productNameColumn;
+    private TableColumn<Product, String> productNameColumn;
 
     @FXML
-    private TableColumn<ProductStock, Integer> quantityColumn;
+    private TableColumn<Product, Integer> quantityColumn;
+
+    private static final File PRODUCT_FILE = new File("products.bin");
 
     @FXML
     public void initialize() {
-        // Bind the table columns to the ProductStock properties
-        productNameColumn.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        productNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
-        // Populate the table with sample data
-        stockTable.setItems(getStockData());
+        // Load products into the TableView
+        loadProductStock();
     }
 
-    // Sample data to display in the table
-    private ObservableList<ProductStock> getStockData() {
-        return FXCollections.observableArrayList(
-                new ProductStock("Bread", 100),
-                new ProductStock("Milk", 60),
-                new ProductStock("Butter", 25)
-        );
+    // Method to load products from the binary file and display them in the TableView
+    private void loadProductStock() {
+
+        List<Product> products = BinaryFileHelper.readAllObjects(PRODUCT_FILE);
+
+        ObservableList<Product> productList = FXCollections.observableArrayList(products);
+
+        stockTable.setItems(productList);
+    }
+
+    @FXML
+    private void backButtonOnClick() {
+        try {
+            SceneSwitcher.switchTo("Sabbir/ProductSupplierDashboard");
+        } catch (IOException e) {
+            showAlert("Error", "Failed to load previous scene.");
+            e.printStackTrace();
+        }
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
-

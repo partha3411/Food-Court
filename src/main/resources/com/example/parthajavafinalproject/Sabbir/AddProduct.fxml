@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodcourt.AddProductController">
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sabbir.AddProductController">
 
     <padding>
         <Insets bottom="30" left="40" right="40" top="30" />
@@ -25,6 +25,6 @@
         <TextField fx:id="quantityField" prefWidth="300" promptText="Enter quantity" />
     </VBox>
 
-    <Button fx:id="addButton" prefWidth="160" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Add Product" />
-   <Button mnemonicParsing="false" text="Back" />
+    <Button fx:id="addButton" onAction="#addProductOnClick" prefWidth="160" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Add Product" />
+    <Button mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
 </VBox>

@@ -9,46 +9,60 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="412.0" prefWidth="541.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodcourt.CreateUserController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sabbir.CreateUserController">
     <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
 
+    <!-- Title Label -->
     <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Create New User" />
 
+    <!-- User ID Field -->
     <HBox spacing="10">
         <Label prefHeight="17.0" prefWidth="91.0" text="User ID:" />
         <TextField fx:id="userIdField" prefHeight="25.0" prefWidth="140.0" />
     </HBox>
 
+    <!-- Name Field -->
     <HBox spacing="10">
         <Label prefHeight="17.0" prefWidth="92.0" text="Name:" />
         <TextField fx:id="nameField" prefHeight="25.0" prefWidth="135.0" />
     </HBox>
 
+    <!-- Password Field -->
     <HBox spacing="10">
         <Label prefHeight="17.0" prefWidth="95.0" text="Password:" />
         <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="141.0" />
     </HBox>
 
+    <!-- Confirm Password Field -->
     <HBox spacing="10">
         <Label text="Confirm Password:" />
         <PasswordField fx:id="confirmPasswordField" />
     </HBox>
 
+    <!-- Email Field -->
     <HBox spacing="10">
         <Label prefHeight="17.0" prefWidth="98.0" text="Email:" />
         <TextField fx:id="emailField" prefHeight="25.0" prefWidth="140.0" />
     </HBox>
 
+    <!-- Role Field (ComboBox) -->
     <HBox spacing="10">
         <Label prefHeight="17.0" prefWidth="97.0" text="Role:" />
         <ComboBox fx:id="roleComboBox" prefHeight="25.0" prefWidth="140.0" />
     </HBox>
 
+    <!-- Salary Field -->
     <HBox spacing="10">
         <Label prefHeight="17.0" prefWidth="95.0" text="Salary:" />
         <TextField fx:id="salaryField" prefHeight="25.0" prefWidth="152.0" />
     </HBox>
 
-    <Button fx:id="submitButton" prefHeight="41.0" prefWidth="150.0" text="Submit" />
-   <Button mnemonicParsing="false" text="Back" />
+    <!-- Submit Button -->
+    <Button fx:id="submitButton" prefHeight="41.0" prefWidth="150.0" text="Submit" onAction="#handleSubmitButton" />
+
+    <!-- Back Button -->
+    <Button mnemonicParsing="false" text="Back" onAction="#handleBackButton" />
+
+    <!-- Success Message Label -->
+    <Label fx:id="successLabel" textFill="green" style="-fx-font-size: 14px; -fx-font-weight: bold;" visible="false"/>
 </VBox>
