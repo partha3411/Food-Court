@@ -72,7 +72,14 @@ public class LoginScenecontroller
             successLabel.setText("Cashier Login Successful");
 
         }
-
+        else if (userType.equals("Customer") && id.equals("3333") && password.equals("@3333")) {
+            fxmlLoader = new FXMLLoader(getClass().getResource("sahadat/customerDashboard.fxml"));
+            successLabel.setText("Customer Login Successful");
+        }
+        else if (userType.equals("Food Delivery partner") && id.equals("4444") && password.equals("@4444")) {
+            fxmlLoader = new FXMLLoader(getClass().getResource("sahadat/partnerDashboard.fxml"));
+            successLabel.setText("Food Delivery partner Login Successful");
+        }
         //else if (userType.equals("Staff_Category") && id.equals("ID(4 Digit)") && password.equals("pass(your wish)")) {
             //fxmlLoader = new FXMLLoader(getClass().getResource("(Je fxml Load korte chao).fxml"));
             //successLabel.setText("staff Category Login Successful");
