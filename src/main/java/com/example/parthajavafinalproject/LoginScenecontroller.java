@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -28,7 +29,7 @@ public class LoginScenecontroller
 
     @javafx.fxml.FXML
     public void initialize() {
-        userTypeComboBox.getItems().addAll("Manager","Cashier","Customer","Food Delivery partner","supplier","Cleaning Stuff","Health and Safety Officers");
+        userTypeComboBox.getItems().addAll("Manager","Cashier","Customer","Food Delivery partner","Product Supplier","Cleaning Stuff","Health and Safety Officers","Admin");
 
     }
 
@@ -93,6 +94,27 @@ public class LoginScenecontroller
             //successLabel.setText("staff Category Login Successful");
 
         //}
+        else if (userType.equals("Product Supplier") && id.equals("7777") && password.equals("7777")) {
+            try {
+                // Switch to the AddProduct scene
+                SceneSwitcher.switchTo("Sabbir/ProductSupplierDashboard");
+            } catch (IOException e) {
+                // Show an error alert if the scene cannot be loaded
+                showAlert("Error", "Failed to load  scene.");
+                e.printStackTrace();
+            }
+        }
+        else if (userType.equals("Admin") && id.equals("8888") && password.equals("8888")) {
+            try {
+                // Switch to the AddProduct scene
+                SceneSwitcher.switchTo("Sabbir/AdminDashboard");
+            } catch (IOException e) {
+                // Show an error alert if the scene cannot be loaded
+                showAlert("Error", "Failed to load  scene.");
+                e.printStackTrace();
+            }
+        }
+
         else {
             erorLabel.setText("Invalid user ID & Passward");
             return;
@@ -129,5 +151,13 @@ public class LoginScenecontroller
         }
 
 
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

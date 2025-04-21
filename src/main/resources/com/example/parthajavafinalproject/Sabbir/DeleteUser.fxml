@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.foodcourt.controller.DeleteUserController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" spacing="20" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sabbir.DeleteUserController">
 
     <padding>
         <Insets bottom="30" left="40" right="40" top="30" />
@@ -19,6 +19,8 @@
         <ComboBox fx:id="userComboBox" prefWidth="300" promptText="Choose a user" />
     </VBox>
 
-    <Button fx:id="deleteButton" prefWidth="150" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete User" />
-   <Button mnemonicParsing="false" text="Back" />
+    <Button fx:id="deleteButton" prefWidth="150" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;" text="Delete User" onAction="#handleDeleteButton" />
+    <Button mnemonicParsing="false" text="Back" onAction="#handleBackButton" />
+
+    <Label fx:id="successLabel" textFill="green" style="-fx-font-size: 14px; -fx-font-weight: bold;" visible="false"/>
 </VBox>

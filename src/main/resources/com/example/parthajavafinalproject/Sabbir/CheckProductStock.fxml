@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodcourt.ProductStockController">
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sabbir.ProductStockController">
 
     <padding>
         <Insets bottom="30" left="40" right="40" top="30" />
@@ -21,5 +21,5 @@
             <TableColumn fx:id="quantityColumn" prefWidth="200" text="Quantity in Stock" />
         </columns>
     </TableView>
-   <Button mnemonicParsing="false" text="Back" />
+    <Button mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
 </VBox>

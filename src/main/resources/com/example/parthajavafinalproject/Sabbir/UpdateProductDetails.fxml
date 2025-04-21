@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodcourt.UpdateProductController">
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sabbir.UpdateProductController">
 
     <padding>
         <Insets bottom="30" left="40" right="40" top="30" />
@@ -29,6 +29,6 @@
         <TextField fx:id="quantityField" prefWidth="300" promptText="Enter quantity" />
     </VBox>
 
-    <Button fx:id="updateButton" prefWidth="160" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Update Product" />
-   <Button mnemonicParsing="false" text="Back" />
+    <Button fx:id="updateButton" onAction="#updateProductOnClick" prefWidth="160" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Update Product" />
+    <Button mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
 </VBox>

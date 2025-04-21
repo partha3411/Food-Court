@@ -5,54 +5,54 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="637.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.foodcourt.ProductSupplierDashboardController">
+<AnchorPane prefHeight="637.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parthajavafinalproject.Sabbir.ProductSupplierDashboardController">
    <children>
       <Label layoutX="201.0" layoutY="14.0" text="Product Supplier Dashboard" textFill="#2b72cf">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="263.0" layoutY="91.0" mnemonicParsing="false" text="Add Product">
+      <Button fx:id="addProductButton" layoutX="263.0" layoutY="91.0" mnemonicParsing="false" onAction="#handleAddProductOnClick" text="Add Product">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="241.0" layoutY="141.0" mnemonicParsing="false" text="Check Product Stock">
+      <Button fx:id="checkStockButton" layoutX="241.0" layoutY="141.0" mnemonicParsing="false" onAction="#handleCheckStockOnClick" text="Check Product Stock">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="263.0" layoutY="441.0" mnemonicParsing="false" text="Update Product">
+      <Button fx:id="updateProductButton" layoutX="252.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleUpdateProductOnClick" text="Update Product">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="262.0" layoutY="396.0" mnemonicParsing="false" text="Monthly Report">
+      <Button fx:id="monthlyReportButton" layoutX="262.0" layoutY="396.0" mnemonicParsing="false" onAction="#handleMonthlyReportOnClick" text="Monthly Report">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="251.0" layoutY="336.0" mnemonicParsing="false" text="Delivered History">
+      <Button fx:id="deliveredHistoryButton" layoutX="251.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleDeliveredHistoryOnClick" text="Delivered History">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="234.0" layoutY="191.0" mnemonicParsing="false" text="Check Supply Requests">
+      <Button fx:id="checkRequestsButton" layoutX="234.0" layoutY="452.0" mnemonicParsing="false" onAction="#handleCheckRequestsOnClick" text="Check Supply Requests">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="251.0" layoutY="237.0" mnemonicParsing="false" text="Confirm Delivery">
+      <Button fx:id="confirmDeliveryButton" layoutX="252.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleConfirmDeliveryOnClick" text="Confirm Delivery">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="254.0" layoutY="285.0" mnemonicParsing="false" text="Deleted Product">
+      <Button fx:id="deletedProductButton" layoutX="251.0" layoutY="221.0" mnemonicParsing="false" onAction="#handleDeletedProductOnClick" text="Deleted Product">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="25.0" layoutY="34.0" mnemonicParsing="false" text="Log Out">
+      <Button fx:id="logOutButton" layoutX="25.0" layoutY="34.0" mnemonicParsing="false" onAction="#logoutButtonOnClick" text="Log Out">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
