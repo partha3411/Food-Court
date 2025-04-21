@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 
 public class LoginScenecontroller
 {
@@ -43,7 +45,7 @@ public class LoginScenecontroller
             stage.setScene(nextScene);
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace(); // Print stack trace to help with debugging
+            e.printStackTrace();
         }
     }
 
@@ -54,37 +56,41 @@ public class LoginScenecontroller
         String userType = userTypeComboBox.getValue();
 
         if (id.isEmpty() || password.isEmpty() || userType == null) {
-            System.out.println("Please fill all fields.");
+            erorLabel.setText("Please fill all fields.");
+            return;
+        }
+
+        FXMLLoader fxmlLoader = null;
+
+        if (userType.equals("Manager") && id.equals("1111") && password.equals("@1234")) {
+            fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/manager.fxml"));
+            successLabel.setText("Manager Login Successful");
+
+        }
+        else if (userType.equals("Cashier") && id.equals("2222") && password.equals("@2345")) {
+            fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/cashier.fxml"));
+            successLabel.setText("Cashier Login Successful");
+
+        }
+
+        //else if (userType.equals("Staff_Category") && id.equals("ID(4 Digit)") && password.equals("pass(your wish)")) {
+            //fxmlLoader = new FXMLLoader(getClass().getResource("(Je fxml Load korte chao).fxml"));
+            //successLabel.setText("staff Category Login Successful");
+
+        //}
+        else {
+            erorLabel.setText("Invalid user ID & Passward");
             return;
         }
 
         try {
-            FXMLLoader fxmlLoader = null;
-
-            switch (userType) {
-                case "Manager":
-                    fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/manager.fxml"));
-                    System.out.println("Login Successful");
-                    break;
-                case "Cashier":
-                    fxmlLoader = new FXMLLoader(getClass().getResource("Sajjatul/cashier.fxml"));
-                    System.out.println("Login Successful");
-                    break;
-                default:
-                    System.out.println("Unknown user type.");
-                    return;
-            }
-
-            if (fxmlLoader != null) {
-                Parent root = fxmlLoader.load();
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                stage.setTitle(userType + " Dashboard");
-                stage.setScene(scene);
-                stage.show();
-            }
-
-        } catch (Exception e) {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle(userType + " Dashboard");
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
