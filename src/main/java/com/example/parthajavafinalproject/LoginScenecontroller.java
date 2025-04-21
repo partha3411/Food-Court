@@ -90,7 +90,7 @@ public class LoginScenecontroller
         }
         //else if (userType.equals("Staff_Category") && id.equals("ID(4 Digit)") && password.equals("pass(your wish)")) {
             //fxmlLoader = new FXMLLoader(getClass().getResource("(Je fxml Load korte chao).fxml"));
-            //successLabel.setText("staff Category Login Successful");
+            //successLabel.setText("staff Category Login Successful")
 
         //}
         else {
