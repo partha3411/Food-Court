@@ -2,6 +2,7 @@ package com.example.parthajavafinalproject.sahadat;
 
 import com.example.parthajavafinalproject.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -14,26 +15,51 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class CustomerFeedbackController {
-    @javafx.fxml.FXML
+    @FXML
     private TextArea feedbackTextArea;
-    @javafx.fxml.FXML
+    @FXML
     private Label statusLB;
-    @javafx.fxml.FXML
-    private ComboBox ratingCB;
+    @FXML
+    private ComboBox<String> ratingCB;
 
-    @javafx.fxml.FXML
-    public void handleSubmitFeedback(ActionEvent actionEvent) {
+    @FXML
+    public void initialize() {
+
+        ratingCB.getItems().addAll("1", "2", "3", "4", "5");
     }
 
-    @javafx.fxml.FXML
+    @FXML
+    public void handleSubmitFeedback(ActionEvent actionEvent) {
+        String feedback = feedbackTextArea.getText().trim();
+        String rating = ratingCB.getValue();
+
+
+        if (feedback.isEmpty() || rating == null) {
+            statusLB.setText("Please enter feedback and select a rating.");
+            return;
+        }
+
+
+        statusLB.setText("Comment Submitted");
+
+
+        feedbackTextArea.clear();
+        ratingCB.setValue(null);
+    }
+
+    @FXML
     public void customerDashboard(ActionEvent event) throws IOException {
-        Parent root = null;
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerDashboard.fxml"));
-        root = fxmlLoader.load();
+        Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setTitle("Back");
         stage.show();
+    }
+
+    @FXML
+    public void ratingButton(ActionEvent actionEvent) {
+
     }
 }
