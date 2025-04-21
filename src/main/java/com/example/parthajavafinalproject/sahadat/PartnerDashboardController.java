@@ -64,7 +64,7 @@ public class PartnerDashboardController {
     @javafx.fxml.FXML
     public void partnerEarningsView(ActionEvent event) throws IOException {
         Parent root = null;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/partnerEarningView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/partnerEarningsView.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -100,7 +100,7 @@ public class PartnerDashboardController {
     @javafx.fxml.FXML
     public void partnerDeliveryRequestView(ActionEvent event) throws IOException {
         Parent root = null ;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("partnerDeliveryRequestView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/partnerDeliveryRequestView.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -112,7 +112,7 @@ public class PartnerDashboardController {
     @javafx.fxml.FXML
     public void partnerDeliverOrder(ActionEvent event) throws IOException {
         Parent root = null ;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("partnerDeliverOrder.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/partnerDeliverOrder.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

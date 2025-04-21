@@ -1,10 +1,19 @@
 package com.example.parthajavafinalproject.sahadat;
 
 
+import com.example.parthajavafinalproject.HelloApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CustomerOrderController {
 
@@ -28,7 +37,7 @@ public class CustomerOrderController {
     private final ObservableList<String> burgerMenu = FXCollections.observableArrayList("Beef Burger", "Chicken Burger", "Veggie Burger");
     private final ObservableList<String> sushiMenu = FXCollections.observableArrayList("California Roll", "Tuna Roll", "Salmon");
     @FXML
-    private ChoiceBox restaurantsCB;
+    private ComboBox restaurantsCB;
 
     @FXML
     public void initialize() {
@@ -80,6 +89,26 @@ public class CustomerOrderController {
                 statusLabel3.setText("Order confirmed!");
             }
         }
+    }
+
+    @FXML
+    public void customerDashboard(ActionEvent event) throws IOException {
+        Parent root = null;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerDashboard.fxml"));
+        root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Back");
+        stage.show();
+    }
+
+    @FXML
+    public void restaurantButton(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void foodButton(ActionEvent actionEvent) {
     }
 }
 

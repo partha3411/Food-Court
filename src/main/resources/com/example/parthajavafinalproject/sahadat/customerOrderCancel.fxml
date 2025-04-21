@@ -12,9 +12,10 @@
             <Font size="24.0" />
          </font></Label>
       <Button layoutX="229.0" layoutY="95.0" mnemonicParsing="false" onAction="#cancelOrderButton" prefHeight="25.0" prefWidth="149.0" text="Cancel Order" />
-      <Label layoutX="229.0" layoutY="141.0" prefHeight="35.0" prefWidth="149.0" text="Order Cancel!">
+      <Label fx:id="ordercancelButton" layoutX="229.0" layoutY="141.0" prefHeight="35.0" prefWidth="149.0">
          <font>
             <Font size="24.0" />
          </font></Label>
+      <Button layoutX="263.0" layoutY="231.0" mnemonicParsing="false" onAction="#customerDashboard" prefHeight="25.0" prefWidth="78.0" text="Back" />
    </children>
 </AnchorPane>

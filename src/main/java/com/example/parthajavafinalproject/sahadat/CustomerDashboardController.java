@@ -48,7 +48,7 @@ public class CustomerDashboardController {
     @javafx.fxml.FXML
     public void customerTrackOrder(ActionEvent event) throws IOException {
         Parent root = null;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerTrackerOrder.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sahadat/customerTrackOrder.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
