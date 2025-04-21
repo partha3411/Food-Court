@@ -118,7 +118,7 @@ public class CleaningTasksController
     @javafx.fxml.FXML
     public void Logout(ActionEvent event)  throws IOException {
         Parent root;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("src/main/resources/com/example/parthajavafinalproject/loginScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("loginScene.fxml"));
         root = fxmlLoader.load();
         Scene scene = new Scene(root) ;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
