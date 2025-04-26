@@ -27,24 +27,22 @@ public class UpdateProductController {
 
     private static final File PRODUCT_FILE = new File("products.bin");
 
-    // This method will run when the scene is loaded
+
     @FXML
     public void initialize() {
         loadProductsIntoComboBox();
     }
 
-    // Method to load product names into the ComboBox
+
     private void loadProductsIntoComboBox() {
         List<Product> products = BinaryFileHelper.readAllObjects(PRODUCT_FILE);
         for (Product product : products) {
             productComboBox.getItems().add(product.getName());
         }
 
-        // Add listener to ComboBox to handle product selection
         productComboBox.setOnAction(event -> loadSelectedProduct());
     }
 
-    // Method to load the selected product into the fields
     private void loadSelectedProduct() {
         String selectedProductName = productComboBox.getValue();
         if (selectedProductName != null) {
@@ -60,7 +58,6 @@ public class UpdateProductController {
         }
     }
 
-    // Method to handle "Update Product" button click
     @FXML
     private void updateProductOnClick() {
         String selectedProductName = productComboBox.getValue();
@@ -74,11 +71,11 @@ public class UpdateProductController {
         }
 
         try {
-            // Parse price and quantity
+
             double price = Double.parseDouble(priceText);
             int quantity = Integer.parseInt(quantityText);
 
-            // Get the selected product
+
             List<Product> products = BinaryFileHelper.readAllObjects(PRODUCT_FILE);
             Product updatedProduct = null;
             for (Product product : products) {
@@ -89,18 +86,17 @@ public class UpdateProductController {
             }
 
             if (updatedProduct != null) {
-                // Update the product details
+
                 updatedProduct.setName(newProductName);
                 updatedProduct.setPrice(price);
                 updatedProduct.setQuantity(quantity);
 
-                // Write the updated list back to the binary file
                 BinaryFileHelper.writeAllObjects(PRODUCT_FILE, products);
 
-                // Show success alert
+
                 showAlert("Success", "Product updated successfully!");
 
-                // Clear input fields
+
                 clearFields();
             }
         } catch (NumberFormatException e) {
@@ -108,7 +104,6 @@ public class UpdateProductController {
         }
     }
 
-    // Method to show alert messages
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
@@ -117,18 +112,17 @@ public class UpdateProductController {
         alert.showAndWait();
     }
 
-    // Method to clear all input fields
+
     private void clearFields() {
         productNameField.clear();
         priceField.clear();
         quantityField.clear();
     }
 
-    // Method to handle the "Back" button click (Navigate to previous scene)
     @FXML
     private void backButtonOnClick() {
         try {
-            // Switch to the ProductSupplierDashboard scene
+
             SceneSwitcher.switchTo("Sabbir/ProductSupplierDashboard");
         } catch (IOException e) {
             // Show an error alert if the scene cannot be loaded

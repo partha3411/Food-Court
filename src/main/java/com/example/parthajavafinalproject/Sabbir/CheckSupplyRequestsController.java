@@ -22,13 +22,13 @@ public class CheckSupplyRequestsController {
 
     @FXML
     public void initialize() {
-        // Binding properties to columns using your SupplyRequest class
+
         requestIdColumn.setCellValueFactory(new PropertyValueFactory<>("requestId"));
         productColumn.setCellValueFactory(new PropertyValueFactory<>("product"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Optional: Load sample data
+
         requestTable.setItems(getSampleData());
     }
 

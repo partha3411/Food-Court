@@ -32,11 +32,11 @@ public class ProductStockController {
         productNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
-        // Load products into the TableView
+
         loadProductStock();
     }
 
-    // Method to load products from the binary file and display them in the TableView
+
     private void loadProductStock() {
 
         List<Product> products = BinaryFileHelper.readAllObjects(PRODUCT_FILE);

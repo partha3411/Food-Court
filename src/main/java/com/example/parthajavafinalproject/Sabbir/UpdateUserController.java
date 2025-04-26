@@ -49,35 +49,35 @@ public class UpdateUserController {
     @FXML
     private TableColumn<CreateUser, Double> salaryColumn;
     @FXML
-    private Label successLabel; // Success/Error Label
+    private Label successLabel;
 
-    // File where users are stored
+
     private static final File userFile = new File("createUsers.dat");
 
     @FXML
     public void initialize() {
-        // Initialize the ComboBox and TableView
+
         loadUsers();
         initializeTable();
     }
 
-    // Load users into ComboBox and TableView
+
     private void loadUsers() {
         List<CreateUser> users = BinaryFileHelper.readAllObjects(userFile);
 
-        // Clear ComboBox before adding items
+
         userComboBox.getItems().clear();
 
-        // Add users to ComboBox (by user ID)
+
         for (CreateUser user : users) {
             userComboBox.getItems().add(user.getUserId());
         }
 
-        // Load data into the TableView
+
         userTableView.getItems().setAll(users);
     }
 
-    // Initialize the TableView columns
+
     private void initializeTable() {
         userIdColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getUserId()));
         nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
@@ -87,7 +87,7 @@ public class UpdateUserController {
         salaryColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().getSalary()).asObject());
     }
 
-    // When a user is selected from the ComboBox, populate the fields
+
     @FXML
     private void handleUserSelection() {
         String selectedUserId = userComboBox.getValue();
@@ -96,11 +96,10 @@ public class UpdateUserController {
             return;
         }
 
-        // Get the user data from the binary file
+
         List<CreateUser> users = BinaryFileHelper.readAllObjects(userFile);
         for (CreateUser user : users) {
             if (user.getUserId().equals(selectedUserId)) {
-                // Populate the text fields with the selected user's data
                 nameField.setText(user.getName());
                 emailField.setText(user.getEmail());
                 salaryField.setText(String.valueOf(user.getSalary()));
@@ -120,7 +119,7 @@ public class UpdateUserController {
             return;
         }
 
-        // Get the user data from the binary file
+
         List<CreateUser> users = BinaryFileHelper.readAllObjects(userFile);
         CreateUser userToUpdate = null;
         for (CreateUser user : users) {
@@ -131,18 +130,17 @@ public class UpdateUserController {
         }
 
         if (userToUpdate != null) {
-            // Validate fields
+
             if (nameField.getText().isEmpty() || emailField.getText().isEmpty() || salaryField.getText().isEmpty() || roleField.getText().isEmpty()) {
                 successLabel.setText("All fields must be filled!");
                 successLabel.setVisible(true);
                 return;
             }
 
-            // Update the user's data
+
             userToUpdate.setName(nameField.getText());
             userToUpdate.setEmail(emailField.getText());
 
-            // Handle salary as a double value
             double salary;
             try {
                 salary = Double.parseDouble(salaryField.getText());
@@ -155,15 +153,14 @@ public class UpdateUserController {
 
             userToUpdate.setRole(roleField.getText());
 
-            // Save the updated user list to the file
+
             BinaryFileHelper.writeAllObjects(userFile, users);
 
-            // Refresh the TableView and show success message
+
             loadUsers();
             successLabel.setText("User updated successfully!");
             successLabel.setVisible(true);
 
-            // Optionally clear fields after update
             nameField.clear();
             emailField.clear();
             salaryField.clear();
@@ -173,7 +170,7 @@ public class UpdateUserController {
 
     @FXML
     private void handleBackButton(ActionEvent event) {
-        // Switch back to the Admin Dashboard when the Back button is clicked
+
         try {
             SceneSwitcher.switchTo("sabbir/AdminDashboard");
         } catch (IOException e) {

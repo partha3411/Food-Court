@@ -38,25 +38,25 @@ public class DeleteProductController {
 
     @FXML
     public void initialize() {
-        // Initialize columns with the properties of the Product class
+
         productNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
-        // Load products into the TableView and ComboBox
+
         loadProducts();
     }
 
-    // Method to load products from the binary file and display in the TableView and ComboBox
+
     private void loadProducts() {
-        // Read all products from the binary file
+
         List<Product> products = BinaryFileHelper.readAllObjects(PRODUCT_FILE);
 
-        // Create an ObservableList for TableView
+
         ObservableList<Product> productList = FXCollections.observableArrayList(products);
         productTable.setItems(productList);
 
-        // Create an ObservableList for ComboBox (only product names)
+
         ObservableList<String> productNames = FXCollections.observableArrayList();
         for (Product product : products) {
             productNames.add(product.getName());
@@ -64,10 +64,10 @@ public class DeleteProductController {
         productComboBox.setItems(productNames);
     }
 
-    // Method to handle the "Delete Product" button click
+
     @FXML
     private void deleteProductOnClick() {
-        // Get the selected product name from ComboBox
+
         String selectedProductName = productComboBox.getValue();
 
         if (selectedProductName == null) {
@@ -75,10 +75,9 @@ public class DeleteProductController {
             return;
         }
 
-        // Read all products from the binary file
+
         List<Product> products = BinaryFileHelper.readAllObjects(PRODUCT_FILE);
 
-        // Find the product that matches the selected product name
         Product selectedProduct = null;
         for (Product product : products) {
             if (product.getName().equals(selectedProductName)) {
@@ -88,23 +87,22 @@ public class DeleteProductController {
         }
 
         if (selectedProduct != null) {
-            // Remove the selected product from the list
+
             products.remove(selectedProduct);
 
-            // Save the updated product list back to the binary file
             BinaryFileHelper.writeAllObjects(PRODUCT_FILE, products);
 
-            // Show success alert
+
             showAlert("Success", "Product deleted successfully!");
 
-            // Reload the table and ComboBox after deletion
+
             loadProducts();
         } else {
             showAlert("Error", "Failed to delete the selected product.");
         }
     }
 
-    // Method to show alert messages
+
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
@@ -113,14 +111,13 @@ public class DeleteProductController {
         alert.showAndWait();
     }
 
-    // Method to handle the "Back" button click (Navigate to previous scene)
     @FXML
     private void backButtonOnClick() {
         try {
-            // Switch to the ProductSupplierDashboard scene
+
             SceneSwitcher.switchTo("Sabbir/ProductSupplierDashboard");
         } catch (IOException e) {
-            // Show an error alert if the scene cannot be loaded
+
             showAlert("Error", "Failed to load previous scene.");
             e.printStackTrace();
         }

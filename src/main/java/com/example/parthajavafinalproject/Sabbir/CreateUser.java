@@ -11,7 +11,7 @@ public class CreateUser implements Serializable {
     private String role;
     private double salary;
 
-    // Constructor
+
     public CreateUser(String userId, String name, String password, String email, String role, double salary) {
         this.userId = userId;
         this.name = name;
@@ -21,7 +21,7 @@ public class CreateUser implements Serializable {
         this.salary = salary;
     }
 
-    // Getters and Setters for each field
+
     public String getUserId() {
         return userId;
     }
